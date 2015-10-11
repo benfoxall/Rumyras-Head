@@ -1,0 +1,176 @@
+nav {}
+nav ul, nav ol {list-style:none;}
+
+nav {
+  a {
+    display: block;
+    box-sizing: border-box; -moz-box-sizing: border-box;
+    padding: $verticalSpace/2 $gutter/2;
+  }
+}
+
+/*MAIN SITE NAV*/
+nav[role="main"] {
+  list-style:none;
+  @media all and (max-width:642px) {display:none;}
+  ul {
+    margin:0px; padding:0px;
+    margin-bottom:$verticalSpace;
+    li {
+      background:none;
+    }
+  }
+  a {
+    border:none;
+    @include special-border($blue,bottom,light,8px);
+    @media all and (max-width:900px) {
+      @include special-border($blue,top,light,4px);
+    }
+    font-family:$headerFont;
+    font-size:$fontSize*2;
+    @media all and (max-width:900px) {
+      font-size:$fontSize*1.4;
+    }
+    &:nth-child(3n-2) {
+      @include special-border($purple,bottom,light,8px);
+      @media all and (max-width:900px) {
+        @include special-border($purple,top,light,4px);
+      }
+      color:$purple;
+      &:hover {
+        color:lighten($purple, 16%);
+      }
+    }
+    &:nth-child(3n-1) {
+      @include special-border($pink,bottom,light,8px);
+      @media all and (max-width:900px) {
+        @include special-border($pink,top,light,4px);
+      }
+      color:$pink;
+      &:hover {
+        color:lighten($pink, 16%);
+      }
+    }
+    &:nth-child(3n) {
+      @include special-border($orange,bottom,light,8px);
+      @media all and (max-width:900px) {
+        @include special-border($orange,top,light,4px);
+      }
+      color:$orange;
+      &:hover {
+        color:lighten($orange, 16%);
+      }
+    }
+    &[href*="mailto"] {
+      @include special-border($cyan,bottom,light,8px);
+      @media all and (max-width:900px) {
+        @include special-border($cyan,top,light,4px);
+        display:none;
+      }
+      color:$cyan;
+      &:hover {
+        color:lighten($cyan, 16%);
+      }
+    }
+
+    &:nth-child(n), &:nth-child(n):hover, &[href*="mailto"] {
+      padding-top:$verticalSpace/2;
+      @media all and (max-width:900px) {
+        padding-right:10px;
+      }
+    }
+  }
+  
+}
+
+/*SOCIAL NAVS*/
+.social {
+  padding:0px; margin:0px;
+  overflow:hidden;
+  li {
+    background:none; padding:0px; margin:0px;
+    @media all and (min-width:642px) and (max-width:900px) {
+      width:47.9%; float:left;
+      &:nth-child(2n-1) {margin-right:4%;}
+    }
+  }
+  a {
+    font-size:$smallFont;
+    display:block;
+    border:none;
+    @include special-border($blue,bottom,light,4px);
+  }
+  a[href*="twitter"] {
+    @include add-icon-before("\f099",$cyan);
+    @include special-border($cyan,bottom,light,4px);
+  }
+  a[href*="lanyrd"] {
+    @include add-icon-before("\f02b",$blue);
+  }
+  a[href*="github"] {
+    @include add-icon-before("\f09b",$purple);
+    @include special-border($purple,bottom,light,4px);
+  }
+  a[href*="mailto"] {
+    @include add-icon-before("\f0e0",$pink);
+    @include special-border($pink,bottom,light,4px);
+  }
+  a[href*="codepen"] {
+    @include add-icon-before("\f121",$pink);
+    @include special-border($pink,bottom,light,4px);
+  }
+  a[href*="feed"] {
+    @include add-icon-before("\f09e",$orange);
+    @include special-border($orange,bottom,light,4px);
+  }
+  a[href*="http"] {
+    &:before {
+      padding-right:$gutter*0.66;
+
+    }
+  }
+}
+aside .social {
+  a[href*="http"], a[href*="mailto"] {
+    background:none; border:none;
+    padding:0px; margin:0px;
+    display:inline-block;
+    color:transparent; font-size:0px;
+    text-transform:none; text-decoration:none;
+    &:before {
+      font-size:50px; line-height:50px;
+      padding:0px 0px 0px $gutter;
+      // padding-right:0px; padding-left:$gutter;
+      @media all and (max-width:900px) {
+        padding-left:$gutter*0.66;
+        font-size:32px; line-height:36px;
+      }
+      @media all and (max-width:642px) {
+        padding-left:$gutter*0.33;
+        font-size:28px; line-height:32px;
+      }
+    }
+  }
+  a[href*="mailto"] {
+    @media all and (min-width:900px) {
+      display:none;
+    }
+  }
+  a[href*="github"], a[href*="mailto"] {
+    @media all and (max-width:642px) {
+      display:none;
+    }
+  }
+}
+
+
+
+menu {}
+menu[type="list"] {}
+menu[type="toolbar"] {list-style:none;}
+menu[type="toolbar"] button {
+	background:none;
+	border:4px solid $grey;
+	padding:3px; margin:0px;
+}
+menu[type="context"] {}

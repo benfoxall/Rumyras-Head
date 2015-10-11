@@ -7,93 +7,75 @@
 
 
 // 1. HTML & BODY ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-html { background-color: $primaryBackgroundColour; }
+html { background-color: $secondaryBackgroundColour; }
 body {
   width: 100%;
   overflow: auto;
   font-family: $font;
-  font-size: 100%;
+  font-size: 84%;
   font-color: $primaryFontColour;
   line-height: 1;
+  @include at-least($screenMedium) { font-size: 90%; }
+  @include at-least($screenLarge) { font-size: 100%; }
   @include at-least($screenXlarge) { font-size: 112%; }
-  @include until($screenMedium) { font-size: 90%; }
-  @include until($screenSmall) { font-size: 84%; }
 }
 
 // 2. SITE STRUCTURE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // 2.1 Main header, aside & footer
 // Default layout is full width add .layout-sidebar for large screens to have side nav
-header[role="banner"],
-body > aside,
+header[role="main"],
+section[role="main"],
 body > footer {
-  padding: $verticalSpace $gutter;
   @include simple-vendor-prefix(box-sizing,border-box);
 }
 
-header[role="banner"] {
-  h1 {}
+header[role="main"], body > footer {
+  width: 100%; float:none;
+  @include at-least($screenLarge) {width:38%; float:left; text-align:right;}
 }
 
-body > footer {
-  width: 100%;
-  padding: $verticalSpace/2 $gutter 0px;
-  @include simple-vendor-prefix(box-sizing,border-box);
-  p, nav {
-      display: inline-block;
-      width: 50%;
-      @include simple-vendor-prefix(box-sizing,border-box);
-  }
+header[role="main"] {
+  overflow: auto;
+  padding: $verticalSpace/2 $gutter/2;
+  @include at-least($screenLarge) {padding: $verticalSpace $gutter;}
   nav {
-    text-align: right;
+    @include simple-vendor-prefix(box-sizing,border-box);
     a {
-      margin-left: $gutter/2;
-      border-width: 0px;
+      width: 30%; float: left;
+      margin-right: 3%;
+      @include at-least($screenLarge) {
+        width:100%; float:none; margin:0px;
+      }
+      &:nth-of-type(3) {
+        width:34%; margin-right:0px;
+        @include at-least($screenLarge) {
+          width:100%;
+        }
+      }
     }
+  }
+}
+
+body > footer {
+  padding: $verticalSpace/2 $gutter 0px;
+  p {
+      width: 100%; overflow: hidden;
+      padding-top:$verticalSpace;
+      font-size: $fontSize*0.9;
+      span {float:left;}
   }
 }
 
 /*2.2 Main content container*/
 section[role="main"] {
-  width: 100%;
+  width: 100%; float:none;
   padding: $verticalSpace $gutter;
-  @include simple-vendor-prefix(box-sizing,border-box);
-}
-
-
-@include at-least($screenLarge) {
-
-  .layout-sidebar {
-    header[role="banner"],
-    body > aside {
-      width: 32%;
-      float: left;
-      text-align: right;
-    }
-    header[role="banner"] {
-      nav {
-        //due to @extends not being allowed within @includes this is just a copy from nav-block-vertical.
-        & > ul {
-          background-color: transparent;
-          & > li > a {
-            background-color: $blockNavBackgroundColour;
-            &:hover { background-color: darken($blockNavBackgroundColour, 20%); }
-          }
-        }
-        li {
-          display: block;
-          margin-bottom: $verticalSpace/4;
-        }
-        .nav-sub {
-          display: block;
-          position: static;
-          border-width: 0px;
-        }
-      }
-    }
-
-    section[role="main"] {
-      width: 67.5%;
-      float: right;
-    }
+  background-color:transparentize($primaryBackgroundColour,0.1);
+  border:4px solid $extraLightGrey;
+  border-width:4px 0px;
+  @include at-least($screenLarge) {
+    width:62%; float:right;
+    border-width:0px 0px 0px 4px;
   }
 }
+

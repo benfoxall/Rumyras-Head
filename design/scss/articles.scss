@@ -1,0 +1,82 @@
+article {
+  margin-bottom:$verticalSpace*2;
+  padding:$verticalSpace 0px $verticalSpace*2;
+  overflow:hidden;
+  @include special-border($blue,top,dark,12px);
+  time {float:right;}
+  @media all and (max-width:900px) {
+    @include special-border($blue,top,dark,8px);
+  }
+  .post-tags {
+    margin:$verticalSpace 0px;
+    text-align:right;
+    @include special-border($blue,top,dark,4px);
+    a {margin-left:6px;}
+  }
+}
+div.feature {
+  margin-bottom:$verticalSpace*2;
+  padding:$verticalSpace 0px $verticalSpace*2;
+  overflow:hidden;
+  @include special-border($orange,top,dark,12px);
+  @media all and (max-width:900px) {
+    @include special-border($orange,top,dark,8px);
+  }
+  @media all and (max-width:642px) {
+    margin-bottom:$verticalSpace;
+    padding:$verticalSpace 0px;
+  }
+  h2, h3, h4, h5, h6 {color:$orange;}
+  a {@include animated-link($orange, lighten($orange, 15%));}
+}
+
+/*dif categories == dif colours*/
+.category-brain-dribble {
+  @include special-border($purple,top,dark,12px);
+  @media all and (max-width:900px) {
+    @include special-border($purple,top,dark,8px);
+  }
+  @media all and (max-width:642px) {
+    margin-bottom:$verticalSpace;
+    padding:$verticalSpace 0px;
+  }
+  .post-tags {
+    @include special-border($purple,top,dark,8px);
+  }
+}
+.category-craft-code {
+  @include special-border($pink,top,dark,12px);
+  @media all and (max-width:900px) {
+    @include special-border($pink,top,dark,8px);
+  }
+  @media all and (max-width:642px) {
+    margin-bottom:$verticalSpace;
+    padding:$verticalSpace 0px;
+  }
+  .post-tags {
+    @include special-border($pink,top,dark,8px);
+  }
+}
+.category-speak-write-mentor {
+  @include special-border($orange,top,dark,12px);
+  @media all and (max-width:900px) {
+    @include special-border($orange,top,dark,8px);
+  }
+  @media all and (max-width:642px) {
+    margin-bottom:$verticalSpace;
+    padding:$verticalSpace 0px;
+  }
+  .post-tags {
+    @include special-border($orange,top,dark,8px);
+  }
+}
+
+.post .more-link {
+  display:block;
+  border:none;
+  text-align:right;
+  font-family:$headerFont;
+  font-size:$bigFont;
+}
+
+

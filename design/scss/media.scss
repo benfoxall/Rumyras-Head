@@ -1,0 +1,28 @@
+/*media*/
+figure {
+  width:50%; float:right;
+  margin:0px 0px $verticalSpace $gutter;
+  box-sizing:border-box; -moz-box-sizing:border-box;
+  @include special-border($blue,left,dark,12px);
+  @media all and (max-width:500px) {
+    width:100%;
+  }
+}
+.category-brain-dribble figure {@include special-border($purple,left,dark,12px);}
+.category-craft-code figure {@include special-border($pink,left,dark,12px);}
+.category-speak-write-mentor figure {@include special-border($orange,left,dark,12px);}
+
+figure.feature {width:100%;}
+figcaption {
+  margin:$verticalSpace/2 0px;
+  font-style:italic; font-size:$smallFont;
+}
+img {
+  width:100%;
+  border:4px solid $grey;
+}
+
+audio {}
+/*Prevents modern browsers from displaying `audio` without controls. Remove excess height in iOS 5 devices.*/
+audio:not([controls]) {display:none; height:0;}
+video {}

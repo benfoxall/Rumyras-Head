@@ -1,0 +1,19 @@
+<% wrap_layout :layout do %>
+<article class="post <%= current_article.data.category %>">
+  <header>
+     <h2><%= current_article.title %></h2>
+     <time datetime="<%= current_article.data.date%>"><%= Date.parse(current_article.data.date).strftime('%B %e, %Y') %></time>
+  </header>
+  <div class="post-content">
+    <%= yield %>
+  </div>
+  <div class="post-tags">
+    <p>Tags:
+     <% current_article.tags.each do |tag| %>
+       <!-- <li><a href="/blog/tags/<%= tag %>/"><%= tag %></a></li> -->
+       <span><%= tag %>,&nbsp;</span>
+     <% end %>
+    </p>
+  </div>
+</article>
+<% end %>

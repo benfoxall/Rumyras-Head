@@ -13,36 +13,41 @@
 // 1. COLOURS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // 1.1 Colour palette:
 // Amend for your own palette. It's fine to rename vars - abstracting of these is in the next section (1.2) so updating that will update all other files.
-$blue: #2368db;
-$purple: #9e3f9e;
-$red: #db183c;
-$orange: #e97f02;
-$yellow: #f8ca00;
-$green: #31a33e;
+$blue:rgba(38,39,72,1);
+$purple:rgba(95,46,68,1);
+$pink:rgba(164,62,79,1);
+$orange:rgba(180,119,66,1);
+$cyan:rgba(82,174,159,1);
+$cream:rgba(243,243,233,1);
 
-$grey: desaturate($purple, 95%);
+$grey: desaturate($blue, 95%);
 $darkGrey: darken($grey, 20%);
 $lightGrey: lighten($grey, 20%);
 $extraLightGrey: lighten($grey, 40%);
 
 $white: darken(lighten($grey,100%),1%);
-$black: lighten(darken($grey,100%),5%);
+$black: lighten(darken($blue,100%),5%);
 
 //1.2 Abstracted colour variables:
 // For use within other sass files. Usually specified for each element at the beginning of it's specific sass file. E.g. $primaryButtonColour:$primaryColour;
-$primaryColour: $purple !default;
-$secondaryColour: $red !default;
+$primaryColour: $blue !default;
+$secondaryColour: $cyan !default;
 $tertiaryColour: $grey !default;
 // quaternary, quinary, senary
 
+// category colours
+$brainDribble: $purple;
+$craftCode: $pink;
+$speakWrite: $orange;
+
 $primaryBackgroundColour: $white !default;
-$secondaryBackgroundColour: $extraLightGrey !default;
+$secondaryBackgroundColour: $cream !default;
 $tertiaryBackgroundColour: $lightGrey !default;
 
 $borderColour: $lightGrey !default;
 
-$successColour: $green !default;
-$errorColour: $red !default;
+$successColour: $cyan !default;
+$errorColour: $pink !default;
 
 $primaryFontColour: $black !default;
 $alternateFontColour: $white !default;
@@ -87,13 +92,19 @@ $alternateFontColour: $white !default;
 .hide-font {color:transparent; font-size:0px; text-transform:none; text-decoration:none;}
 
 //2.2 Font imports & settings
-@include font-face('Font Awesome', '../fonts/fontAwesome/fontawesome-webfont');
+@import url(http://fonts.googleapis.com/css?family=Playball);
+@include font-face('Adventor', '../fonts/texgyreadventor-regular-webfont');
+@include font-face('Adventor', '../fonts/texgyreadventor-italic-webfont', normal, italic);
+@include font-face('Adventor', '../fonts/texgyreadventor-bold-webfont', bold);
+@include font-face('Adventor', '../fonts/texgyreadventor-bolditalic-webfont', bold, italic);
+@include font-face('Font Awesome', '../fonts/fontawesome-webfont');
 
-$font:'Helvetica Neue', Helvetica, Arial, sans-serif !default;
+
+$font:'Adventor', Helvetica, Arial, sans-serif !default;
 $fontSize:1em !default;
 $lineHeight:1.5 !default;
 
-$headerFont:'Helvetica Neue', Helvetica, Arial, sans-serif !default;
+$headerFont:'Playball', cursive !default;
 $headerLineHeight:1.1;
 
 $iconFont:'Font Awesome', monospace !default;
@@ -137,4 +148,321 @@ $screenXlarge:1280px;
   -o-#{$name}: $argument;
   #{$name}: $argument;
 }
+
+/* 1.4 Nice design stuff/little shineys------------------------*/
+$roundedCorners:1px;
+$boxShadow:0px 0px 0px 0px $grey;
+/*below is not the best way to do this - I need to refactor ~Ruth*/
+@mixin special-border($borderColour, $position:left, $first:light, $width:20px) {
+  $emWidth: ($width/16)*1em;
+  //set defaults
+  $padding:0px $gutter/2;
+  $gradientDirection:top;
+  $size:$width 100%;
+  $bkPosition:left top;
+  @if $position == top {
+    $padding:$verticalSpace/2 0px;
+    $gradientDirection:left;
+    $size:100% $width;
+  } @else if $position == right {
+    $padding:0px $gutter/2;
+    $bkPosition:right top;
+  } @else if $position == bottom {
+    $padding:$verticalSpace/2 0px;
+    $gradientDirection:left;
+    $size:100% $width;
+    $bkPosition:left bottom;
+  }
+  padding:$padding;
+  @if $first == light {
+    background-image:
+      -webkit-linear-gradient($gradientDirection,
+        lighten($borderColour, 15%) 33%,
+        $borderColour 33%,
+        $borderColour 66%,
+        darken($borderColour, 15%) 66%
+      )
+    ;
+    background-image:
+      -moz-linear-gradient($gradientDirection,
+        lighten($borderColour, 15%) 33%,
+        $borderColour 33%,
+        $borderColour 66%,
+        darken($borderColour, 15%) 66%
+      )
+    ;
+    background-image:
+      -ms-linear-gradient($gradientDirection,
+        lighten($borderColour, 15%) 33%,
+        $borderColour 33%,
+        $borderColour 66%,
+        darken($borderColour, 15%) 66%
+      )
+    ;
+    background-image:
+      -o-linear-gradient($gradientDirection,
+        lighten($borderColour, 15%) 33%,
+        $borderColour 33%,
+        $borderColour 66%,
+        darken($borderColour, 15%) 66%
+      )
+    ;
+    background-image:
+      linear-gradient($gradientDirection,
+        lighten($borderColour, 15%) 33%,
+        $borderColour 34%,
+        $borderColour 66%,
+        darken($borderColour, 5%) 67%
+      )
+    ;
+  } @else {
+    background-image:
+      -webkit-linear-gradient($gradientDirection,
+        darken($borderColour, 15%) 33%,
+        $borderColour 33%,
+        $borderColour 66%,
+        lighten($borderColour, 15%) 66%
+      )
+    ;
+    background-image:
+      -moz-linear-gradient($gradientDirection,
+        darken($borderColour, 15%) 33%,
+        $borderColour 33%,
+        $borderColour 66%,
+        lighten($borderColour, 15%) 66%
+      )
+    ;
+    background-image:
+      -o-linear-gradient($gradientDirection,
+        darken($borderColour, 15%) 33%,
+        $borderColour 33%,
+        $borderColour 66%,
+        lighten($borderColour, 15%) 66%
+      )
+    ;
+    background-image:
+      -ms-linear-gradient($gradientDirection,
+        darken($borderColour, 15%) 33%,
+        $borderColour 33%,
+        $borderColour 66%,
+        lighten($borderColour, 15%) 66%
+      )
+    ;
+    background-image:
+      linear-gradient($gradientDirection,
+        darken($borderColour, 15%) 33%,
+        $borderColour 33%,
+        $borderColour 66%,
+        lighten($borderColour, 15%) 66%
+      )
+    ;
+  }
+  background-repeat:no-repeat;
+  background-size:$size;
+  background-position:$bkPosition;
+}
+
+@mixin button-style($buttonColour) {
+    background-color:$buttonColour;
+    background-image:
+      -webkit-linear-gradient(top,
+        lighten($buttonColour, 10%) 33%,
+        $buttonColour 34%,
+        $buttonColour 66%,
+        darken($buttonColour, 5%) 67%
+      )
+    ;
+    background-image:
+      -moz-linear-gradient(top,
+        lighten($buttonColour, 10%) 33%,
+        $buttonColour 34%,
+        $buttonColour 66%,
+        darken($buttonColour, 5%) 67%
+      )
+    ;
+    background-image:
+      -ms-linear-gradient(top,
+        lighten($buttonColour, 10%) 33%,
+        $buttonColour 34%,
+        $buttonColour 66%,
+        darken($buttonColour, 5%) 67%
+      )
+    ;
+    background-image:
+      -o-linear-gradient(top,
+        lighten($buttonColour, 10%) 33%,
+        $buttonColour 34%,
+        $buttonColour 66%,
+        darken($buttonColour, 5%) 67%
+      )
+    ;
+    background-image:
+      linear-gradient(top,
+        lighten($buttonColour, 10%) 33%,
+        $buttonColour 34%,
+        $buttonColour 66%,
+        darken($buttonColour, 5%) 67%
+      )
+    ;
+    display:inline-block;
+    padding:8px 10px;
+    border-radius:$roundedCorners; border:3px solid $grey;
+    color: $white; font-family:$font;
+    text-decoration:none; text-shadow:none; text-align:center;
+    &:hover {
+        background-color: darken($buttonColour,5%);
+        background-image:
+          -webkit-linear-gradient(top,
+            lighten($buttonColour, 15%) 33%,
+            lighten($buttonColour, 3%) 34%,
+            lighten($buttonColour, 3%) 66%,
+            lighten($buttonColour, 1%) 67%
+          )
+        ;
+        background-image:
+          -moz-linear-gradient(top,
+            lighten($buttonColour, 15%) 33%,
+            lighten($buttonColour, 3%) 34%,
+            lighten($buttonColour, 3%) 66%,
+            lighten($buttonColour, 1%) 67%
+          )
+        ;
+        background-image:
+          -o-linear-gradient(top,
+            lighten($buttonColour, 15%) 33%,
+            lighten($buttonColour, 3%) 34%,
+            lighten($buttonColour, 3%) 66%,
+            lighten($buttonColour, 1%) 67%
+          )
+        ;
+        background-image:
+          -ms-linear-gradient(top,
+            lighten($buttonColour, 15%) 33%,
+            lighten($buttonColour, 3%) 34%,
+            lighten($buttonColour, 3%) 66%,
+            lighten($buttonColour, 1%) 67%
+          )
+        ;
+        background-image:
+          linear-gradient(top,
+            lighten($buttonColour, 15%) 33%,
+            lighten($buttonColour, 3%) 34%,
+            lighten($buttonColour, 3%) 66%,
+            lighten($buttonColour, 1%) 67%
+          )
+        ;
+        cursor: pointer;
+        color: $white;
+    }
+}
+
+@mixin gradedBackground($colour) {
+  padding-left:40px;
+  background-image:
+    -webkit-linear-gradient(left,
+      lighten($colour, 15%) 10px,
+      $colour 11px,
+      $colour 20px,
+      darken($colour, 15%) 21px,
+      darken($colour, 15%) 30px,
+      transparent 31px
+    )
+  ;
+  background-image:
+    -moz-linear-gradient(left,
+      lighten($colour, 15%) 10px,
+      $colour 11px,
+      $colour 20px,
+      darken($colour, 15%) 21px,
+      darken($colour, 15%) 30px,
+      transparent 31px
+    )
+  ;
+  background-image:
+    -o-linear-gradient(left,
+      lighten($colour, 15%) 10px,
+      $colour 11px,
+      $colour 20px,
+      darken($colour, 15%) 21px,
+      darken($colour, 15%) 30px,
+      transparent 31px
+    )
+  ;
+  background-image:
+    -ms-linear-gradient(left,
+      lighten($colour, 15%) 10px,
+      $colour 11px,
+      $colour 20px,
+      darken($colour, 15%) 21px,
+      darken($colour, 15%) 30px,
+      transparent 31px
+    )
+  ;
+  background-image:
+    linear-gradient(left,
+      lighten($colour, 15%) 10px,
+      $colour 11px,
+      $colour 20px,
+      darken($colour, 15%) 21px,
+      darken($colour, 15%) 30px,
+      transparent 31px
+    )
+  ;
+  @media all and (max-width:900px) {
+    padding-left:32px;
+    background-image:
+      -webkit-linear-gradient(left,
+        lighten($colour, 15%) 8px,
+        $colour 9px,
+        $colour 16px,
+        darken($colour, 15%) 17px,
+        darken($colour, 15%) 24px,
+        transparent 25px
+      )
+    ;
+    background-image:
+      -moz-linear-gradient(left,
+        lighten($colour, 15%) 8px,
+        $colour 9px,
+        $colour 16px,
+        darken($colour, 15%) 17px,
+        darken($colour, 15%) 24px,
+        transparent 25px
+      )
+    ;
+    background-image:
+      -o-linear-gradient(left,
+        lighten($colour, 15%) 8px,
+        $colour 9px,
+        $colour 16px,
+        darken($colour, 15%) 17px,
+        darken($colour, 15%) 24px,
+        transparent 25px
+      )
+    ;
+    background-image:
+      -ms-linear-gradient(left,
+        lighten($colour, 15%) 8px,
+        $colour 9px,
+        $colour 16px,
+        darken($colour, 15%) 17px,
+        darken($colour, 15%) 24px,
+        transparent 25px
+      )
+    ;
+    background-image:
+      linear-gradient(left,
+        lighten($colour, 15%) 8px,
+        $colour 9px,
+        $colour 16px,
+        darken($colour, 15%) 17px,
+        darken($colour, 15%) 24px,
+        transparent 25px
+      )
+    ;
+  }
+}
+
+
+
 

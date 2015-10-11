@@ -1,0 +1,249 @@
+html {
+    background:$white;
+    background-image:
+        -webkit-linear-gradient(135deg,
+            lighten($cream,5%) 0%,
+            lighten($cream,5%) 10%,
+            lighten($cream,10%) 11%,
+            lighten($cream,10%) 40%,
+            lighten($cream,30%) 41%,
+            lighten($cream,30%) 50%,
+            lighten($cream,5%) 51%,
+            lighten($cream,5%) 60%,
+            lighten($cream,10%) 61%,
+            lighten($cream,10%) 90%,
+            lighten($cream,30%) 91%)
+    ;
+    background-image:
+        -mox-linear-gradient(135deg,
+            lighten($cream,5%) 0%,
+            lighten($cream,5%) 10%,
+            lighten($cream,10%) 11%,
+            lighten($cream,10%) 40%,
+            lighten($cream,30%) 41%,
+            lighten($cream,30%) 50%,
+            lighten($cream,5%) 51%,
+            lighten($cream,5%) 60%,
+            lighten($cream,10%) 61%,
+            lighten($cream,10%) 90%,
+            lighten($cream,30%) 91%)
+    ;
+    background-image:
+        -o-linear-gradient(135deg,
+            lighten($cream,5%) 0%,
+            lighten($cream,5%) 10%,
+            lighten($cream,10%) 11%,
+            lighten($cream,10%) 40%,
+            lighten($cream,30%) 41%,
+            lighten($cream,30%) 50%,
+            lighten($cream,5%) 51%,
+            lighten($cream,5%) 60%,
+            lighten($cream,10%) 61%,
+            lighten($cream,10%) 90%,
+            lighten($cream,30%) 91%)
+    ;
+    background-image:
+        -ms-linear-gradient(135deg,
+            lighten($cream,5%) 0%,
+            lighten($cream,5%) 10%,
+            lighten($cream,10%) 11%,
+            lighten($cream,10%) 40%,
+            lighten($cream,30%) 41%,
+            lighten($cream,30%) 50%,
+            lighten($cream,5%) 51%,
+            lighten($cream,5%) 60%,
+            lighten($cream,10%) 61%,
+            lighten($cream,10%) 90%,
+            lighten($cream,30%) 91%)
+    ;
+    background-image:
+        // linear-gradient(40deg,transparentize($white,0.95),transparentize($cream,0.95)),
+
+        linear-gradient(135deg,
+            lighten($cream,5%) 0%,
+            lighten($cream,5%) 10%,
+            lighten($cream,10%) 11%,
+            lighten($cream,10%) 40%,
+            lighten($cream,30%) 41%,
+            lighten($cream,30%) 50%,
+            lighten($cream,5%) 51%,
+            lighten($cream,5%) 60%,
+            lighten($cream,10%) 61%,
+            lighten($cream,10%) 90%,
+            lighten($cream,30%) 91%)
+    ;
+    background-size:/*7px 7px,*/ 5px 5px;
+    /*Prevents iOS text size adjust after orientation change, without disabling user zoom.*/
+    -webkit-text-size-adjust:100%;
+}
+body {
+    width:100%;
+    font-size:100%; line-height:1; @include font-style($blue,$white,$font);
+    @media all and (max-width:540px) {
+        padding:0%;
+    }
+    &>div {
+        position:relative;
+        overflow:auto;
+        @media all and (min-width:900px) {
+            background-image:
+                -webkit-linear-gradient(left,
+                    transparent 37.8%,
+                    $grey 37.8%,
+                    $grey 38%,
+                    transparentize($white,0.2) 38%
+                );
+            background-image:
+                -moz-linear-gradient(left,
+                    transparent 37.8%,
+                    $grey 37.8%,
+                    $grey 38%,
+                    transparentize($white,0.2) 38%
+                );
+            background-image:
+                -ms-linear-gradient(left,
+                    transparent 37.8%,
+                    $grey 37.8%,
+                    $grey 38%,
+                    transparentize($white,0.2) 38%
+                );
+            background-image:
+                -o-linear-gradient(left,
+                    transparent 37.8%,
+                    $grey 37.8%,
+                    $grey 38%,
+                    transparentize($white,0.2) 38%
+                );
+            background-image:
+                linear-gradient(left,
+                    transparent 37.8%,
+                    $grey 37.8%,
+                    $grey 38%,
+                    transparentize($white,0.2) 38%
+                );
+        }
+    }
+
+}
+
+/*SITE STRUCTURE AND MEDIA QUERIES~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*header & footer*/
+header[role="main"], body > div > aside, body > div > footer, section[role="main"] {
+    box-sizing:border-box; -moz-box-sizing:border-box;
+    padding:0px $gutter;
+    @media all and (max-width:900px) {
+        padding:0px $gutter/2;
+    }
+}
+header[role="main"], body > div > aside, body > div > footer {
+    width:38%; float:left;
+    text-align:right;
+    @media all and (max-width:900px) {
+        width:100%; float:none;
+        //padding:2%;
+        //background-color:$blue;
+    }
+}
+
+aside[role="banner"] {
+    width:100%;
+    padding:0px;
+    overflow:hidden;
+    form[role="search"], nav[role="complementary"] {
+        box-sizing:border-box; -moz-box-sizing:border-box;
+        float:left;
+        padding:$verticalSpace $gutter;
+        @media all and (max-width:900px) {
+            padding:$verticalSpace/2 $gutter/2;
+        }
+    }
+    form[role="search"] {
+        width:38%;
+        @media all and (max-width:900px) {
+            width:62%;
+        }
+        @media all and (max-width:642px) {
+            width:78%;
+            padding-right:0px;
+        }
+    }
+    nav[role="complementary"] {
+        float:right;
+        padding-bottom:0px;
+        @media all and (max-width:642px) {
+            padding-left:0px;
+            padding-top:15px;
+        }
+    }
+}
+
+header[role="main"] {
+    overflow:auto;
+    h1 {
+        a {@include animated-link($blue, $cyan); border:none;}
+        @media all and (max-width:900px) {
+            width:100%;
+            box-sizing:border-box; -moz-box-sizing:border-box;
+            padding:20px 10px 0px 0px;
+        }
+    }
+    nav {
+        @media all and (max-width:900px) {
+            box-sizing:border-box; -moz-box-sizing:border-box;
+            a {
+                width:30%; float:left;
+                margin-right:3%;
+                &:nth-of-type(3) {width:34%; margin-right:0px;}
+            }
+        }
+    }
+}
+body > div > footer {
+    position:absolute; bottom:0px;
+    padding-bottom:$verticalSpace*2;
+    @media all and (max-width:900px) {
+        position:relative; bottom:0px;
+        padding:$verticalSpace/2 $gutter/2;
+    }
+    p {
+        width:100%; overflow:hidden;
+        padding-top:$verticalSpace;
+        font-size:$smallFont;
+        span {float:left;}
+    }
+
+    // p {
+    //     font-size:$fontSize*0.7;
+    //     @media all and (min-width:860px) {
+    //         font-size:$fontSize*0.8;
+    //     }
+    // }
+    // a {
+    //     margin:$verticalSpace/2 20px $verticalSpace/2 0px;
+    //     float:right;
+    //     color:$white;
+    //     border-color:$white;
+    //     &:hover {
+    //         color:$grey;
+    //         border-color:$grey;
+    //     }
+    // }
+
+}
+
+/*full width containers*/
+section[role="main"] {
+    width:62%; float:right;
+    @media all and (min-width:900px) {
+        min-height:900px;
+    }
+    @media all and (max-width:900px) {
+        width:100%; float:none;
+        padding:$verticalSpace $gutter/2;
+        background-color:transparentize($white,0.2);
+        border:4px solid $grey;
+        border-width:4px 0px;
+        //padding-top:4%;
+    }
+}
+

@@ -1,0 +1,62 @@
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+  width:100%;
+	border-collapse:collapse;
+	border-spacing:0px;
+	margin:$verticalSpace 0px;
+  border-bottom:4px solid $grey;
+}
+caption {margin-bottom:$verticalSpace/2;}
+tr {
+  border-bottom:2px solid $colour;
+  &:nth-child(2n-1) {background-color:transparentize($colour,0.9);}
+}
+thead {
+  @include special-border($colour,bottom,dark,4px);
+  tr:nth-child(n) {background-color:transparent;}
+}
+th, td {
+    text-align:left; font-weight:normal; font-size:$fontSize;
+    padding:$verticalSpace/2 $gutter;
+    @media all and (max-width:900px) {
+      font-size:$fontSize*0.9;
+      padding:$verticalSpace/3 $gutter/2;
+    }
+    @media all and (max-width:642px) {
+      font-size:$fontSize*0.8;
+      padding:$verticalSpace/4 $gutter/3;
+    }
+}
+th {}
+td {}
+
+.category-brain-dribble {
+  tr {
+    border-bottom:2px solid $purple;
+    &:nth-child(2n-1) {background-color:transparentize($purple,0.9);}
+  }
+  thead {
+    @include special-border($purple,bottom,dark,4px);
+    tr:nth-child(n) {background-color:transparent;}
+  }
+}
+.category-craft-code {
+  tr {
+    border-bottom:2px solid $pink;
+    &:nth-child(2n-1) {background-color:transparentize($pink,0.9);}
+  }
+  thead {
+    @include special-border($pink,bottom,dark,4px);
+    tr:nth-child(n) {background-color:transparent;}
+  }
+}
+.category-challenge-rumyra, .category-speak-write-mentor {
+  tr {
+    border-bottom:2px solid $orange;
+    &:nth-child(2n-1) {background-color:transparentize($orange,0.9);}
+  }
+  thead {
+    @include special-border($orange,bottom,dark,4px);
+    tr:nth-child(n) {background-color:transparent;}
+  }
+}

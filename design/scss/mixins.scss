@@ -1,0 +1,93 @@
+//TEXT/FONT
+@mixin font-style($colour,$shadowColour,$family:inherit) {
+  color:$colour;
+  text-shadow:1px 1px 0px $shadowColour;
+  font-family:$family;
+}
+@mixin word-wrap {
+  white-space:pre; white-space:pre-wrap; word-wrap:break-word;
+}
+@mixin animated-link($colour, $hoverColour) {
+  border-bottom:2px solid $colour;
+  color:$colour; text-decoration:none;
+  font-weight:normal; font-size:100%;
+  -webkit-transition: 0.2s ease;
+  -moz-transition: 0.2s ease;
+  -ms-transition: 0.2s ease;
+  -o-transition: 0.2s ease;
+  transition: 0.2s ease;
+  &:hover, &:active {
+    border-color:$hoverColour;
+    color:$hoverColour;
+  }
+}
+
+//ICON FONT REPLACEMENT
+/*this all needs refactoring*/
+@mixin make-icon($iconContent:'x',$iconColour:$white,$iconSize:30px) {
+  background:none; border:none;
+  padding:0px; margin:0px;
+  color:transparent; font-size:0px;
+  text-transform:none; text-decoration:none;
+  &:before {
+    display: inline-block;
+    font-family:'icons';
+    content: $iconContent;
+    font-size: $iconSize;
+    line-height: $iconSize;
+    color: $iconColour;
+  }
+  &:hover {
+    background:none; border:none;
+    &:before {
+      color: lighten($iconColour,10%);
+    }
+  }
+}
+@mixin add-icon-before($iconContent:'x',$iconColour:$white,$iconSize:26px) {
+  color:$iconColour;
+  &:before {
+    display: inline-block;
+    font-family: 'FontAwesome';
+    content: $iconContent;
+    font-size: $iconSize;
+    line-height: $iconSize;
+    color: $iconColour;
+    padding-right: $gutter;
+  }
+  &:hover {
+    color:lighten($iconColour,10%);
+    &:before {
+      color:lighten($iconColour,10%);
+    }
+  }
+}
+@mixin add-icon-after($iconContent:'x',$iconColour:$white,$iconSize:26px) {
+  &:after {
+    display: inline-block;
+    font-family: 'FontAwesome';
+    content: $iconContent;
+    font-size: $iconSize;
+    line-height: $iconSize;
+    color: $iconColour;
+    padding-left: $gutter;
+  }
+}
+
+//VENDOR PREFIXES
+@mixin vendorize($property, $value) {
+  -webkit-#{$property}: $value;
+  -moz-#{$property}: $value;
+  -ms-#{$property}: $value;
+  -o-#{$property}: $value;
+  #{$property}: $value;
+}
+//THIS OF COURSE ONLY WORKS IF YOU HAVE ONE IMAGE :S
+@mixin vendorize-background($backgroundDeclaration) {
+  background-image:-webkit-#{$backgroundDeclaration};
+  background-image:-moz-#{$backgroundDeclaration};
+  background-image:-ms-#{$backgroundDeclaration};
+  background-image:-o-#{$backgroundDeclaration};
+  background-image:#{$backgroundDeclaration};
+}
+

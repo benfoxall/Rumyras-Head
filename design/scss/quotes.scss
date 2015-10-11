@@ -1,0 +1,65 @@
+@mixin pull-quote-style($position:right) {
+  overflow:hidden;
+  float:left;
+  //common styles
+  &:before, &:after {
+    display:block;
+    font-family: $headerFont, cursive;
+    font-size:$fontSize*2;
+    line-height:1.4;
+    text-align:center;
+  }
+  @if $position == top {
+    &:before {
+      content:"\201C" attr(data-pullquote-top) "\201D";
+      margin:0px auto $verticalSpace/2;
+      width:66%;
+    }
+  } @else if $position == left {
+    &:before {
+      content:"\201C" attr(data-pullquote-left) "\201D";
+      float:left;
+      margin:0px $gutter $verticalSpace/2 0px;
+      width:33%;
+    }
+  } @else if $position == bottom {
+    &:after {
+      content:"\201C" attr(data-pullquote-bottom) "\201D";
+      margin:$verticalSpace/2 auto 0px;
+      width:66%;
+    }
+  } @else {
+    &:before {
+      content:"\201C" attr(data-pullquote-right) "\201D";
+      float:right;
+      margin:0px 0px $verticalSpace/2 $gutter;
+      width:33%;
+    }
+  }
+}
+p[data-pullquote-top] {@include pull-quote-style(top);}
+p[data-pullquote-right] {@include pull-quote-style(right);}
+p[data-pullquote-bottom] {@include pull-quote-style(bottom);}
+p[data-pullquote-left] {@include pull-quote-style(left);}
+
+.category-brain-dribble p[data-pullquote-top],
+.category-brain-dribble p[data-pullquote-right],
+.category-brain-dribble p[data-pullquote-bottom],
+.category-brain-dribble p[data-pullquote-left] {
+  &:before, &:after {color:$purple;}
+}
+.category-craft-code p[data-pullquote-top],
+.category-craft-code p[data-pullquote-right],
+.category-craft-code p[data-pullquote-bottom],
+.category-craft-code p[data-pullquote-left] {
+  &:before, &:after {color:$pink;}
+}
+.category-speak-write-mentor p[data-pullquote-top],
+.category-speak-write-mentor p[data-pullquote-right],
+.category-speak-write-mentor p[data-pullquote-bottom],
+.category-speak-write-mentor p[data-pullquote-left] {
+  &:before, &:after {color:$orange;}
+}
+
+
+

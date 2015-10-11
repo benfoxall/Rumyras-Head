@@ -1,0 +1,25 @@
+.engadgements {
+	margin:$verticalSpace $gutter;
+	li {
+		@include gradedBackground($blue);
+		a {}
+		time {display:inline-block;}
+
+	}
+	.speaking {
+		@include gradedBackground($orange);
+		a {@include animated-link($orange, lighten($orange, 15%));}
+	}
+	.writing {
+		@include gradedBackground($blue);
+		a {@include animated-link($blue, lighten($blue, 15%));}
+	}
+	.mentoring {
+		@include gradedBackground($purple);
+		a {@include animated-link($purple, lighten($purple, 15%));}
+	}
+	.workshop {
+		@include gradedBackground($pink);
+		a {@include animated-link($pink, lighten($pink, 15%));}
+	}
+}

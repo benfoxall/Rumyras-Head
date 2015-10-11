@@ -12,3 +12,11 @@ gem "wdm", "~> 0.1.0", :platforms => [:mswin, :mingw]
 
 # Windows does not come with time zone data
 gem "tzinfo-data", platforms: [:mswin, :mingw, :jruby]
+
+# blogging!!
+gem "middleman-blog"
+
+# deploy to github pages
+gem 'middleman-deploy', '~> 1.0'
+
+gem "nokogiri"

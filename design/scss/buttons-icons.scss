@@ -1,0 +1,73 @@
+/*button styles*/
+html input[type="button"],
+input[type="submit"],
+input[type="reset"],
+button,
+.button {
+    display:inline-block;
+    @include button-style($colour);
+}
+.category-brain-dribble .button {@include button-style($purple);}
+.category-craft-code .button {@include button-style($pink);}
+.category-speak-write-mentor .button {@include button-style($orange);}
+/*no pointer on disabled buttons*/
+button[disabled], input[disabled] {cursor:default;}
+
+/*buttons in places*/
+table button {margin:0px;}
+
+/*Special big buttons - just use this class*/
+.main-cta, input.main-cta {
+  padding: $verticalSpace $gutter*2;
+  margin: 0px 0px $verticalSpace;
+  font-size: $fontSize*1.4;
+}
+
+//.create {
+//  @include add-icon-after('✚');
+//}
+
+//.add {
+
+//}
+
+//.remove {
+//	@include button-style($grey);
+//	margin: 0px; padding: 0px;
+//  border-radius:18px;
+//  &:before {
+//  	display: inline-block;
+//    font-family: 'icons';
+//    content: 'n';
+//    font-size: 24px;
+//    line-height: 1.2;
+//    color: $white;
+//  }
+//}
+
+//.cancel {
+//  @include button-style($red);
+//}
+
+//.delete {
+//  @include make-icon('n',$red);
+//}
+
+//.copy {
+//  @include make-icon('c',$orange);
+//}
+
+//.view {
+//  @include make-icon('v',$green);
+//}
+
+//.edit {
+//  @include make-icon('e',$orange);
+//}
+
+//.save, .yes {
+//  @include make-icon('y',$green);
+//}
+
+//a.ui-dialogue-titlebar-close {border:none;}
+

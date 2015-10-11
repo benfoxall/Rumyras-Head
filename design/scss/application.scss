@@ -1,0 +1,62 @@
+/*
+Theme Name:I am Naked
+Theme URI:http://rumyra.com/playground/i-am-naked-wordpress-theme
+Author: Ruth John
+Author URI: http://rumyra.com
+Description: I am Naked is an HTML5 barebones Wordpress theme. This time with no CSS already written so you can create your very own. This theme concentrates on beautiful clean simple HTML5 markup - no extra divs & purely semantic elements.
+Version:1.0
+Tags: skeleton, barebones, bare bones, naked, clean, semantic, microformats, white, responsive
+License: GNU General Public License v2.0
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+*/
+
+// THIS FILE PULLS IN ALL SCSS FILES WE USE
+// 	This is the file that gets compiled for use in your app.
+
+// 	If you create any extras (such as ui elements), create a file for them & add them in here.
+
+// 	Read the comments - you will easily be able to find you're way around, there are also notes on the github page
+
+/*set colours, sizes, gradients (in variables & mixins) - any bits of code/styles that are reuseable thoughout the css*/
+@import 'mixins.scss';
+@import 'variables.scss';
+
+/*reset margins, padding, borders & outline. Sets HTML5 bock elements, also includes a couple of bits of normalize.css */
+@import 'reset.scss';
+
+
+/*HTML ELEMENTS~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*headers, paragraphs, lists, formatting etc...*/
+@import 'text-elements.scss';
+@import 'prism.scss';
+
+/*forms*/
+@import 'forms.scss';
+
+/*tables*/
+@import 'tables.scss';
+
+/*lists*/
+@import 'lists.scss';
+
+/*images, audio, video, canvas etc...*/
+@import 'media.scss';
+
+/*quotes*/
+@import 'quotes.scss';
+
+/*UI ELEMENTS~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*navigation and menus*/
+@import 'nav-menu.scss';
+
+/*buttons*/
+@import 'buttons-icons.scss';
+
+/*posts & articles*/
+@import 'articles.scss';
+@import 'comments.scss';
+
+/*PAGE LAYOUTS*/
+/*page layout, html and body elements, layout media queries*/
+@import 'layout.scss';
+

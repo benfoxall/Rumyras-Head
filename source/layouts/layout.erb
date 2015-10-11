@@ -29,26 +29,6 @@
 
   <body class="<%= page_classes %>">
 
-    <aside role="banner">
-      <form role="search" method="get" action="http://rumyrashead.com/">
-        <fieldset><legend>Search Rumyra's Head</legend>
-          <div class="form-field">
-            <label for="s">Search term</label>
-            <input type="text" placeholder="Search term" name="s" id="s">
-          </div>
-          <input type="submit" value="Search">
-        </fieldset>
-      </form>
-
-      <nav role="complementary" class="social">
-        <a href="http://www.twitter.com/rumyra" rel="external">Follow @rumyra on Twitter</a>
-        <a href="http://www.github.com/rumyra" rel="external">Rumyra on Github</a>
-        <a href="mailto:sayhello@rumyrashead.com">Say Hello</a>
-        <!--<a href="http://codepen.io/Rumyra" rel="external">Rumyra on Codepen</a>-->
-        <a href="http://rumyrashead.com/feed/">Get the RSS feed</a>
-      </nav>
-    </aside>
-
     <header role="main">
       
       <h1><a href="http://rumyrashead.com" rel="internal" title="Link back to the home of Rumyra's Head">Rumyra's Head</a></h1>
@@ -63,13 +43,32 @@
     </header>
 
     <section role="main">
+      <aside role="banner">
+      <!-- <form role="search" method="get" action="http://rumyrashead.com/">
+        <fieldset><legend>Search Rumyra's Head</legend>
+          <div class="form-field">
+            <label for="s">Search term</label>
+            <input type="text" placeholder="Search term" name="s" id="s">
+          </div>
+          <input type="submit" value="Search">
+        </fieldset>
+      </form> -->
+
+      <nav role="complementary" class="nav-social">
+        <a href="http://www.twitter.com/rumyra" rel="external" class="icon-make i-twitter">Follow @rumyra on Twitter</a>
+        <a href="http://www.github.com/rumyra" rel="external" class="icon-make i-github">Rumyra on Github</a>
+        <a href="mailto:sayhello@rumyrashead.com" class="icon-make i-email">Say Hello</a>
+        <!--<a href="http://codepen.io/Rumyra" rel="external">Rumyra on Codepen</a>-->
+        <a href="http://rumyrashead.com/feed/" class="icon-make i-rss">Get the RSS feed</a>
+      </nav>
+    </aside>
 
     <%= yield %>
 
-    <section>
+    </section>
 
       <footer>
-      <ul class="social">
+      <ul class="nav-social">
         <li><a href="http://www.twitter.com/rumyra" rel="external">Follow @rumyra on Twitter</a></li>
         <li><a href="http://lanyrd.com/profile/rumyra/" rel="external">Rumyra on Lanyrd</a></li>
         <li><a href="http://www.github.com/rumyra" rel="external">Rumyra on Github</a></li>
@@ -82,7 +81,3 @@
     </footer>
   </body>
 </html>
-
-
-
-

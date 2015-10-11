@@ -1,0 +1,418 @@
+/*
+CONTENTS
+
+1. VARIABLES
+    1.1 Colours
+    1.2 Typography
+    1.3 Very simple spacing
+*/
+
+/* 1. VARIABLES ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* 1.1 colours--------------------------------------------*/
+$blue:rgba(38,39,72,1);
+$purple:rgba(95,46,68,1);
+$pink:rgba(164,62,79,1);
+$orange:rgba(180,119,66,1);
+$cyan:rgba(82,174,159,1);
+$cream:rgba(222,221,191,1);
+
+/*suggest changing to 'action colour'*/
+$colour:$blue;
+$secondaryColour:$purple;
+$accentColour:$cyan;
+
+//.category-challenge-rumyra {$color:$orange;}
+
+/*these are all little hacks :) means the main colour can be as light or saturated as you like*/ 
+/*White is main colour but with 98% lightness */
+$white:lighten($cream,18%);
+/*Grey is main colour but with 5% saturation*/
+$grey:desaturate($cream,20%);
+/*Black is main colour but with 5% brightness*/
+$black:darken($blue,10%);
+
+/* 1.2 typography ----------------------------------------*/
+@font-face {
+    font-family: 'TeXGyreAdventorRegular';
+    src: url('fonts/texgyreadventor-regular-webfont.eot');
+    src: url('fonts/texgyreadventor-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/texgyreadventor-regular-webfont.woff') format('woff'),
+         url('fonts/texgyreadventor-regular-webfont.ttf') format('truetype'),
+         url('fonts/texgyreadventor-regular-webfont.svg#TeXGyreAdventorRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'TeXGyreAdventorItalic';
+    src: url('fonts/texgyreadventor-italic-webfont.eot');
+    src: url('fonts/texgyreadventor-italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/texgyreadventor-italic-webfont.woff') format('woff'),
+         url('fonts/texgyreadventor-italic-webfont.ttf') format('truetype'),
+         url('fonts/texgyreadventor-italic-webfont.svg#TeXGyreAdventorItalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'TeXGyreAdventorBold';
+    src: url('fonts/texgyreadventor-bold-webfont.eot');
+    src: url('fonts/texgyreadventor-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/texgyreadventor-bold-webfont.woff') format('woff'),
+         url('fonts/texgyreadventor-bold-webfont.ttf') format('truetype'),
+         url('fonts/texgyreadventor-bold-webfont.svg#TeXGyreAdventorBold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'TeXGyreAdventorBoldItalic';
+    src: url('fonts/texgyreadventor-bolditalic-webfont.eot');
+    src: url('fonts/texgyreadventor-bolditalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/texgyreadventor-bolditalic-webfont.woff') format('woff'),
+         url('fonts/texgyreadventor-bolditalic-webfont.ttf') format('truetype'),
+         url('fonts/texgyreadventor-bolditalic-webfont.svg#TeXGyreAdventorBoldItalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+  font-family: 'FontAwesome';
+  src: url('fonts/fontawesome-webfont.eot');
+  src: url('fonts/fontawesome-webfont.eot') format('embedded-opentype'),
+    url('fonts/fontawesome-webfont.woff') format('woff'),
+    url('fonts/fontawesome-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@import url(http://fonts.googleapis.com/css?family=Playball);
+
+$font:'TeXGyreAdventorRegular', Helvetica, Arial, sans-serif;
+$headerFont:'Playball', Helvetica, Arial, sans-serif;
+$iconFont:'FontAwesome';
+$fontSize:1.1em;
+$smallFont:$fontSize*0.9;
+$bigFont:$fontSize*1.2;
+
+
+
+/* 1.3 Very simple spacing---------------------------------*/
+/*this can be percentage, pixels or ems etc... used for space inbetween block elements*/
+$verticalSpace:20px;
+/*used for left and right margins/padding usually in conjunction with $verticalSpace above*/
+$gutter:30px;
+$column:80px;
+
+$fullWidth:(($gutter+$column)*9)+$gutter;
+$mainColWidth:($gutter+$column)*6;
+$asideWidth:($gutter+$column)*3;
+
+/* 1.4 Nice design stuff/little shineys------------------------*/
+$roundedCorners:1px;
+$boxShadow:0px 0px 0px 0px $grey;
+/*below is not the best way to do this - I need to refactor ~Ruth*/
+@mixin special-border($borderColour, $position:left, $first:light, $width:20px) {
+  //set defaults
+  $padding:$verticalSpace/2 $gutter/2 $verticalSpace/2 $width+$gutter/2;
+  $gradientDirection:top;
+  $size:$width 100%;
+  $bkPosition:left top;
+  @if $position == top {
+    $padding:$width+$verticalSpace $gutter/2 $verticalSpace/2 $gutter/2;
+    $gradientDirection:left;
+    $size:100% $width;
+  } @else if $position == right {
+    $padding:$verticalSpace/2 $width+$gutter/2 $verticalSpace/2 $gutter/2;
+    $bkPosition:right top;
+  } @else if $position == bottom {
+    $padding:$verticalSpace/2 $gutter/2 $width+$verticalSpace/2 $gutter/2;
+    $gradientDirection:left;
+    $size:100% $width;
+    $bkPosition:left bottom;
+  }
+  padding:$padding;
+  @if $first == light {
+    background-image:
+      -webkit-linear-gradient($gradientDirection,
+        lighten($borderColour, 15%) 33%,
+        $borderColour 33%,
+        $borderColour 66%,
+        darken($borderColour, 15%) 66%
+      )
+    ;
+    background-image:
+      -moz-linear-gradient($gradientDirection,
+        lighten($borderColour, 15%) 33%,
+        $borderColour 33%,
+        $borderColour 66%,
+        darken($borderColour, 15%) 66%
+      )
+    ;
+    background-image:
+      -ms-linear-gradient($gradientDirection,
+        lighten($borderColour, 15%) 33%,
+        $borderColour 33%,
+        $borderColour 66%,
+        darken($borderColour, 15%) 66%
+      )
+    ;
+    background-image:
+      -o-linear-gradient($gradientDirection,
+        lighten($borderColour, 15%) 33%,
+        $borderColour 33%,
+        $borderColour 66%,
+        darken($borderColour, 15%) 66%
+      )
+    ;
+    background-image:
+      linear-gradient($gradientDirection,
+        lighten($borderColour, 15%) 33%,
+        $borderColour 34%,
+        $borderColour 66%,
+        darken($borderColour, 5%) 67%
+      )
+    ;
+  } @else {
+    background-image:
+      -webkit-linear-gradient($gradientDirection,
+        darken($borderColour, 15%) 33%,
+        $borderColour 33%,
+        $borderColour 66%,
+        lighten($borderColour, 15%) 66%
+      )
+    ;
+    background-image:
+      -moz-linear-gradient($gradientDirection,
+        darken($borderColour, 15%) 33%,
+        $borderColour 33%,
+        $borderColour 66%,
+        lighten($borderColour, 15%) 66%
+      )
+    ;
+    background-image:
+      -o-linear-gradient($gradientDirection,
+        darken($borderColour, 15%) 33%,
+        $borderColour 33%,
+        $borderColour 66%,
+        lighten($borderColour, 15%) 66%
+      )
+    ;
+    background-image:
+      -ms-linear-gradient($gradientDirection,
+        darken($borderColour, 15%) 33%,
+        $borderColour 33%,
+        $borderColour 66%,
+        lighten($borderColour, 15%) 66%
+      )
+    ;
+    background-image:
+      linear-gradient($gradientDirection,
+        darken($borderColour, 15%) 33%,
+        $borderColour 33%,
+        $borderColour 66%,
+        lighten($borderColour, 15%) 66%
+      )
+    ;
+  }
+  background-repeat:no-repeat;
+  background-size:$size;
+  background-position:$bkPosition;
+}
+
+@mixin button-style($buttonColour) {
+    background-color:$buttonColour;
+    background-image:
+      -webkit-linear-gradient(top,
+        lighten($buttonColour, 10%) 33%,
+        $buttonColour 34%,
+        $buttonColour 66%,
+        darken($buttonColour, 5%) 67%
+      )
+    ;
+    background-image:
+      -moz-linear-gradient(top,
+        lighten($buttonColour, 10%) 33%,
+        $buttonColour 34%,
+        $buttonColour 66%,
+        darken($buttonColour, 5%) 67%
+      )
+    ;
+    background-image:
+      -ms-linear-gradient(top,
+        lighten($buttonColour, 10%) 33%,
+        $buttonColour 34%,
+        $buttonColour 66%,
+        darken($buttonColour, 5%) 67%
+      )
+    ;
+    background-image:
+      -o-linear-gradient(top,
+        lighten($buttonColour, 10%) 33%,
+        $buttonColour 34%,
+        $buttonColour 66%,
+        darken($buttonColour, 5%) 67%
+      )
+    ;
+    background-image:
+      linear-gradient(top,
+        lighten($buttonColour, 10%) 33%,
+        $buttonColour 34%,
+        $buttonColour 66%,
+        darken($buttonColour, 5%) 67%
+      )
+    ;
+    display:inline-block;
+    padding:8px 10px;
+    border-radius:$roundedCorners; border:3px solid $grey;
+    color: $white; font-family:$font;
+    text-decoration:none; text-shadow:none; text-align:center;
+    &:hover {
+        background-color: darken($buttonColour,5%);
+        background-image:
+          -webkit-linear-gradient(top,
+            lighten($buttonColour, 15%) 33%,
+            lighten($buttonColour, 3%) 34%,
+            lighten($buttonColour, 3%) 66%,
+            lighten($buttonColour, 1%) 67%
+          )
+        ;
+        background-image:
+          -moz-linear-gradient(top,
+            lighten($buttonColour, 15%) 33%,
+            lighten($buttonColour, 3%) 34%,
+            lighten($buttonColour, 3%) 66%,
+            lighten($buttonColour, 1%) 67%
+          )
+        ;
+        background-image:
+          -o-linear-gradient(top,
+            lighten($buttonColour, 15%) 33%,
+            lighten($buttonColour, 3%) 34%,
+            lighten($buttonColour, 3%) 66%,
+            lighten($buttonColour, 1%) 67%
+          )
+        ;
+        background-image:
+          -ms-linear-gradient(top,
+            lighten($buttonColour, 15%) 33%,
+            lighten($buttonColour, 3%) 34%,
+            lighten($buttonColour, 3%) 66%,
+            lighten($buttonColour, 1%) 67%
+          )
+        ;
+        background-image:
+          linear-gradient(top,
+            lighten($buttonColour, 15%) 33%,
+            lighten($buttonColour, 3%) 34%,
+            lighten($buttonColour, 3%) 66%,
+            lighten($buttonColour, 1%) 67%
+          )
+        ;
+        cursor: pointer;
+        color: $white;
+    }
+}
+
+@mixin gradedBackground($colour) {
+  padding-left:40px;
+  background-image:
+    -webkit-linear-gradient(left,
+      lighten($colour, 15%) 10px,
+      $colour 11px,
+      $colour 20px,
+      darken($colour, 15%) 21px,
+      darken($colour, 15%) 30px,
+      transparent 31px
+    )
+  ;
+  background-image:
+    -moz-linear-gradient(left,
+      lighten($colour, 15%) 10px,
+      $colour 11px,
+      $colour 20px,
+      darken($colour, 15%) 21px,
+      darken($colour, 15%) 30px,
+      transparent 31px
+    )
+  ;
+  background-image:
+    -o-linear-gradient(left,
+      lighten($colour, 15%) 10px,
+      $colour 11px,
+      $colour 20px,
+      darken($colour, 15%) 21px,
+      darken($colour, 15%) 30px,
+      transparent 31px
+    )
+  ;
+  background-image:
+    -ms-linear-gradient(left,
+      lighten($colour, 15%) 10px,
+      $colour 11px,
+      $colour 20px,
+      darken($colour, 15%) 21px,
+      darken($colour, 15%) 30px,
+      transparent 31px
+    )
+  ;
+  background-image:
+    linear-gradient(left,
+      lighten($colour, 15%) 10px,
+      $colour 11px,
+      $colour 20px,
+      darken($colour, 15%) 21px,
+      darken($colour, 15%) 30px,
+      transparent 31px
+    )
+  ;
+  @media all and (max-width:900px) {
+    padding-left:32px;
+    background-image:
+      -webkit-linear-gradient(left,
+        lighten($colour, 15%) 8px,
+        $colour 9px,
+        $colour 16px,
+        darken($colour, 15%) 17px,
+        darken($colour, 15%) 24px,
+        transparent 25px
+      )
+    ;
+    background-image:
+      -moz-linear-gradient(left,
+        lighten($colour, 15%) 8px,
+        $colour 9px,
+        $colour 16px,
+        darken($colour, 15%) 17px,
+        darken($colour, 15%) 24px,
+        transparent 25px
+      )
+    ;
+    background-image:
+      -o-linear-gradient(left,
+        lighten($colour, 15%) 8px,
+        $colour 9px,
+        $colour 16px,
+        darken($colour, 15%) 17px,
+        darken($colour, 15%) 24px,
+        transparent 25px
+      )
+    ;
+    background-image:
+      -ms-linear-gradient(left,
+        lighten($colour, 15%) 8px,
+        $colour 9px,
+        $colour 16px,
+        darken($colour, 15%) 17px,
+        darken($colour, 15%) 24px,
+        transparent 25px
+      )
+    ;
+    background-image:
+      linear-gradient(left,
+        lighten($colour, 15%) 8px,
+        $colour 9px,
+        $colour 16px,
+        darken($colour, 15%) 17px,
+        darken($colour, 15%) 24px,
+        transparent 25px
+      )
+    ;
+  }
+}

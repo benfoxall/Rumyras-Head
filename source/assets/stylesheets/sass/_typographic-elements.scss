@@ -15,25 +15,32 @@ $highlightTextBkgrndColour: transparentize($primaryColour,0.8) !default;
 $insertedTextBkgrndColour: transparentize($primaryColour,0.8) !default;
 $blockquoteBkgrndColour: transparentize($primaryColour,0.8) !default;
 
-$primaryLinkColour: $primaryColour !default;
-$primaryLinkHoverColour: darken($primaryColour,20%) !default;
+$primaryLinkColour: $secondaryColour !default;
 
 $blockLinkColour:$white !default;
 
 //1. HEADERS~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 header {}
 h1, h2, h3, h4, h5, h6 {
-  margin-bottom: $verticalSpace/2;
+  margin-bottom: $verticalSpace/4;
   font-weight: normal;
   line-height: $headerLineHeight;
 }
 h1, h2, h3, h4 { font-family: $headerFont; }
-h1 { font-size: $fontSize*2.6; }
-h2 { font-size: $fontSize*2.2; }
-h3 { font-size:$fontSize*1.9; }
-h4 { font-size:$fontSize*1.6; }
-h5 { font-size:$fontSize*1.4; }
-h6 { font-size:$fontSize*1.2; }
+h1 {
+  margin-bottom: 0px;
+  font-size: $fontSize*3.2;
+  @include special-border($blue, bottom, light, 8px);
+  @include at-least($screenLarge) {@include special-border($blue, top, light, 12px);}
+}
+h2 {font-size: $fontSize*2.4;}
+article.brain-dribble h2 {color:$brainDribble;}
+article.craft-code h2 {color:$craftCode;}
+article.speak-write-mentor h2 {color:$speakWrite;}
+h3 {font-size:$fontSize*2;}
+h4 {font-size:$fontSize*1.7;}
+h5 { font-size:$fontSize*1.5; }
+h6 { font-size:$fontSize*1.3; }
 
 //2. PARAGRAPHS~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 p {
@@ -42,7 +49,7 @@ p {
   line-height: $lineHeight;
 }
 .lede, p.lede {
-  font-size: $fontSize*1.2;
+  font-size: $fontSize*1.3;
 }
 .feature-text {
   font-weight: bold;
@@ -54,6 +61,15 @@ strong, b { font-weight: bold; }
 em, i, dfn, var { font-style: italic; }
 dfn, abbr, abbr[title] { border-bottom: 1px dotted;}
 ins, mark {padding:0px $gutter/6;}
+article.brain-dribble {
+  dfn, abbr, abbr[title] {border-bottom-color:$brainDribble;}
+}
+article.craft-code {
+  dfn, abbr, abbr[title] {border-bottom-color:$brainDribble;}
+}
+article.speak-write-mentor {
+  dfn, abbr, abbr[title] {border-bottom-color:$speakWrite;}
+}
 ins {
 	background-color: $insertedTextBkgrndColour;
   text-decoration: none;
@@ -61,6 +77,15 @@ ins {
 small { font-size: 84%; }
 del { text-decoration: line-through; }
 mark { background-color: $highlightTextBkgrndColour; }
+article.brain-dribble {
+  mark {background-color: transparentize($brainDribble, 0.8);}
+}
+article.craft-code {
+  mark {background-color: transparentize($craftCode, 0.8);}
+}
+article.speak-write-mentor {
+  mark {background-color: transparentize($speakWrite, 0.8);}
+}
 kbd, code, samp, pre { font-family: monospace; font-size: 120%; }
 /*Prevents `sub` and `sup` affecting `line-height` in all browsers.*/
 sub, sup {
@@ -83,24 +108,26 @@ a {
 	color: $primaryLinkColour;
   text-decoration: none;
 }
+article.brain-dribble a {color:$brainDribble; border-color:$brainDribble;}
+article.craft-code a {color:$craftCode; border-color:$craftCode;}
+article.speak-write-mentor a {color:$speakWrite; border-color:$speakWrite;}
 // normalise font size and remove underline for headers
 p a, address a, ul a, ol a, dl a, menu a { font-size: 100%; }
-h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { border: none; font-size: 100%; }
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {color: currentColor; border: none; font-size: 100%; }
 
-a:hover, a:active, a:visited {
-  border-bottom-width: 0px;
-  color: $primaryLinkHoverColour;
-}
+a:hover, a:active, a:visited {border-bottom-width: 0px;}
 a:focus { outline: thin dotted; }
-h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover { color: $primaryLinkHoverColour; }
+h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover {}
 
 
 //5. BLOCK LEVEL TEXT ELEMENTS~~~~~~~~~~~~~~~~~~~~
 
 //5.1. lists, navs and menus
 ol, ul, dl, menu[type="list"] { margin: $verticalSpace $gutter*2; }
+ul {list-style: none;}
 ol { list-style: lower-roman; }
 li, dt, dd {
+  margin:$verticalSpace/2 0px;
   font-size: $fontSize;
   line-height: $lineHeight;
 }
@@ -109,11 +136,51 @@ li, dl > dd {
   margin: $verticalSpace/2 0px;
   padding-left: $gutter/2;
 }
+article ul li {
+  @include special-border($primaryColour,left,light,4px);
+  padding-top:0px; padding-bottom:0;
+  @include at-least($screenLarge) {
+    @include special-border($primaryColour,left,light,8px);
+    padding-top:0px; padding-bottom:0;
+  }
+}
+article.brain-dribble {
+  ul li {
+    @include special-border($brainDribble,left,light,4px);
+    padding-top:0px; padding-bottom:0;
+    @include at-least($screenLarge) {
+      @include special-border($brainDribble,left,light,8px);
+      padding-top:0px; padding-bottom:0;
+    }
+  }
+}
+article.craft-code {
+  ul li {
+    @include special-border($craftCode,left,light,4px);
+    padding-top:0px; padding-bottom:0;
+    @include at-least($screenLarge) {
+      @include special-border($craftCode,left,light,8px);
+      padding-top:0px; padding-bottom:0;
+    }
+  }
+}
+article.speak-write-mentor {
+  ul li {
+    @include special-border($speakWrite,left,light,4px);
+    padding-top:0px; padding-bottom:0;
+    @include at-least($screenLarge) {
+      @include special-border($speakWrite,left,light,8px);
+      padding-top:0px; padding-bottom:0;
+    }
+  }
+}
+
+
 
 //5.2. Address & Time
 address, time {
 	display: block;
-	margin: $verticalSpace 0px;
+	margin: $verticalSpace/2 0px;
 }
 //5.3. Quotes
 q {}
@@ -122,10 +189,13 @@ blockquote {
   padding: $verticalSpace $gutter;
   background-color: $blockquoteBkgrndColour;
   quotes:'"';
+  line-height: $lineHeight;
   
   &:before {
+    margin: $verticalSpace*-0.3 0px 0px $gutter*-0.2;
   	float: left;
   	content:'“';
+    font-family: $headerFont;
     font-size: $fontSize*3;
   }
   &:after {
@@ -135,6 +205,9 @@ blockquote {
 		text-align: right;
   }
 }
+article.brain-dribble blockquote {background-color:transparentize($brainDribble, 0.8);}
+article.craft-code blockquote {background-color:transparentize($craftCode, 0.8);}
+article.speak-write-mentor blockquote {background-color:transparentize($speakWrite, 0.8);}
 
 //5.4. Basic styling, see _prism.scss for colours etc... Code -> NB see 3. for <code> */
 pre {

@@ -1,0 +1,310 @@
+/*
+CONTENTS
+
+1. Headers
+2. Paragraphs
+3. Inline Formatting
+4. Links
+5. Block Level Text Elements
+	a. lists
+	b. address, time
+	c. quotes
+	d. code
+
+*/
+
+
+/*1. HEADERS~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+header {}
+h1, h2, h3, h4, h5, h6 {
+	margin-bottom: $verticalSpace;
+	font-family:$headerFont; font-weight:normal;
+}
+h1 {
+	font-size:$fontSize*4;
+	@include special-border($blue,top,light,12px);
+  @media all and (max-width:900px) {
+    font-size:$fontSize*3.2;
+    @include special-border($blue,top,light,8px);
+  }
+  @media all and (max-width:642px) {
+    font-size:$fontSize*2.6;
+  }
+}
+h2 {
+	font-size:$fontSize*3.2;
+	@media all and (max-width:900px) {
+		font-size:$fontSize*2.6;
+	}
+  @media all and (max-width:642px) {
+    font-size:$fontSize*2;
+  }
+}
+article.category-brain-dribble h2 {color:$purple;}
+article.category-craft-code h2 {color:$pink;}
+article.category-speak-write-mentor h2 {color:$orange;}
+h3 {font-size:$fontSize*2.6;
+  @media all and (max-width:900px) {
+    font-size:$fontSize*2.3;
+  }
+  @media all and (max-width:642px) {
+    font-size:$fontSize*1.7;
+  }
+}
+h4 {font-size:$fontSize*2.2;
+  @media all and (max-width:900px) {
+    font-size:$fontSize*2;
+  }
+  @media all and (max-width:642px) {
+    font-size:$fontSize*1.5;
+  }
+}
+h5 {font-size:$fontSize*1.8;
+@media all and (max-width:900px) {
+    font-size:$fontSize*1.6;
+  }
+  @media all and (max-width:642px) {
+    font-size:$fontSize*1.2;
+  }
+}
+h6 {font-size:$fontSize*1.4;
+  @media all and (max-width:900px) {
+    font-size:$fontSize*1.2;
+  }
+  @media all and (max-width:642px) {
+    font-size:$fontSize*1.1;
+  }
+}
+
+/*2. PARAGRAPHS~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+p {
+	margin:$verticalSpace/2 0px $verticalSpace;
+	font-size:$fontSize; line-height:1.6;
+  @media all and (max-width:900px) {
+    font-size:$fontSize*0.9;
+  }
+  @media all and (max-width:642px) {
+    font-size:$fontSize*0.8;
+  }
+}
+.lede, p.lede {
+  font-size:$fontSize*1.2;
+  @media all and (max-width:900px) {
+    font-size:$fontSize*1.1;
+  }
+}
+.feature-text {font-weight:bold; font-style:italic; font-family:'TeXGyreAdventorBoldItalic';}
+
+/*3. INLINE FORMATTING~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+strong, b {font-weight:bold; font-family:'TeXGyreAdventorBold';}
+em, i, dfn, var {font-style:italic;}
+strong em, b i {font-family:'TeXGyreAdventorBoldItalic';}
+dfn, abbr, abbr[title] {border-bottom:2px solid $grey;}
+article.category-brain-dribble {
+	dfn, abbr, abbr[title] {border-bottom-color:$purple;}
+}
+article.category-craft-code {
+	dfn, abbr, abbr[title] {border-bottom-color:$pink;}
+}
+article.category-speak-write-mentor {
+	dfn, abbr, abbr[title] {border-bottom-color:$orange;}
+}
+ins {
+	padding:0px 3px;
+	text-decoration:none;
+	background-color:$grey;
+	border:1px dotted $grey; border-width:0px 1px;
+}
+small {font-size:80%;}
+del {text-decoration:line-through;}
+mark {
+	padding:0px 6px; background-color:$cyan;
+}
+article.category-brain-dribble mark {background-color:lighten($purple,20%);}
+article.category-craft-code mark {background-color:lighten($pink,20%);}
+article.category-speak-write-mentor mark {background-color:lighten($orange,20%);}
+kbd, code, samp, pre {font-family:monospace; font-size:$bigFont;}
+code {
+	padding:0px 6px;
+	background-color:$black;
+	color:$white;
+	text-shadow:none;
+}
+/*Prevents `sub` and `sup` affecting `line-height` in all browsers.*/
+sub, sup {
+	position:relative; vertical-align:baseline;
+	font-size:80%; line-height:0;
+}
+sub {top:-0.5em;}
+sup {bottom:-0.25em;}
+/*changing direction of text dependent on language*/
+[dir="ltr"] bdi {direction:rtl; unicode-bidi:bidi-override;}
+[dir="rtl"] bdi {direction:ltr; unicode-bidi:bidi-override;}
+
+/*4. LINKS~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+a {
+	@include animated-link($cyan, $blue);
+}
+a:focus {outline: thin dotted;}
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, p a, address a, ul a, ol a, dl a, menu a {font-size:100%;}
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {border:none;}
+article.category-brain-dribble {
+	a, h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+    @include animated-link($purple, lighten($purple,16%));
+  }
+  h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {border:none;}
+}
+article.category-craft-code {
+	a, h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+    @include animated-link($pink, lighten($pink,16%));
+  }
+  h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {border:none;}
+}
+article.category-speak-write-mentor {
+	a, h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+    @include animated-link($orange, lighten($orange,16%));
+  }
+  h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {border:none;}
+}
+
+.more-link {@include special-border($blue,bottom,dark,4px);}
+article.category-brain-dribble .more-link {@include special-border($purple,bottom,dark,4px);}
+article.category-craft-code .more-link {@include special-border($pink,bottom,dark,4px);}
+article.category-speak-write-mentor .more-link {@include special-border($orange,bottom,dark,4px);}
+
+/*5. BLOCK LEVEL TEXT ELEMENTS~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*5a. lists, navs and menus*/
+ol, ul, dl, menu[type="list"] {margin:$verticalSpace $gutter*2;}
+ul {list-style:none;}
+ol {list-style:decimal;}
+li, dt, dd {
+  font-size:$fontSize; line-height:1.4; margin:$verticalSpace/2 0px;
+  @media all and (max-width:900px) {
+    font-size:$fontSize*0.9;
+  }
+  @media all and (max-width:642px) {
+    font-size:$fontSize*0.8;
+  }
+
+}
+li {
+  padding-left:$gutter/2;
+  @media all and (max-width:900px) {
+    padding-left:$gutter/3;
+  }
+}
+article ul li {
+	@include special-border($blue,left,light,8px);
+  // border-left:8px $blue solid;
+	padding-top:0px; padding-bottom:0;
+  @media all and (max-width:900px) {
+    @include special-border($blue,left,light,4px);
+    padding-top:0px; padding-bottom:0;
+  }
+}
+article.category-brain-dribble {
+	ul li {
+		@include special-border($purple,left,light,8px);
+		padding-top:0px; padding-bottom:0;
+    @media all and (max-width:900px) {
+      @include special-border($purple,left,light,4px);
+      padding-top:0px; padding-bottom:0;
+    }
+	}
+}
+article.category-craft-code {
+	ul li {
+		@include special-border($pink,left,light,8px);
+		padding-top:0px; padding-bottom:0;
+    @media all and (max-width:900px) {
+      @include special-border($pink,left,light,4px);
+      padding-top:0px; padding-bottom:0;
+    }
+	}
+}
+article.category-speak-write-mentor {
+	ul li {
+		@include special-border($orange,left,light,8px);
+		padding-top:0px; padding-bottom:0;
+    @media all and (max-width:900px) {
+      @include special-border($orange,left,light,4px);
+      padding-top:0px; padding-bottom:0;
+    }
+	}
+}
+
+dl > dt {margin-top:$verticalSpace;}
+dl > dd {margin-bottom:0px; padding-left:$gutter;}
+/*5b. Address & Time*/
+address, time {display:block;}
+time {font-size:$smallFont;}
+/*5c. Quotes*/
+q {}
+blockquote {
+    margin:$verticalSpace $gutter;
+    @include special-border($blue,right,light,12px);
+    padding-bottom:$verticalSpace;
+    &:before, &:after {
+    	display:inline-block;
+			margin:0; padding:0;
+			font-size:$fontSize*6; font-family:$headerFont; line-height:0.4;
+    }
+    //&:before {content:'“';}
+    &:after {content:'”'; float:right; margin-top:-10px;}
+    p {
+    	display:inline-block;
+			&:before {content:'“';}
+			&:after {content:'”';}
+    }
+}
+article.category-brain-dribble {
+	blockquote {
+    @include special-border($purple,right,light,12px);
+    padding-bottom:$verticalSpace;
+    color:$purple;
+  }
+}
+article.category-craft-code {
+	blockquote {
+    @include special-border($pink,right,light,12px);
+    padding-bottom:$verticalSpace;
+    color:$pink;
+  }
+}
+article.category-speak-write-mentor {
+	blockquote {
+    @include special-border($orange,right,light,12px);
+    padding-bottom:$verticalSpace;
+    color:$orange;
+  }
+}
+
+/*5d. Code -> NB see 3. for <code> */
+pre {
+	margin:$verticalSpace $gutter; padding:$verticalSpace $gutter;
+	color:$white; text-shadow:none; @include word-wrap;
+}
+/*5e. Details & summary*/
+details {
+	margin:$verticalSpace $gutter;
+	background-color:transparentize($blue,0.9);
+	@include special-border($blue,left,light,8px);
+	cursor:pointer;
+  @media all and (max-width:642px) {
+    margin:$verticalSpace $gutter/2;
+  }
+}
+article.category-brain-dribble {
+	details {background-color:transparentize($purple,0.9);
+    @include special-border($purple,left,light,8px);}
+}
+article.category-craft-code {
+	details {background-color:transparentize($pink,0.9);
+    @include special-border($pink,left,light,8px);}
+}
+article.category-speak-write-mentor {
+	details {background-color:transparentize($orange,0.9);
+    @include special-border($orange,left,light,8px);}
+}
+
+
