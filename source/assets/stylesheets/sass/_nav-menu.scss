@@ -108,15 +108,35 @@ nav[role="main"] {
 
 .nav-social {
   a {border:none;}
+  a[href*="twitter"], a[href*="twitter"]:before {color:$cyan;}
+  a[href*="lanyrd"], a[href*="lanyrd"]:before {color:$blue;}
+  a[href*="github"], a[href*="github"]:before {color:$purple;}
+  a[href*="mailto"], a[href*="mailto"]:before {color:$pink;}
+  a[href*="codepen"], a[href*="codepen"]:before {color:$pink;}
+  a[href*="feed"], a[href*="feed"]:before {color:$orange;}
 }
 section .nav-social {
-  padding: $verticalSpace/4 $gutter/4;
+  padding: $verticalSpace/2 $gutter/4;
   a {
     display:inline-block;
+    &:before {font-size:40px; padding-right:20px;}
   }
-  a[href*="twitter"]:before {color:$cyan;}
-  a[href*="mailto"]:before {color:$purple;}
-  a[href*="feed"]:before {color:$orange;}
+  
+}
+footer .nav-social {
+  @include clearListStyles;
+  a, span {
+    display:block;
+    @include special-border($blue,bottom,light,4px);
+  }
+  a[href*="twitter"] {@include special-border($cyan,bottom,light,4px);}
+  a[href*="github"] {@include special-border($purple,bottom,light,4px);}
+  a[href*="mailto"] {@include special-border($pink,bottom,light,4px);}
+  a[href*="codepen"] {@include special-border($pink,bottom,light,4px);}
+  a[href*="feed"] {@include special-border($orange,bottom,light,4px);}
+  a[href*="http"] {
+    &:before {padding-right:$gutter*0.66;}
+  }
 }
 
 

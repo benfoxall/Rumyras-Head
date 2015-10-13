@@ -19,17 +19,17 @@ body {
   @include at-least($screenLarge) { font-size: 100%; }
   @include at-least($screenXlarge) { font-size: 112%; }
 }
-
+body > div {position: relative; overflow: auto;}
 // 2. SITE STRUCTURE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // 2.1 Main header, aside & footer
 // Default layout is full width add .layout-sidebar for large screens to have side nav
 header[role="main"],
 section[role="main"],
-body > footer {
+body > div > footer {
   @include simple-vendor-prefix(box-sizing,border-box);
 }
 
-header[role="main"], body > footer {
+header[role="main"], body > div > footer {
   width: 100%; float:none;
   @include at-least($screenLarge) {width:38%; float:left; text-align:right;}
 }
@@ -37,7 +37,7 @@ header[role="main"], body > footer {
 header[role="main"] {
   overflow: auto;
   padding: $verticalSpace/2 $gutter/2;
-  @include at-least($screenLarge) {padding: $verticalSpace $gutter;}
+  @include at-least($screenLarge) {padding: 0px $gutter;}
   nav {
     @include simple-vendor-prefix(box-sizing,border-box);
     a {
@@ -56,8 +56,12 @@ header[role="main"] {
   }
 }
 
-body > footer {
+body > div > footer {
   padding: $verticalSpace/2 $gutter 0px;
+  position: relative; bottom: 0px;
+  @include at-least($screenLarge) {
+    position:absolute; bottom: 0px;
+  }
   p {
       width: 100%; overflow: hidden;
       padding-top:$verticalSpace;

@@ -28,10 +28,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 h1, h2, h3, h4 { font-family: $headerFont; }
 h1 {
-  margin-bottom: 0px;
+  margin-bottom: $verticalSpace;
   font-size: $fontSize*3.2;
   @include special-border($blue, bottom, light, 8px);
-  @include at-least($screenLarge) {@include special-border($blue, top, light, 12px);}
+  @include at-least($screenLarge) {
+    @include special-border($blue, bottom, light, 12px);
+    padding: $verticalSpace/3 0px;
+  }
+  padding: $verticalSpace/4 0px;
 }
 h2 {font-size: $fontSize*2.4;}
 article.brain-dribble h2 {color:$brainDribble;}

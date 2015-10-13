@@ -1,0 +1,86 @@
+article {
+  margin:$verticalSpace 0px;
+  overflow:hidden;
+  @include special-border($blue,top,dark,4px);
+  // time {float:right;}
+  @include at-least($screenLarge) {
+    @include special-border($blue,top,dark,8px);
+  }
+  .post-tags {
+    margin:$verticalSpace/2 0px;
+    text-align:right;
+    @include special-border($blue,top,dark,4px);
+    a {margin-left:6px;}
+  }
+}
+
+/*dif categories == dif colours*/
+article.brain-dribble {
+  @include special-border($brainDribble,top,dark,4px);
+  @include at-least($screenLarge) {
+    @include special-border($brainDribble,top,dark,8px);
+  }
+  .post-tags {
+    @include special-border($brainDribble,top,dark,4px);
+  }
+}
+article.craft-code {
+  @include special-border($craftCode,top,dark,4px);
+  @include at-least($screenLarge) {
+    @include special-border($craftCode,top,dark,8px);
+  }
+  .post-tags {
+    @include special-border($craftCode,top,dark,4px);
+  }
+}
+article.speak-write-mentor {
+  @include special-border($speakWrite,top,dark,4px);
+  @include at-least($screenLarge) {
+    @include special-border($speakWrite,top,dark,8px);
+  }
+  .post-tags {
+    @include special-border($speakWrite,top,dark,4px);
+  }
+}
+
+article.brain-dribble, article.craft-code, article.speak-write-mentor {padding:$verticalSpace 0px;}
+
+.link-fullart {
+  display:block;
+  border:none;
+  text-align:right;
+  font-family:$headerFont;
+  font-size: $fontSize*1.3;
+}
+
+// list of articles on homepage
+.list-posts {
+  @include clearListStyles();
+  li {
+    overflow: auto;
+    @include special-border($blue, top, dark, 4px);
+    .link-fullart {float:none;}
+    &.brain-dribble {
+      @include special-border($brainDribble, top, dark, 4px);
+      a h2, a time, .link-fullart {border:none; color:$brainDribble;}
+    }
+    &.craft-code {
+      @include special-border($craftCode, top, dark, 4px);
+      a h2, a time, .link-fullart {border:none; color:$craftCode;}
+    }
+    &.speak-write-mentor {
+      @include special-border($speakWrite, top, dark, 4px);
+      a h2, a time, .link-fullart {border:none; color:$speakWrite;}
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+

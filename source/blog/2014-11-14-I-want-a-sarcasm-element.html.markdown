@@ -12,7 +12,7 @@ status: published
 <sarcasm>
 <code>&lt;sarcasm></code><i>Throws toys out the pram</i><code>&lt;/sarcasm></code>
 
-For aaaggees now I've wanted a way to express my sarcasm over the internets. When you're typing this can be pretty hard... it can get lost pretty quickly when words on a screen don't come with tone.
+<p>For aaaggees now I've wanted a way to express my sarcasm over the internets. When you're typing this can be pretty hard... it can get lost pretty quickly when words on a screen don't come with tone.</p>
 
 Enter the <code>&lt;sarcasm></code> element*. I, (as well as others), have been know to add this to IRC chats, or at least end a line with <code>&lt;/sarcasm></code>.
 

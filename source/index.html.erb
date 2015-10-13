@@ -12,7 +12,7 @@ title: Rumyras Head
     <div class="post-content">
       <%= article.summary %>
     </div>
-    <a href="<%= article.url %>" class="link-fullart">Full Article</a>
+    <a href="<%= article.url %>" class="link-fullart icon-after i-forward">Full Article</a>
   </article>
   <% end %>
 <% end %>
@@ -20,13 +20,12 @@ title: Rumyras Head
 
 <ul class="list-posts">
  <% blog.articles[9...-1].each do |article| %>
- <%= article %>
  <% if article.data.status == 'published' %>
    <li class="<%= article.data.category %>">
     <% link_to(article.path) do %>
       <h2><%= article.title %></h2>
-      <p><%= Date.parse(article.data.date).strftime('%B %e, %Y') %> <span><%= article.data.author %></span></p>
-
+      <time datetime="<%=article.data.date%>"><%= Date.parse(article.data.date).strftime('%B %e, %Y') %></time>
+      <span class="link-fullart icon-after i-forward">Full Article</span>
     <% end %>
    </li>
    <% end %>
