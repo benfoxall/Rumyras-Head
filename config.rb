@@ -57,7 +57,7 @@ activate :syntax
 
 activate :blog do |blog|
   # blog.prefix = "blog"
-  blog.permalink = "/{title}/"
+  blog.permalink = "/{title}.html"
   blog.sources = "blog/:year-:month-:day-:title.html"
   blog.taglink = "category/{tag}.html"
   blog.tag_template = "category.html"
