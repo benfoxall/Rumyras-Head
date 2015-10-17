@@ -6,6 +6,7 @@ tags:
 - colour-scheme
 - design
 - photoshop
+- craft-code
 category: craft-code
 status: published
 ---

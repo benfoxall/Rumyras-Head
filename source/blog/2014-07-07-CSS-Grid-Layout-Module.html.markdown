@@ -6,29 +6,32 @@ tags:
 - code
 - css
 - grid
+- craft-code
 status: published
 ---
 
-<p>So I had a chance recently to play around with the <a href="http://www.w3.org/TR/css-grid-1/">CSS Grid Layout Module</a>. It has up until recently only been supported by IE (I know, don't worry I felt a bit weird typing that). I personally don't have a very accessible way to develop in IE, so was pleased to discover it is now supported by Chrome if you enabled the 'Experimental Web Platform' flag.</p>
+So I had a chance recently to play around with the <a href="http://www.w3.org/TR/css-grid-1/">CSS Grid Layout Module</a>. It has up until recently only been supported by IE (I know, don't worry I felt a bit weird typing that). I personally don't have a very accessible way to develop in IE, so was pleased to discover it is now supported by Chrome if you enabled the 'Experimental Web Platform' flag.
 
-<p>The best resource for using it in Chrome is <a href="http://www.rachelandrew.co.uk/archives/2014/06/27/css-grid-layout-getting-to-grips-with-the-chrome-implementation/">Rachel Andrews' post here</a> (Thanks <a href="https://twitter.com/justinavery">@justinavery</a>). She did write <a href="http://24ways.org/2012/css3-grid-layout/">another great one for 24 Ways</a>, however as it was only supported by IE at the time, it uses IE syntax which is slightly different to the syntax Chrome uses and thus confused me to start with. Similarly with the <a href="http://css-tricks.com/almanac/properties/g/grid/">CSS Tricks post here</a>, which is also good, but if you are using Chrome can be confusing.</p>
+The best resource for using it in Chrome is <a href="http://www.rachelandrew.co.uk/archives/2014/06/27/css-grid-layout-getting-to-grips-with-the-chrome-implementation/">Rachel Andrews' post here</a> (Thanks <a href="https://twitter.com/justinavery">@justinavery</a>). She did write <a href="http://24ways.org/2012/css3-grid-layout/">another great one for 24 Ways</a>, however as it was only supported by IE at the time, it uses IE syntax which is slightly different to the syntax Chrome uses and thus confused me to start with. Similarly with the <a href="http://css-tricks.com/almanac/properties/g/grid/">CSS Tricks post here</a>, which is also good, but if you are using Chrome can be confusing.
 
-<h2>Some things to share</h2><p>I discovered I don't need vendor prefixes, I was originally using <code>-webkit-</code>, once I removed this I had that 'Yes' moment when I refreshed my page.</p>
+## Some things to share
+
+I discovered I don't need vendor prefixes, I was originally using `-webkit-`, once I removed this I had that 'Yes' moment when I refreshed my page.
 
 READMORE
 
-<p>The initial setting up of your grid seemed pretty straight forward. Declare your display type to be grid on the container and then specify your columns and rows via their sizes (Rachel's article above explains this much better than me :) ).</p>
+The initial setting up of your grid seemed pretty straight forward. Declare your display type to be grid on the container and then specify your columns and rows via their sizes (Rachel's article above explains this much better than me :) ).
 
-<pre class="language-css"><code>
+<pre class="css">
 .container {
   display: grid;
   grid-template-columns:200px 200px 200px 200px 200px 200px 200px 200px;/*8 columns*/
   grid-template-rows:200px 200px 200px 200px;/*4 rows*/
-}</code></pre>
+}</pre>
 
 <p>You can of course use the shorthand syntax here (as it's explained in other posts so I originally didn't mention it here, thanks for the nudge <a href="https://twitter.com/stopsatgreen">@stopsatgreen</a>).
 
-<pre class="language-css"><code>
+<pre><code class="language-css">
 .container {
   display: grid;
   grid-template-columns:repeat(8, 200px);/*repeats 8 200px columns*/
@@ -38,7 +41,7 @@ READMORE
 <p>The design I was working with is laid out like a simplified periodic table, with images in specific cells. I wanted to mark it up so I could change the position of these images easily and play around with the design. It would have also been a bonus to make it easy for anyone else who came to look at the code do the same thing.</p>
 <p>I had 4 rows and 8 columns worth of cells. To start I positioned each of the images into their appropriate cells by using the <code>grid-row</code> and <code>grid-column</code> properties:</p>
 
-<pre class="language-css"><code>
+<pre><code class="language-css">
 img:nth-of-type(1) {
   grid-row:1;
   grid-column:1;

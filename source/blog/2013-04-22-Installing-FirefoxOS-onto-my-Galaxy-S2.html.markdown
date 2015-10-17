@@ -1,7 +1,7 @@
 ---
 title: Installing FirefoxOS onto my Galaxy S2
 date: '2013-04-22'
-tags:
+tags: brain-dribble
 category: brain-dribble
 status: draft
 ---

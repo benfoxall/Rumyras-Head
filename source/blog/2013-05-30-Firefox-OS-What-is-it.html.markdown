@@ -4,6 +4,7 @@ date: '2013-05-30'
 category: craft-code
 tags:
 - firefoxos
+- craft-code
 status: published
 ---
 
@@ -11,7 +12,7 @@ So you may have caught wind of some phones that were released recently - namely 
 
 Some time last year, Mozilla - the web company probably best known for its browser Firefox - started developing software that could run on devices such as smart phones. This is Firefox OS. Think iOS or Android - you will see a very similar thing when you see a phone running Firefox OS - a nice flick through interface with icons representing the apps installed.
 
-<img src="https://thelab.o2.com/wp-content/uploads/2013/05/phonesOS1.jpg" />
+![Firefox OS phones](/media/phonesOS1.jpg)
 
 READMOREThese Geeksphones you've been hearing about are an initial release of handsets, running Firefox OS, which are aimed at developers so they can start developing and testing apps on them. There is the <a target="_blank" href="http://shop.geeksphone.com/en/phones/1-keon.html" title="http://shop.geeksphone.com/en/phones/1-keon.html">Keon</a> which is more affordable, but not quite as powerful as the <a target="_blank" href="http://shop.geeksphone.com/en/phones/5-peak.html" title="http://shop.geeksphone.com/en/phones/5-peak.html">Peak</a>. It looks like consumer phones will be available later this year in selected markets such as Brazil, Columbia and Hungary to name a few (<a target="_blank" href="http://blog.mozilla.org/blog/2013/02/24/mozilla-unlocks-the-power-of-the-web-on-mobile-with-firefox-os/" title="Mozilla unlocks the power of the web on mobile - Mozilla.org blog">more here</a>). Mozilla are being supported in this venture by <a rel="external" href="http://blog.mozilla.org/blog/2013/02/24/mozilla-unlocks-the-power-of-the-web-on-mobile-with-firefox-os/" title="Mozilla unlocks the power of the web on mobile - Mozilla.org blog">18 mobile operators</a>, including Telefónica.
 

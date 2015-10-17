@@ -47,12 +47,20 @@
 #   end
 # end
 
+require 'rack/rewrite'
+use Rack::Rewrite do
+  rewrite '/feed/', '/feed.xml'
+end
+
 activate :directory_indexes
+activate :syntax
 
 activate :blog do |blog|
   # blog.prefix = "blog"
   blog.permalink = "/{title}/"
   blog.sources = "blog/:year-:month-:day-:title.html"
+  blog.taglink = "category/{tag}.html"
+  blog.tag_template = "category.html"
 end
 
 activate :deploy do |deploy|
@@ -72,6 +80,8 @@ set :js_dir, 'assets/javascripts'
 set :images_dir, 'images'
 
 page "blog/*", :layout => :post
+
+page "/feed.xml", layout: false
 
 # Build-specific configuration
 configure :build do

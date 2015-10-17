@@ -1,7 +1,7 @@
 ---
 title: FirefoxOS for non techies
 date: '2013-04-23'
-tags:
+tags: brain-dribble
 category: brain-dribble
 status: draft
 ---

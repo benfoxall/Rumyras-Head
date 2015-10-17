@@ -38,22 +38,6 @@ header[role="main"] {
   overflow: auto;
   padding: $verticalSpace/2 $gutter/2;
   @include at-least($screenLarge) {padding: 0px $gutter;}
-  nav {
-    @include simple-vendor-prefix(box-sizing,border-box);
-    a {
-      width: 30%; float: left;
-      margin-right: 3%;
-      @include at-least($screenLarge) {
-        width:100%; float:none; margin:0px;
-      }
-      &:nth-of-type(3) {
-        width:34%; margin-right:0px;
-        @include at-least($screenLarge) {
-          width:100%;
-        }
-      }
-    }
-  }
 }
 
 body > div > footer {
@@ -66,6 +50,7 @@ body > div > footer {
       width: 100%; overflow: hidden;
       padding-top:$verticalSpace;
       font-size: $fontSize*0.9;
+      text-align: right;
       span {float:left;}
   }
 }
@@ -78,7 +63,7 @@ section[role="main"] {
   border:4px solid $extraLightGrey;
   border-width:4px 0px;
   @include at-least($screenLarge) {
-    width:62%; float:right;
+    width:62%; float:right; min-height:1000px;
     border-width:0px 0px 0px 4px;
   }
 }

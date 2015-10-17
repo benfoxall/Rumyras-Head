@@ -7,6 +7,7 @@ tags:
 - image-compression
 - middleman
 - wordpress
+- craft-code
 status: published
 ---
 

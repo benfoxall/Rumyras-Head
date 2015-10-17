@@ -1,7 +1,7 @@
 ---
 title: I Wrote A Thing!
 date: '2013-12-08'
-tags:
+tags: speak-write-mentor
 category: speak-write-mentor
 status: published
 ---

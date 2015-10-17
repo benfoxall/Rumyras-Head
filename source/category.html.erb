@@ -1,0 +1,30 @@
+
+<% page_articles[0...3].each do |article| %>
+  <% if article.data.status == 'published' %>
+  <article class="post-summary <%= article.data.category %>">
+    <header>
+      <% link_to(article.path) do %><h2><%= article.title %></h2><% end %>
+      <time datetime="<%=article.data.date%>"><%= Date.parse(article.data.date).strftime('%B %e, %Y') %></time>
+    </header>
+    <div class="post-content">
+      <%= article.summary %>
+    </div>
+    <a href="<%= article.url %>" class="link-fullart icon-after i-forward">Full Article</a>
+  </article>
+  <% end %>
+<% end %>
+
+
+<ul class="list-posts">
+ <% page_articles[4...-1].each do |article| %>
+ <% if article.data.status == 'published' %>
+   <li class="<%= article.data.category %>">
+    <% link_to(article.path) do %>
+      <h2><%= article.title %></h2>
+      <time datetime="<%=article.data.date%>"><%= Date.parse(article.data.date).strftime('%B %e, %Y') %></time>
+      <span class="link-fullart icon-after i-forward">Full Article</span>
+    <% end %>
+   </li>
+   <% end %>
+ <% end %>
+</ul>

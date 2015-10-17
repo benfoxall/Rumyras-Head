@@ -6,6 +6,7 @@ tags:
 - design
 - responsive
 - web
+- craft-code
 category: craft-code
 status: published
 ---

@@ -54,15 +54,29 @@ nav {
 
 nav[role="main"] {
   @include until($screenSmall) {display:none;}
+  @include simple-vendor-prefix(box-sizing,border-box);
   a {
+    width: 30%; float: left;
+    margin-right: 3%;
     border:none;
     @include special-border($blue,top,light,4px);
     font-family: $headerFont;
     font-size: $fontSize*1.4;
     @include at-least($screenLarge) {
+      width:100%; float:none; margin:0px;
       @include special-border($blue,bottom,light,8px);
       font-size: $fontSize*2;
     }
+    &:nth-child(3) {
+      width:34%; margin-right:0px;
+      @include at-least($screenLarge) {width:100%;}
+    }
+    &:nth-child(4) {
+      display:none;
+      @include at-least($screenLarge) {display:block;}
+    }
+
+    // different colours
     &:nth-child(3n-2) {
       @include special-border($brainDribble,top,light,4px);
       @include at-least($screenLarge) {
@@ -117,11 +131,16 @@ nav[role="main"] {
 }
 section .nav-social {
   padding: $verticalSpace/2 $gutter/4;
+  @include until($screenLarge) {
+    position:absolute; top:$verticalSpace; right:0px;
+  }
   a {
     display:inline-block;
-    &:before {font-size:40px; padding-right:20px;}
+    &:before {
+      @include  at-least($screenSmall) {font-size: 30px; padding-right:15px;}
+      @include at-least($screenLarge) {font-size:40px; padding-right:20px;}
+    }
   }
-  
 }
 footer .nav-social {
   @include clearListStyles;
@@ -159,22 +178,22 @@ footer .nav-social {
     }
   }
 }
-@include until($screenMedium) {
-  nav {
-    width: 33%;
-    ul {
-      position: absolute;
-      display: none;
-      &.nav-show { display: block; }
-    }
-    li { display: block; }
-    a {
-      display: block;
-      border-width: 2px 0px 0px;
-    }
-  }
-}
-@include until($screenSmall) { nav {width:50%} }
+// @include until($screenMedium) {
+//   nav {
+//     width: 33%;
+//     ul {
+//       position: absolute;
+//       display: none;
+//       &.nav-show { display: block; }
+//     }
+//     li { display: block; }
+//     a {
+//       display: block;
+//       border-width: 2px 0px 0px;
+//     }
+//   }
+// }
+// @include until($screenSmall) { nav {width:50%} }
 
 // 2 Breadcrumbs
 .nav-breadcrumb {

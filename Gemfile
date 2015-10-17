@@ -19,4 +19,13 @@ gem "middleman-blog"
 # deploy to github pages
 gem 'middleman-deploy', '~> 1.0'
 
+# for blog summaries
 gem "nokogiri"
+
+# For feed.xml.builder
+gem "builder", "~> 3.0"
+
+# To see if I can rewrite old urls
+gem 'rack-rewrite', '~> 1.2.1'
+
+gem "middleman-syntax"

@@ -5,9 +5,9 @@ tags:
 - conference
 - mobile
 - skills-learning
+- speak-write-mentor
 category: speak-write-mentor
 status: published
-status: status
 ---
 
 Last Tuesday I was privilege to speak at the <a href="http://www.learningtechnologies.co.uk/learning-and-skills-group/" rel="external">Learning & Skills Group Conference</a> at <a href="http://www.olympia.co.uk/" rel="external">Kensington Olympia</a> along with the amazing <a href="http://shkspr.mobi/blog/">Terence Eden</a>.

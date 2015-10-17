@@ -2,7 +2,7 @@
 title: Chaining CSS :not()
 date: '2015-01-19'
 category: craft-code
-tags:
+tags: craft-code
 status: published
 ---
 

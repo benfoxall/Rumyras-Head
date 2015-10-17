@@ -1,9 +1,9 @@
 article {
-  margin:$verticalSpace 0px;
   overflow:hidden;
   @include special-border($blue,top,dark,4px);
   // time {float:right;}
   @include at-least($screenLarge) {
+    margin:$verticalSpace 0px;
     @include special-border($blue,top,dark,8px);
   }
   .post-tags {
