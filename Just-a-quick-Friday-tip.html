@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+  <!--char set (lang above)-->
+  <meta charset="utf-8">
+
+  <!--device/browser shizzle-->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!--meta content-->
+  <link rel="shortcut icon" href="favicon.ico" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+  <meta name="author" content="Ruth John (@rumyra)">
+  <meta name="dcterms.rightsHolder" content="Ruth John for Rumyra Ltd, United Kingdom, 2015">
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <title>Just a quick Friday tip</title>
+
+  <!--Stylesheets (include as necessary)-->
+  <!--[if lte IE 9]>
+  <link rel="stylesheet" href="ie.css" type="text/css" media="screen"/>
+  <![endif]-->
+
+  <link href="/assets/stylesheets/application.css" rel="stylesheet" type="text/css" /><link href="/assets/stylesheets/all.css" rel="stylesheet" type="text/css" /><link href="/assets/stylesheets/pygments.css" rel="stylesheet" type="text/css" />
+  <script src="/assets/javascripts/all.js" type="text/javascript"></script>
+</head>
+
+  <body class="Just-a-quick-Friday-tip"><div>
+
+    <header role="main">
+      
+      <h1><a href="/" rel="internal" title="Link back to the home of Rumyra's Head">Rumyra's Head</a></h1>
+
+      <nav role="main">
+        <a href="/category/brain-dribble.html">Brain Dribble</a>
+        <a href="/category/craft-code.html">Craft &amp; Code</a>
+        <!--<a href="http://rumyrashead.com/category/challenge-rumyra/">Challenge Rumyra</a>-->
+        <a href="/category/speak-write-mentor.html">Speak, Write, Mentor</a>
+        <a href="mailto:sayhello@rumyrashead.com">Say Hello</a>
+      </nav>
+    </header>
+
+    <section role="main">
+      <aside role="banner">
+      <!-- <form role="search" method="get" action="http://rumyrashead.com/">
+        <fieldset><legend>Search Rumyra's Head</legend>
+          <div class="form-field">
+            <label for="s">Search term</label>
+            <input type="text" placeholder="Search term" name="s" id="s">
+          </div>
+          <input type="submit" value="Search">
+        </fieldset>
+      </form> -->
+
+      <nav role="complementary" class="nav-social">
+        <a href="http://www.twitter.com/rumyra" rel="external" class="icon-make i-twitter">Follow @rumyra on Twitter</a>
+        <a href="http://www.github.com/rumyra" rel="external" class="icon-make i-github">Rumyra on Github</a>
+        <a href="mailto:sayhello@rumyrashead.com" class="icon-make i-email">Say Hello</a>
+        <!--<a href="http://codepen.io/Rumyra" rel="external">Rumyra on Codepen</a>-->
+        <a href="/feed.xml" class="icon-make i-rss">Get the RSS feed</a>
+      </nav>
+    </aside>
+
+    <article class="post craft-code">
+  <header>
+     <h2>Just a quick Friday tip</h2>
+     <time datetime="2015-01-30">January 30, 2015</time>
+  </header>
+  <div class="post-content">
+    <p>I know a lot of you out there are already aware of this and to you it will seem obvious, however, I've found myself giving this tip a few times over the past couple of weeks, so think it's worth quickly noting.</p>
+
+<p>If you have a containing element, (div, article, section etc…), with a lot of content inside, reference which one it is at the closing tag. E.g:</p>
+
+<pre class="language-markup"><code>&lt;section role="main"&gt;
+
+  &lt;!-- ALL the page's content here --&gt;
+
+&lt;/section&gt;&lt;!-- this is the end of section[role="main"] --&gt;
+</code></pre>
+
+<p>This is particularly helpful if you have your HTML file split into partials. You may close a container in a different file to that which it starts.</p>
+
+  </div>
+  <div class="post-tags">
+    <p>Tags:
+       <!-- <li><a href="/blog/tags/article/">article</a></li> -->
+       <span>article,&nbsp;</span>
+       <!-- <li><a href="/blog/tags/comment/">comment</a></li> -->
+       <span>comment,&nbsp;</span>
+       <!-- <li><a href="/blog/tags/containing-element/">containing-element</a></li> -->
+       <span>containing-element,&nbsp;</span>
+       <!-- <li><a href="/blog/tags/div/">div</a></li> -->
+       <span>div,&nbsp;</span>
+       <!-- <li><a href="/blog/tags/section/">section</a></li> -->
+       <span>section,&nbsp;</span>
+       <!-- <li><a href="/blog/tags/craft-code/">craft-code</a></li> -->
+       <span>craft-code,&nbsp;</span>
+    </p>
+  </div>
+</article>
+
+
+    </section>
+
+      <footer>
+      <ul class="nav-social">
+        <li><a href="http://www.twitter.com/rumyra" rel="external" class="icon-before i-twitter">Follow @rumyra on Twitter</a></li>
+        <li><a href="http://lanyrd.com/profile/rumyra/" rel="external" class="icon-before i-tags">Rumyra on Lanyrd</a></li>
+        <li><a href="http://www.github.com/rumyra" rel="external" class="icon-before i-github">Rumyra on Github</a></li>
+        <li><a href="http://codepen.io/Rumyra" rel="external" class="icon-before i-codepen">Rumyra on Codepen</a></li>
+        <li><a href="/feed.xml" class="icon-before i-rss">Get the RSS feed</a></li>
+        <li><span class="icon-before i-mobile">Say hello by text on +441287 244048</span></li>
+      </ul>
+      <p><span>© Rumyra's Head 2015</span><!--<a href="http://www.ruthjohn.com" rel="external">-->Designed by Ruth John</p>
+      
+    </footer>
+  </div>
+
+</body>
+</html>

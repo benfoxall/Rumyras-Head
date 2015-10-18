@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+  <!--char set (lang above)-->
+  <meta charset="utf-8">
+
+  <!--device/browser shizzle-->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!--meta content-->
+  <link rel="shortcut icon" href="favicon.ico" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+  <meta name="author" content="Ruth John (@rumyra)">
+  <meta name="dcterms.rightsHolder" content="Ruth John for Rumyra Ltd, United Kingdom, 2015">
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <title>The Middleman</title>
+
+  <!--Stylesheets (include as necessary)-->
+  <!--[if lte IE 9]>
+  <link rel="stylesheet" href="ie.css" type="text/css" media="screen"/>
+  <![endif]-->
+
+  <link href="/assets/stylesheets/application.css" rel="stylesheet" type="text/css" /><link href="/assets/stylesheets/all.css" rel="stylesheet" type="text/css" /><link href="/assets/stylesheets/pygments.css" rel="stylesheet" type="text/css" />
+  <script src="/assets/javascripts/all.js" type="text/javascript"></script>
+</head>
+
+  <body class="category category_craft-code"><div>
+
+    <header role="main">
+      
+      <h1><a href="/" rel="internal" title="Link back to the home of Rumyra's Head">Rumyra's Head</a></h1>
+
+      <nav role="main">
+        <a href="/category/brain-dribble.html">Brain Dribble</a>
+        <a href="/category/craft-code.html">Craft &amp; Code</a>
+        <!--<a href="http://rumyrashead.com/category/challenge-rumyra/">Challenge Rumyra</a>-->
+        <a href="/category/speak-write-mentor.html">Speak, Write, Mentor</a>
+        <a href="mailto:sayhello@rumyrashead.com">Say Hello</a>
+      </nav>
+    </header>
+
+    <section role="main">
+      <aside role="banner">
+      <!-- <form role="search" method="get" action="http://rumyrashead.com/">
+        <fieldset><legend>Search Rumyra's Head</legend>
+          <div class="form-field">
+            <label for="s">Search term</label>
+            <input type="text" placeholder="Search term" name="s" id="s">
+          </div>
+          <input type="submit" value="Search">
+        </fieldset>
+      </form> -->
+
+      <nav role="complementary" class="nav-social">
+        <a href="http://www.twitter.com/rumyra" rel="external" class="icon-make i-twitter">Follow @rumyra on Twitter</a>
+        <a href="http://www.github.com/rumyra" rel="external" class="icon-make i-github">Rumyra on Github</a>
+        <a href="mailto:sayhello@rumyrashead.com" class="icon-make i-email">Say Hello</a>
+        <!--<a href="http://codepen.io/Rumyra" rel="external">Rumyra on Codepen</a>-->
+        <a href="/feed.xml" class="icon-make i-rss">Get the RSS feed</a>
+      </nav>
+    </aside>
+
+    
+  <article class="post-summary craft-code">
+    <header>
+      <a href="blog/2015-05-12-Compressing-images.html"><h2>Compressing images</h2></a>
+      <time datetime="2015-05-12">May 12, 2015</time>
+    </header>
+    <div class="post-content">
+      <p>I'm currently doing a <a href="https://wordpress.org/">Wordpress</a> -&gt; <a href="https://middlemanapp.com/">Middleman</a> shuffle for our team blog at work. This came from a review of all our infrastructure and where we could do some cost cutting. We decided to decommission the Wordpress site, as the content was primarily flat, (just blog posts), and we could host that for free on <a href="https://pages.github.com/">Github pages</a>.</p>
+
+<p>Most of the build was pretty straight forward. As a quick run down I chose to use middleman as I was already familiar with it, I added the <a href="https://github.com/middleman/middleman-blog">middleman-blog</a> and <a href="https://github.com/middleman-contrib/middleman-deploy">middleman-deploy</a> gems to make my life easier and translated all the posts to markdown using the <a href="https://github.com/mdb/wp2middleman">wp2middleman command line tool</a>. There are plenty of good tutorials out there that run you through this.</p>
+
+<p>When it came to transferring over the media it became important to me to keep the size of the images down to a minimum. Page weights are getting heavier these days (imo) unnecessarily. So when asking in the wonderful <a href="">Front End London Slack</a> about what I could use for batch image compression I received the following responses:</p>
+
+<p>
+    </div>
+    <a href="/Compressing-images.html" class="link-fullart icon-after i-forward">Full Article</a>
+  </article>
+  <article class="post-summary craft-code">
+    <header>
+      <a href="blog/2015-03-30-Tweet-activated-rose.html"><h2>Tweet activated rose</h2></a>
+      <time datetime="2015-03-30">March 30, 2015</time>
+    </header>
+    <div class="post-content">
+      <p>To see how to make the rose, please see my <a href="http://madebyrumyra.com/lighting-up-a-crochet-rose/">blog post over here on my craft blog</a>, (it seemed a more appropriate place for a <em>how to make</em> pattern).</p>
+
+<p>TLDR; I crocheted a rose, a couple of rows of which contained wire, I then sewed LEDs on the rose in a parallel circuit. This post describes how I made it flash when someone tweets with a specified string, head down to the bottom of the post if you don't care about the code, there's a cool video :)</p>
+
+<figure class="media-feature">
+	<img src="media/featureCode.jpg" alt="Lit up crocheted rose, with equipment and code running to make it flash" />
+	<figcaption></figcaption>
+</figure>
+
+<h3>The idea</h3>
+
+<p>What I want to happen, now I have a rose which lights up, its to have it flash any time anyone tweets with a string I specify. (The idea came from my workplace, as O2 sponsor the England rugby team, the rose is the English rose and the hash tag to look out for was one O2 was promoting - #WearTheRose).</p>
+
+<p>Along with the rose, I needed an <a href="http://arduino.cc/">Arduino</a> (I used an Arduino UNO), a script that looked for tweets containing the string I specified and broadcasted them to an Arduino script, which turned the LEDs on when triggered.</p>
+
+<p>
+    </div>
+    <a href="/Tweet-activated-rose.html" class="link-fullart icon-after i-forward">Full Article</a>
+  </article>
+  <article class="post-summary craft-code">
+    <header>
+      <a href="blog/2015-02-06-Today-I-was-given-a-web-page-design.html"><h2>Today I was given a web page design...</h2></a>
+      <time datetime="2015-02-06">February  6, 2015</time>
+    </header>
+    <div class="post-content">
+      <p>This isn't my typical way of working these days. User experience &amp; flow, UI &amp; wireframing, design, mark up, styling and interactivity are all very iterative to me. They don't come in a waterfall sequential order anymore. Working in a lab team, I concentrate on seeing whether an idea, product or technology to solve a problem is useful, before it goes into production, so I usually prioritise content, UX flow and interactivity, before a finished perfectly styled site or app.</p>
+
+<p>Don't get me wrong, I do think styling is important, I just have to weigh up priorities with time constraints. I also built some <a href="http://white-paper.herokuapp.com/" rel="external">starter files</a> (more about these later) to help me along the way with styling, so it doesn't fall by the wayside entirely.</p>
+
+<p>Sorry I'm getting side tracked…</p>
+
+<p>
+    </div>
+    <a href="/Today-I-was-given-a-web-page-design.html" class="link-fullart icon-after i-forward">Full Article</a>
+  </article>
+
+
+<ul class="list-posts">
+   <li class="craft-code">
+<a href="blog/2015-01-19-Chaining-CSS-not.html">      <h2>Chaining CSS :not()</h2>
+      <time datetime="2015-01-19">January 19, 2015</time>
+      <span class="link-fullart icon-after i-forward">Full Article</span>
+</a>   </li>
+   <li class="craft-code">
+<a href="blog/2014-10-10-Animation-code-snippet.html">      <h2>Animation code snippet</h2>
+      <time datetime="2014-10-10">October 10, 2014</time>
+      <span class="link-fullart icon-after i-forward">Full Article</span>
+</a>   </li>
+   <li class="craft-code">
+<a href="blog/2014-09-21-Finding-your-break.html">      <h2>Finding your break</h2>
+      <time datetime="2014-09-21">September 21, 2014</time>
+      <span class="link-fullart icon-after i-forward">Full Article</span>
+</a>   </li>
+   <li class="craft-code">
+<a href="blog/2014-08-18-Choosing-a-colour-scheme.html">      <h2>Choosing a colour scheme</h2>
+      <time datetime="2014-08-18">August 18, 2014</time>
+      <span class="link-fullart icon-after i-forward">Full Article</span>
+</a>   </li>
+   <li class="craft-code">
+<a href="blog/2014-07-07-CSS-Grid-Layout-Module.html">      <h2>CSS Grid Layout Module</h2>
+      <time datetime="2014-07-07">July  7, 2014</time>
+      <span class="link-fullart icon-after i-forward">Full Article</span>
+</a>   </li>
+   <li class="craft-code">
+<a href="blog/2013-10-22-So-I-Was-Thinking-About-Preprocessors.html">      <h2>So I Was Thinking About Preprocessors...</h2>
+      <time datetime="2013-10-22">October 22, 2013</time>
+      <span class="link-fullart icon-after i-forward">Full Article</span>
+</a>   </li>
+</ul>
+
+    </section>
+
+      <footer>
+      <ul class="nav-social">
+        <li><a href="http://www.twitter.com/rumyra" rel="external" class="icon-before i-twitter">Follow @rumyra on Twitter</a></li>
+        <li><a href="http://lanyrd.com/profile/rumyra/" rel="external" class="icon-before i-tags">Rumyra on Lanyrd</a></li>
+        <li><a href="http://www.github.com/rumyra" rel="external" class="icon-before i-github">Rumyra on Github</a></li>
+        <li><a href="http://codepen.io/Rumyra" rel="external" class="icon-before i-codepen">Rumyra on Codepen</a></li>
+        <li><a href="/feed.xml" class="icon-before i-rss">Get the RSS feed</a></li>
+        <li><span class="icon-before i-mobile">Say hello by text on +441287 244048</span></li>
+      </ul>
+      <p><span>© Rumyra's Head 2015</span><!--<a href="http://www.ruthjohn.com" rel="external">-->Designed by Ruth John</p>
+      
+    </footer>
+  </div>
+
+</body>
+</html>

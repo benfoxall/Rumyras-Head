@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Blog Name</title>
+  <subtitle>Blog subtitle</subtitle>
+  <id>http://blog.url.com/</id>
+  <link href="http://blog.url.com/"/>
+  <link href="http://blog.url.com/feed.xml" rel="self"/>
+  <updated>2015-05-12T01:00:00+01:00</updated>
+  <author>
+    <name>Blog Author</name>
+  </author>
+  <entry>
+    <title>Compressing images</title>
+    <link rel="alternate" href="http://blog.url.com/Compressing-images.html"/>
+    <id>http://blog.url.com/Compressing-images.html</id>
+    <published>2015-05-12T01:00:00+01:00</published>
+    <updated>2015-10-18T10:38:51+01:00</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">&lt;p&gt;I'm currently doing a &lt;a href="https://wordpress.org/"&gt;Wordpress&lt;/a&gt; -&amp;gt; &lt;a href="https://middlemanapp.com/"&gt;Middleman&lt;/a&gt; shuffle for our team blog at work. This came from a review of all our infrastructure and where we could do some cost cutting. We decided to decommission the Wordpress site, as the content was primarily flat, (just blog posts), and we could host that for free on &lt;a href="https://pages.github.com/"&gt;Github pages&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Most of the build was pretty straight forward. As a quick run down I chose to use middleman as I was already familiar with it, I added the &lt;a href="https://github.com/middleman/middleman-blog"&gt;middleman-blog&lt;/a&gt; and &lt;a href="https://github.com/middleman-contrib/middleman-deploy"&gt;middleman-deploy&lt;/a&gt; gems to make my life easier and translated all the posts to markdown using the &lt;a href="https://github.com/mdb/wp2middleman"&gt;wp2middleman command line tool&lt;/a&gt;. There are plenty of good tutorials out there that run you through this.&lt;/p&gt;
+
+&lt;p&gt;When it came to transferring over the media it became important to me to keep the size of the images down to a minimum. Page weights are getting heavier these days (imo) unnecessarily. So when asking in the wonderful &lt;a href=""&gt;Front End London Slack&lt;/a&gt; about what I could use for batch image compression I received the following responses:&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://imageoptim.com/"&gt;ImageOptim (Software/GUI)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/JamieMason/ImageOptim-CLI"&gt;ImageOptim CLI&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.jpegmini.com/"&gt;JPEGmini&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://pngmini.com/"&gt;ImageAlpha&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Thanks to &lt;a href="https://twitter.com/patrickhamann"&gt;Patrick&lt;/a&gt;, &lt;a href="https://twitter.com/philhawksworth"&gt;Phil&lt;/a&gt;, &lt;a href="https://twitter.com/ianfeather"&gt;Ian&lt;/a&gt;, &lt;a href="https://twitter.com/danielknell"&gt;Dan&lt;/a&gt; and &lt;a href="https://twitter.com/arranrp"&gt;Arran&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Then the lovely &lt;a href="https://twitter.com/charlotteis"&gt;Charlotte&lt;/a&gt; said:&lt;/p&gt;
+
+&lt;blockquote&gt;@rumyra: I recently took a day at work and investigated all the available tools out there. ImageOptim CLI is your best bet as it uses both lossy and lossless compression, actually works and is free. The CLI uses more tools than just imageoptim, so all the bases are covered. The repo has some ace stats too&lt;/blockquote&gt;
+
+&lt;p&gt;Sums it up nicely - I'm sold!&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Tweet activated rose</title>
+    <link rel="alternate" href="http://blog.url.com/Tweet-activated-rose.html"/>
+    <id>http://blog.url.com/Tweet-activated-rose.html</id>
+    <published>2015-03-30T01:00:00+01:00</published>
+    <updated>2015-10-18T10:48:27+01:00</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">&lt;p&gt;To see how to make the rose, please see my &lt;a href="http://madebyrumyra.com/lighting-up-a-crochet-rose/"&gt;blog post over here on my craft blog&lt;/a&gt;, (it seemed a more appropriate place for a &lt;em&gt;how to make&lt;/em&gt; pattern).&lt;/p&gt;
+
+&lt;p&gt;TLDR; I crocheted a rose, a couple of rows of which contained wire, I then sewed LEDs on the rose in a parallel circuit. This post describes how I made it flash when someone tweets with a specified string, head down to the bottom of the post if you don't care about the code, there's a cool video :)&lt;/p&gt;
+
+&lt;figure class="media-feature"&gt;
+	&lt;img src="media/featureCode.jpg" alt="Lit up crocheted rose, with equipment and code running to make it flash" /&gt;
+	&lt;figcaption&gt;&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h3&gt;The idea&lt;/h3&gt;
+
+&lt;p&gt;What I want to happen, now I have a rose which lights up, its to have it flash any time anyone tweets with a string I specify. (The idea came from my workplace, as O2 sponsor the England rugby team, the rose is the English rose and the hash tag to look out for was one O2 was promoting - #WearTheRose).&lt;/p&gt;
+
+&lt;p&gt;Along with the rose, I needed an &lt;a href="http://arduino.cc/"&gt;Arduino&lt;/a&gt; (I used an Arduino UNO), a script that looked for tweets containing the string I specified and broadcasted them to an Arduino script, which turned the LEDs on when triggered.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;h3&gt;The code&lt;/h3&gt;
+
+&lt;p&gt;It took a lot of searching but most of the code came from one post, which due to the law of sods, I can not for the life of me find :( (I had it open for all the time - as soon as I find it I’ll update).&lt;/p&gt;
+
+&lt;p&gt;I had to make a few amendments. The first was adding in the Gemfile. (FYI I’m assuming you have ruby installed and are familiar with gems). For some reason it also wasn’t broadcasting the servo code, so I added line 33.&lt;/p&gt;
+
+&lt;pre class="language-ruby"&gt;&lt;code&gt;require 'tweetstream'
+require 'serialport'
+ 
+input=ARGV.shift || "#bordeaux,#strasbourg"
+#params for serial port
+port_str = "/dev/tty.usbmodem1411"  #may be different for you
+ 
+sp = SerialPort.new(port_str, 9600, 8, 1, SerialPort::NONE)
+ 
+TweetStream.configure do |config|
+  config.consumer_key       = 'CONSUMERKEYHERE'
+  config.consumer_secret    = 'CONSUMERSECRETHERE'
+  config.oauth_token        = 'OAUTHTOKENHERE'
+  config.oauth_token_secret = 'OAUTHSECRETHERE'
+  config.auth_method        = :oauth
+end
+ 
+@client=TweetStream::Client.new;
+ 
+total=0
+last=Time.now
+words=input.split(',')
+flags=Array.new(words.size)
+buffers=words.map{|w| []}
+sp.puts "512 0 0" # reset the servo
+@client.track(words) do |tweet|
+  p "beginning track of #{tweet.text}"
+  begin
+    search=tweet.text.downcase
+    words.each_with_index do |word,i|
+      if search.include? word
+puts 'got something'
+sp.puts "broadcasting tweet"
+flags[i]=1
+buffers[i]&amp;lt;&amp;lt;tweet
+      end
+    end
+    if (Time.now-last)&amp;gt;0.11
+      begin
+ratio=(180*buffers[0].size/(buffers[0].size+buffers[1].size)).to_i
+str=ratio.to_s+" "+flags.join(' ')
+puts str
+sp.puts str
+last=Time.now
+flags=Array.new(words.size,0)
+      end
+    end
+  end
+end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;There’s a few things you have to set to make sure it runs. One is to create a Twitter app and add your own creds in where it specifies, the other is to make sure the USB port on line 6 is correct. Plug your Arduino in, and in the Arduino IDE go to &lt;em&gt;Tools &amp;gt; Serial Port&lt;/em&gt; and type what ever is next to the tick onto line. (E.g. “/dev/tty.usbmodem1411”).&lt;/p&gt;
+
+&lt;p&gt;If you navigate to the file in your terminal window and run ruby app.rb “stringtolookforhere” the tweets should start to be echoed out.&lt;/p&gt;
+
+&lt;p&gt;Next came the Arduino code, which seemed to work off the bat. I would recommend opening the &lt;em&gt;Serial Monitor&lt;/em&gt; (again under &lt;em&gt;Tools&lt;/em&gt; in the IDE) as you can visually see the broadcasts and when the lights should be on and off.&lt;/p&gt;
+
+&lt;pre class="language-c"&gt;&lt;code&gt;int ledPin=13;    // select the input pin for the potentiometer
+int nbLed=1;
+ 
+void setup() {
+  // Open serial communications and wait for port to open:
+  Serial.begin(9600);
+  while (!Serial) {
+    ; // wait for serial port to connect. Needed for Leonardo only
+  }
+  for(int i=0;i&amp;lt;nbLed;i++){
+   pinMode(ledPin-i, OUTPUT); 
+  }
+}
+ 
+// Utility function to get a value from a string at a given pos
+String getValue(String data, char separator, int index)
+{
+  int found = 0;
+  int strIndex[] = {0, -1};
+  int maxIndex = data.length()-1;
+ 
+  for(int i=0; i&amp;lt;=maxIndex &amp;amp;&amp;amp; found&amp;lt;=index; i++){
+    if(data.charAt(i)==separator || i==maxIndex){
+found++;
+strIndex[0] = strIndex[1]+1;
+strIndex[1] = (i == maxIndex) ? i+1 : i;
+    }
+  }
+  return found&amp;gt;index ? data.substring(strIndex[0], strIndex[1]) : "";
+}
+
+void loop() {
+  if(Serial.available() &amp;gt;0) {
+    String str=Serial.readStringUntil('\n');
+    Serial.println("Read:"+str);
+    for(int i=0;i&amp;lt;nbLed;i++){
+      // look for the next valid integer in the incoming serial stream:
+      if(!getValue(str,' ',i+1).equals("0")){
+digitalWrite(ledPin-i, HIGH);  
+      }
+    }
+  }
+  delay(100);  
+  for(int i=0;i&amp;lt;nbLed;i++){
+    digitalWrite(ledPin-i, LOW); 
+  } 
+}&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3&gt;Hooking it all up&lt;/h3&gt;
+
+&lt;p&gt;All that’s left to do is upload the Arduino code to your Uno and attach the rose.&lt;/p&gt;
+
+&lt;p&gt;Attaching the rose was a very delicate operation, I’d already marked the positive and negative sides of the circuit, it was just a case of winding the wires carefully and making sure they didn’t touch and therefore short.&lt;/p&gt;
+
+&lt;p&gt;It did all manage to come together, however, even I was pretty amazed! Here's a video of the whole thing in action:&lt;/p&gt;
+
+&lt;iframe width="560" height="315" style="border:2px solid grey; margin:20px auto;" src="https://www.youtube.com/embed/_MbP_Syy_mU?rel=0" frameborder="0" allowfullscreen=""&gt;&lt;/iframe&gt;
+
+&lt;p&gt;Looking forward I can not wait to take this idea further. There’s a Red Bear (bluetooth enabled Arduino) just sitting ready to try this with, which would make it much more portable (as long as I can find some power), as well as some much more fancy programmable LEDs.&lt;/p&gt;
+
+&lt;p&gt;Watch this space, I think there’s a lot more to come :)&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Out with the mechanical, in with the 'computerised'</title>
+    <link rel="alternate" href="http://blog.url.com/Out-with-the-mechanical-in-with-the-computerised.html"/>
+    <id>http://blog.url.com/Out-with-the-mechanical-in-with-the-computerised.html</id>
+    <published>2015-02-20T00:00:00+00:00</published>
+    <updated>2015-10-18T10:48:28+01:00</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">&lt;p&gt;I like to think I'm comfortable with new technology, that I'm a woman who embraces new exciting developments in the world around her. I almost grew up online, dad always made sure there was a computer in the house and I thank him for that, because if it wasn't for the BBC there wouldn't have been any &lt;a href="http://www.repton3.co.uk/chuckieegg.aspx" rel="external"&gt;Chuckie Egg&lt;/a&gt; (imagine a world without Chuckie Egg, not even). I had one of the Motorola bricks at college and finally my own HP Desktop computer at university with shiny shiny windows 2000.&lt;/p&gt;
+
+&lt;p&gt;I always want to urge people to try new things, new things can be better, worried that those that are 'happy with what they have' could be missing out on better processes, saving time, seeing more awesome.&lt;/p&gt;
+
+&lt;figure class="media-feature"&gt;
+	&lt;img src="media/oldnnew.jpg" alt="old mechanical janome sewing machine next to new computerised sewing machine" /&gt;
+	&lt;figcaption&gt;&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;But today, today I saw the other side. Today I got a new sewing machine.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p data-pullquote-top="I bought myself a 'computerised' one"&gt;I've always sewn, ever since I was taught how to thread it up and push the foot down, I've used a sewing machine. Mum bought one for 'us' nearly 20 years ago, which I 'borrowed' when I went to uni (by this time there were other machines in the house). It wasn't returned, but it never sat in a corner unused. My most joyous moment about my new flat was having a table it could permanently sit on, not having to get it out and put it away all the time. It's a basic mechanical &lt;a href="http://janome.co.uk/" rel="external"&gt;Janome&lt;/a&gt; model, you have to specify mechanical these days because the other types are 'computerised'. I discovered this is just a fancy word for digital. I also discovered you can get sewing machines with USB ports for uploading designs, but these come at a hefty 'over a grand and a half' price tag. Anyway, the time was well over due, my 20 year old machine needed to be upgraded. So I bought myself a 'computerised' one.&lt;/p&gt;
+
+&lt;p&gt;It came today, I just spent my lunch hour unpacking it and checking over the manual. It's pretty much the same model I had before, just 20 years later. And the last 20 years is a long time.&lt;/p&gt;
+
+&lt;p&gt;I'm super excited, I'm trying to get my work finished early so I can hook it all up and have a play. But as I placed it on my desk and uncovered it, I thought I would uncover the other one, just to compare them.&lt;/p&gt;
+
+&lt;p data-pullquote-top="The time has come"&gt;I suddenly had a sense of forlorn - sadness came over me. I was going to have to say goodbye to the only sewing machine I'd ever really known. There's no dials on my new one, only buttons, you don't even need to use the foot. I'm not just giving up the mechanical sewing machine, I'm giving up a way of using it. I'm giving up one of the most familiar tools to me. I've had six phones since my Motorola, built three new desktops and bought two laptops since my HP desktop. I even own a TV, I never owned a TV, only a sewing machine! But now, now I have a new sewing machine... the time has come, my mechanical sewing machine is now going to be computerised.&lt;/p&gt;
+
+&lt;p&gt;I'm going to give my mechanical one back to my mum, I don't think she likes the other machines in the house - they're probably 'computerised'.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Today I was given a web page design...</title>
+    <link rel="alternate" href="http://blog.url.com/Today-I-was-given-a-web-page-design.html"/>
+    <id>http://blog.url.com/Today-I-was-given-a-web-page-design.html</id>
+    <published>2015-02-06T00:00:00+00:00</published>
+    <updated>2015-10-18T10:38:51+01:00</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">&lt;p&gt;This isn't my typical way of working these days. User experience &amp;amp; flow, UI &amp;amp; wireframing, design, mark up, styling and interactivity are all very iterative to me. They don't come in a waterfall sequential order anymore. Working in a lab team, I concentrate on seeing whether an idea, product or technology to solve a problem is useful, before it goes into production, so I usually prioritise content, UX flow and interactivity, before a finished perfectly styled site or app.&lt;/p&gt;
+
+&lt;p&gt;Don't get me wrong, I do think styling is important, I just have to weigh up priorities with time constraints. I also built some &lt;a href="http://white-paper.herokuapp.com/" rel="external"&gt;starter files&lt;/a&gt; (more about these later) to help me along the way with styling, so it doesn't fall by the wayside entirely.&lt;/p&gt;
+
+&lt;p&gt;Sorry I'm getting side tracked…&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;…back to the design handed to me. It's a lovely design, it will probably go into production and be released. I'm ok (in this instance) with being given it and asked to turn it into a web page. It has reminded me of my workflow in this situation and something I advise people when they ask 'where so you start with a design like that'. It's a rich design. There's a big interactive hero piece.&lt;/p&gt;
+
+&lt;h3&gt;Where do you start?&lt;/h3&gt;
+
+&lt;p&gt;Start with the content. Start with the bones, the HTML. To me it's the crux of the whole piece. You want to just write what you see. Keep it clean and simple, use the correct elements for the correct content. Consider, but don't get hung up on, the CSS and JavaScript to come, if you need to edit it slightly later - edit it slightly later, no biggy.&lt;/p&gt;
+
+&lt;p data-pullquote-top="So make it happy HTML, make it clean, lean and healthy."&gt;But remember, there are people out there that will just see or hear this HTML and nothing else. So make it happy HTML, make it clean, lean and healthy. Don't make it heavy and bloated, all the other languages that join the party later won't thank you for it.&lt;/p&gt;
+
+&lt;p&gt;Disclaimer: Although this is easy for me to say when all I have to do is hand code one web page, without grid systems, frameworks or libraries. I do understand bigger projects benefit from these things, but I also believe you can't go far wrong if you keep your HTML happy.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Just a quick Friday tip</title>
+    <link rel="alternate" href="http://blog.url.com/Just-a-quick-Friday-tip.html"/>
+    <id>http://blog.url.com/Just-a-quick-Friday-tip.html</id>
+    <published>2015-01-30T00:00:00+00:00</published>
+    <updated>2015-10-18T10:38:51+01:00</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">&lt;p&gt;I know a lot of you out there are already aware of this and to you it will seem obvious, however, I've found myself giving this tip a few times over the past couple of weeks, so think it's worth quickly noting.&lt;/p&gt;
+
+&lt;p&gt;If you have a containing element, (div, article, section etc…), with a lot of content inside, reference which one it is at the closing tag. E.g:&lt;/p&gt;
+
+&lt;pre class="language-markup"&gt;&lt;code&gt;&amp;lt;section role="main"&amp;gt;
+
+  &amp;lt;!-- ALL the page's content here --&amp;gt;
+
+&amp;lt;/section&amp;gt;&amp;lt;!-- this is the end of section[role="main"] --&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This is particularly helpful if you have your HTML file split into partials. You may close a container in a different file to that which it starts.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Chaining CSS :not()</title>
+    <link rel="alternate" href="http://blog.url.com/Chaining-CSS-not.html"/>
+    <id>http://blog.url.com/Chaining-CSS-not.html</id>
+    <published>2015-01-19T00:00:00+00:00</published>
+    <updated>2015-10-18T10:38:51+01:00</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">&lt;p&gt;I found myself using the CSS psuedo class &lt;code&gt;:not()&lt;/code&gt; the other day. It proved superbly useful. For those that are unaware, by adding it to your CSS, you can choose &lt;b&gt;not&lt;/b&gt; to affect a set of elements.&lt;/p&gt;
+
+&lt;pre class="language-css"&gt;&lt;code&gt;myelement:not(.ofthisclass) { style: property; }&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;There's a couple of good resources about it in the &lt;a href="http://css-tricks.com/almanac/selectors/n/not/"&gt;CSS Tricks Almanac&lt;/a&gt; or the &lt;a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:not"&gt;MDN docs&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;What I was looking for was a way to affect anything but a certain class, plus another certain class. If I had declared both separately in my CSS, the first declared would have been overwritten. In this example the div with a class of blue would still have a crimson background, as the declaration below it would overwrite it.&lt;/p&gt;
+
+&lt;pre class="language-css"&gt;&lt;code&gt;div:not(.blue) {
+  background: crimson;
+}
+div:not(.green) {
+  background: crimson;
+}&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;But wait… there is a way. All we need to do is chain the two &lt;i&gt;nots&lt;/i&gt; together:&lt;/p&gt;
+
+&lt;pre class="language-css"&gt;&lt;code&gt;div:not(.blue):not(.green) {
+  background: crimson;
+}&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Voilà! Just what I was looking for. For a demo, &lt;a href="http://codepen.io/Rumyra/pen/dPWOOL"&gt;check out this codepen&lt;/a&gt;.&lt;/p&gt;
+
+</content>
+  </entry>
+</feed>

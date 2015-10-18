@@ -1,0 +1,1951 @@
+@charset "UTF-8";
+/* reset margins, padding, borders & outline. Sets HTML block elements, also includes a couple of bits of normalize.css */
+@import url(http://fonts.googleapis.com/css?family=Playball);
+/* line 4, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_reset.scss */
+html, body, div, span, applet, object, iframe,
+header, hgroup, h1, h2, h3, h4, h5, h6,
+p, blockquote, pre, time,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+figure, figcaption, video, audio, img,
+fieldset, form, label, legend, input, button, select,
+table, caption, tbody, tfoot, thead, tr, th, td,
+section, article, canvas, nav, footer, aside,
+figure {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  vertical-align: baseline; }
+
+/* line 23, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_reset.scss */
+section, article, aside, footer, nav, header, hgroup, details, figure, figcaption, summary {
+  display: block; }
+
+/* line 24, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_reset.scss */
+audio, canvas, video {
+  display: inline-block; }
+
+/*Prevents iOS text size adjust after orientation change, without disabling user zoom.*/
+/* line 26, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_reset.scss */
+html {
+  -webkit-text-size-adjust: 100%; }
+
+/* line 28, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_reset.scss */
+[hidden] {
+  display: none; }
+
+/* line 30, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_reset.scss */
+:focus {
+  outline: 0; }
+
+/* set colours, fonts, sizes & breakpoints */
+/*The following is taken from Bourbon: https://github.com/thoughtbot/bourbon/blob/master/app/assets/stylesheets/css3/_font-face.scss*/
+/* line 92, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_settings.scss */
+.hide-font, .icon-make, .nav-toggle, .icon-button {
+  color: transparent;
+  font-size: 0px;
+  text-transform: none;
+  text-decoration: none; }
+
+@font-face {
+  font-family: "Adventor";
+  font-weight: normal;
+  font-style: normal;
+  src: url("../fonts/texgyreadventor-regular-webfont.eot");
+  src: url("../fonts/texgyreadventor-regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/texgyreadventor-regular-webfont.woff") format("woff"), url("../fonts/texgyreadventor-regular-webfont.otf") format("opentype"), url("../fonts/texgyreadventor-regular-webfont.ttf") format("truetype"), url("../fonts/texgyreadventor-regular-webfont.svg#Adventor") format("svg"); }
+@font-face {
+  font-family: "Adventor";
+  font-weight: normal;
+  font-style: italic;
+  src: url("../fonts/texgyreadventor-italic-webfont.eot");
+  src: url("../fonts/texgyreadventor-italic-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/texgyreadventor-italic-webfont.woff") format("woff"), url("../fonts/texgyreadventor-italic-webfont.otf") format("opentype"), url("../fonts/texgyreadventor-italic-webfont.ttf") format("truetype"), url("../fonts/texgyreadventor-italic-webfont.svg#Adventor") format("svg"); }
+@font-face {
+  font-family: "Adventor";
+  font-weight: bold;
+  font-style: normal;
+  src: url("../fonts/texgyreadventor-bold-webfont.eot");
+  src: url("../fonts/texgyreadventor-bold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/texgyreadventor-bold-webfont.woff") format("woff"), url("../fonts/texgyreadventor-bold-webfont.otf") format("opentype"), url("../fonts/texgyreadventor-bold-webfont.ttf") format("truetype"), url("../fonts/texgyreadventor-bold-webfont.svg#Adventor") format("svg"); }
+@font-face {
+  font-family: "Adventor";
+  font-weight: bold;
+  font-style: italic;
+  src: url("../fonts/texgyreadventor-bolditalic-webfont.eot");
+  src: url("../fonts/texgyreadventor-bolditalic-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/texgyreadventor-bolditalic-webfont.woff") format("woff"), url("../fonts/texgyreadventor-bolditalic-webfont.otf") format("opentype"), url("../fonts/texgyreadventor-bolditalic-webfont.ttf") format("truetype"), url("../fonts/texgyreadventor-bolditalic-webfont.svg#Adventor") format("svg"); }
+@font-face {
+  font-family: "Font Awesome";
+  font-weight: normal;
+  font-style: normal;
+  src: url("../fonts/fontawesome-webfont.eot");
+  src: url("../fonts/fontawesome-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/fontawesome-webfont.woff") format("woff"), url("../fonts/fontawesome-webfont.otf") format("opentype"), url("../fonts/fontawesome-webfont.ttf") format("truetype"), url("../fonts/fontawesome-webfont.svg#Font Awesome") format("svg"); }
+/*The following are taken from Brandon Mathis - http://codepen.io/imathis/pen/BDzcI*/
+/* 1.4 Nice design stuff/little shineys------------------------*/
+/*below is not the best way to do this - I need to refactor ~Ruth*/
+/* HTML ELEMENTS~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* headers, paragraphs, lists, formatting etc... */
+/* line 24, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_typographic-elements.scss */
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 0.375em;
+  font-weight: normal;
+  line-height: 1.1; }
+
+/* line 29, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_typographic-elements.scss */
+h1, h2, h3, h4 {
+  font-family: "Playball", cursive; }
+
+/* line 30, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_typographic-elements.scss */
+h1 {
+  font-size: 3.2em;
+  padding: 0.75em 0px;
+  background-image: -webkit-linear-gradient(left, #40427a 33%, #262748 33%, #262748 66%, #0c0c16 66%);
+  background-image: -moz-linear-gradient(left, #40427a 33%, #262748 33%, #262748 66%, #0c0c16 66%);
+  background-image: -ms-linear-gradient(left, #40427a 33%, #262748 33%, #262748 66%, #0c0c16 66%);
+  background-image: -o-linear-gradient(left, #40427a 33%, #262748 33%, #262748 66%, #0c0c16 66%);
+  background-image: linear-gradient(left, #40427a 33%, #262748 34%, #262748 66%, #1d1e37 67%);
+  background-repeat: no-repeat;
+  background-size: 100% 8px;
+  background-position: left bottom;
+  padding: 0px 0px 0.375em; }
+  @media screen and (min-width: 860px) {
+    /* line 30, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_typographic-elements.scss */
+    h1 {
+      padding: 0.75em 0px;
+      background-image: -webkit-linear-gradient(left, #40427a 33%, #262748 33%, #262748 66%, #0c0c16 66%);
+      background-image: -moz-linear-gradient(left, #40427a 33%, #262748 33%, #262748 66%, #0c0c16 66%);
+      background-image: -ms-linear-gradient(left, #40427a 33%, #262748 33%, #262748 66%, #0c0c16 66%);
+      background-image: -o-linear-gradient(left, #40427a 33%, #262748 33%, #262748 66%, #0c0c16 66%);
+      background-image: linear-gradient(left, #40427a 33%, #262748 34%, #262748 66%, #1d1e37 67%);
+      background-repeat: no-repeat;
+      background-size: 100% 12px;
+      background-position: left bottom;
+      padding: 0.5em 0px;
+      margin-bottom: 1.5em; } }
+
+/* line 40, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_typographic-elements.scss */
+h2 {
+  font-size: 2.4em; }
+
+/* line 41, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_typographic-elements.scss */
+article.brain-dribble h2 {
+  color: #5f2e44; }
+
+/* line 42, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_typographic-elements.scss */
+article.craft-code h2 {
+  color: #a43e4f; }
+
+/* line 43, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_typographic-elements.scss */
+article.speak-write-mentor h2 {
+  color: #b47742; }
+
+/* line 44, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_typographic-elements.scss */
+h3 {
+  font-size: 2em; }
+
+/* line 45, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_typographic-elements.scss */
+h4 {
+  font-size: 1.7em; }
+
+/* line 46, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_typographic-elements.scss */
+h5 {
+  font-size: 1.5em; }
+
+/* line 47, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_typographic-elements.scss */
+h6 {
+  font-size: 1.3em; }
+
+/* line 50, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_typographic-elements.scss */
+p {
+  margin: 0.75em 0px;
+  font-size: 1em;
+  line-height: 1.5; }
+
+/* line 55, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_typographic-elements.scss */
+.lede, p.lede {
+  font-size: 1.3em; }
+
+/* line 58, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_typographic-elements.scss */
+.feature-text {
+  font-weight: bold;
+  font-style: italic; }
+
+/* line 64, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_typographic-elements.scss */
+strong, b {
+  font-weight: bold; }
+
+/* line 65, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_typographic-elements.scss */
+em, i, dfn, var {
+  font-style: italic; }
+
+/* line 66, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_typographic-elements.scss */
+dfn, abbr, abbr[title] {
+  border-bottom: 1px dotted; }
+
+/* line 67, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_typographic-elements.scss */
+ins, mark {
+  padding: 0px 0.25em; }
+
+/* line 69, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_typographic-elements.scss */
+article.brain-dribble dfn, article.brain-dribble abbr, article.brain-dribble abbr[title] {
+  border-bottom-color: #5f2e44; }
+
+/* line 72, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_typographic-elements.scss */
+article.craft-code dfn, article.craft-code abbr, article.craft-code abbr[title] {
+  border-bottom-color: #5f2e44; }
+
+/* line 75, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_typographic-elements.scss */
+article.speak-write-mentor dfn, article.speak-write-mentor abbr, article.speak-write-mentor abbr[title] {
+  border-bottom-color: #b47742; }
+
+/* line 77, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_typographic-elements.scss */
+ins {
+  background-color: rgba(38, 39, 72, 0.2);
+  text-decoration: none; }
+
+/* line 81, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_typographic-elements.scss */
+small {
+  font-size: 84%; }
+
+/* line 82, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_typographic-elements.scss */
+del {
+  text-decoration: line-through; }
+
+/* line 83, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_typographic-elements.scss */
+mark {
+  background-color: rgba(38, 39, 72, 0.2); }
+
+/* line 85, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_typographic-elements.scss */
+article.brain-dribble mark {
+  background-color: rgba(95, 46, 68, 0.2); }
+
+/* line 88, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_typographic-elements.scss */
+article.craft-code mark {
+  background-color: rgba(164, 62, 79, 0.2); }
+
+/* line 91, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_typographic-elements.scss */
+article.speak-write-mentor mark {
+  background-color: rgba(180, 119, 66, 0.2); }
+
+/* line 93, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_typographic-elements.scss */
+kbd, code, samp, pre {
+  font-family: monospace;
+  font-size: 120%; }
+
+/*Prevents `sub` and `sup` affecting `line-height` in all browsers.*/
+/* line 95, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_typographic-elements.scss */
+sub, sup {
+  position: relative;
+  font-size: 84%;
+  line-height: 0;
+  vertical-align: baseline; }
+
+/* line 101, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_typographic-elements.scss */
+sup {
+  top: -0.5em; }
+
+/* line 102, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_typographic-elements.scss */
+sub {
+  bottom: -0.25em; }
+
+/*changing direction of text dependent on language*/
+/* line 104, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_typographic-elements.scss */
+[dir="ltr"] bdi {
+  direction: rtl;
+  unicode-bidi: bidi-override; }
+
+/* line 105, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_typographic-elements.scss */
+[dir="rtl"] bdi {
+  direction: ltr;
+  unicode-bidi: bidi-override; }
+
+/* line 108, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_typographic-elements.scss */
+a {
+  border-bottom: 2px solid #52ae9f;
+  font-weight: normal;
+  font-size: 1em;
+  color: #52ae9f;
+  text-decoration: none; }
+
+/* line 115, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_typographic-elements.scss */
+article.brain-dribble a {
+  color: #5f2e44;
+  border-color: #5f2e44; }
+
+/* line 116, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_typographic-elements.scss */
+article.craft-code a {
+  color: #a43e4f;
+  border-color: #a43e4f; }
+
+/* line 117, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_typographic-elements.scss */
+article.speak-write-mentor a {
+  color: #b47742;
+  border-color: #b47742; }
+
+/* line 119, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_typographic-elements.scss */
+p a, address a, ul a, ol a, dl a, menu a {
+  font-size: 100%; }
+
+/* line 120, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_typographic-elements.scss */
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+  color: currentColor;
+  border: none;
+  font-size: 100%; }
+
+/* line 122, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_typographic-elements.scss */
+a:hover, a:active, a:visited {
+  border-bottom-width: 0px; }
+
+/* line 123, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_typographic-elements.scss */
+a:focus {
+  outline: thin dotted; }
+
+/* line 130, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_typographic-elements.scss */
+ol, ul, dl, menu[type="list"] {
+  margin: 1.5em 3em; }
+
+/* line 131, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_typographic-elements.scss */
+ul {
+  list-style: none; }
+
+/* line 132, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_typographic-elements.scss */
+ol {
+  list-style: lower-roman; }
+
+/* line 133, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_typographic-elements.scss */
+li, dt, dd {
+  margin: 0.75em 0px;
+  font-size: 1em;
+  line-height: 1.5; }
+
+/* line 138, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_typographic-elements.scss */
+dt {
+  font-weight: bold; }
+
+/* line 139, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_typographic-elements.scss */
+li, dl > dd {
+  margin: 0.75em 0px;
+  padding-left: 0.75em; }
+
+/* line 143, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_typographic-elements.scss */
+article ul li {
+  padding: 0px 0.75em;
+  background-image: -webkit-linear-gradient(top, #40427a 33%, #262748 33%, #262748 66%, #0c0c16 66%);
+  background-image: -moz-linear-gradient(top, #40427a 33%, #262748 33%, #262748 66%, #0c0c16 66%);
+  background-image: -ms-linear-gradient(top, #40427a 33%, #262748 33%, #262748 66%, #0c0c16 66%);
+  background-image: -o-linear-gradient(top, #40427a 33%, #262748 33%, #262748 66%, #0c0c16 66%);
+  background-image: linear-gradient(top, #40427a 33%, #262748 34%, #262748 66%, #1d1e37 67%);
+  background-repeat: no-repeat;
+  background-size: 4px 100%;
+  background-position: left top;
+  padding-top: 0px;
+  padding-bottom: 0; }
+  @media screen and (min-width: 860px) {
+    /* line 143, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_typographic-elements.scss */
+    article ul li {
+      padding: 0px 0.75em;
+      background-image: -webkit-linear-gradient(top, #40427a 33%, #262748 33%, #262748 66%, #0c0c16 66%);
+      background-image: -moz-linear-gradient(top, #40427a 33%, #262748 33%, #262748 66%, #0c0c16 66%);
+      background-image: -ms-linear-gradient(top, #40427a 33%, #262748 33%, #262748 66%, #0c0c16 66%);
+      background-image: -o-linear-gradient(top, #40427a 33%, #262748 33%, #262748 66%, #0c0c16 66%);
+      background-image: linear-gradient(top, #40427a 33%, #262748 34%, #262748 66%, #1d1e37 67%);
+      background-repeat: no-repeat;
+      background-size: 8px 100%;
+      background-position: left top;
+      padding-top: 0px;
+      padding-bottom: 0; } }
+
+/* line 152, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_typographic-elements.scss */
+article.brain-dribble ul li {
+  padding: 0px 0.75em;
+  background-image: -webkit-linear-gradient(top, #934769 33%, #5f2e44 33%, #5f2e44 66%, #2b151f 66%);
+  background-image: -moz-linear-gradient(top, #934769 33%, #5f2e44 33%, #5f2e44 66%, #2b151f 66%);
+  background-image: -ms-linear-gradient(top, #934769 33%, #5f2e44 33%, #5f2e44 66%, #2b151f 66%);
+  background-image: -o-linear-gradient(top, #934769 33%, #5f2e44 33%, #5f2e44 66%, #2b151f 66%);
+  background-image: linear-gradient(top, #934769 33%, #5f2e44 34%, #5f2e44 66%, #4e2638 67%);
+  background-repeat: no-repeat;
+  background-size: 4px 100%;
+  background-position: left top;
+  padding-top: 0px;
+  padding-bottom: 0; }
+  @media screen and (min-width: 860px) {
+    /* line 152, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_typographic-elements.scss */
+    article.brain-dribble ul li {
+      padding: 0px 0.75em;
+      background-image: -webkit-linear-gradient(top, #934769 33%, #5f2e44 33%, #5f2e44 66%, #2b151f 66%);
+      background-image: -moz-linear-gradient(top, #934769 33%, #5f2e44 33%, #5f2e44 66%, #2b151f 66%);
+      background-image: -ms-linear-gradient(top, #934769 33%, #5f2e44 33%, #5f2e44 66%, #2b151f 66%);
+      background-image: -o-linear-gradient(top, #934769 33%, #5f2e44 33%, #5f2e44 66%, #2b151f 66%);
+      background-image: linear-gradient(top, #934769 33%, #5f2e44 34%, #5f2e44 66%, #4e2638 67%);
+      background-repeat: no-repeat;
+      background-size: 8px 100%;
+      background-position: left top;
+      padding-top: 0px;
+      padding-bottom: 0; } }
+
+/* line 162, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_typographic-elements.scss */
+article.craft-code ul li {
+  padding: 0px 0.75em;
+  background-image: -webkit-linear-gradient(top, #c66878 33%, #a43e4f 33%, #a43e4f 66%, #6c2934 66%);
+  background-image: -moz-linear-gradient(top, #c66878 33%, #a43e4f 33%, #a43e4f 66%, #6c2934 66%);
+  background-image: -ms-linear-gradient(top, #c66878 33%, #a43e4f 33%, #a43e4f 66%, #6c2934 66%);
+  background-image: -o-linear-gradient(top, #c66878 33%, #a43e4f 33%, #a43e4f 66%, #6c2934 66%);
+  background-image: linear-gradient(top, #c66878 33%, #a43e4f 34%, #a43e4f 66%, #913746 67%);
+  background-repeat: no-repeat;
+  background-size: 4px 100%;
+  background-position: left top;
+  padding-top: 0px;
+  padding-bottom: 0; }
+  @media screen and (min-width: 860px) {
+    /* line 162, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_typographic-elements.scss */
+    article.craft-code ul li {
+      padding: 0px 0.75em;
+      background-image: -webkit-linear-gradient(top, #c66878 33%, #a43e4f 33%, #a43e4f 66%, #6c2934 66%);
+      background-image: -moz-linear-gradient(top, #c66878 33%, #a43e4f 33%, #a43e4f 66%, #6c2934 66%);
+      background-image: -ms-linear-gradient(top, #c66878 33%, #a43e4f 33%, #a43e4f 66%, #6c2934 66%);
+      background-image: -o-linear-gradient(top, #c66878 33%, #a43e4f 33%, #a43e4f 66%, #6c2934 66%);
+      background-image: linear-gradient(top, #c66878 33%, #a43e4f 34%, #a43e4f 66%, #913746 67%);
+      background-repeat: no-repeat;
+      background-size: 8px 100%;
+      background-position: left top;
+      padding-top: 0px;
+      padding-bottom: 0; } }
+
+/* line 172, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_typographic-elements.scss */
+article.speak-write-mentor ul li {
+  padding: 0px 0.75em;
+  background-image: -webkit-linear-gradient(top, #cd9e76 33%, #b47742 33%, #b47742 66%, #7c522d 66%);
+  background-image: -moz-linear-gradient(top, #cd9e76 33%, #b47742 33%, #b47742 66%, #7c522d 66%);
+  background-image: -ms-linear-gradient(top, #cd9e76 33%, #b47742 33%, #b47742 66%, #7c522d 66%);
+  background-image: -o-linear-gradient(top, #cd9e76 33%, #b47742 33%, #b47742 66%, #7c522d 66%);
+  background-image: linear-gradient(top, #cd9e76 33%, #b47742 34%, #b47742 66%, #a16b3b 67%);
+  background-repeat: no-repeat;
+  background-size: 4px 100%;
+  background-position: left top;
+  padding-top: 0px;
+  padding-bottom: 0; }
+  @media screen and (min-width: 860px) {
+    /* line 172, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_typographic-elements.scss */
+    article.speak-write-mentor ul li {
+      padding: 0px 0.75em;
+      background-image: -webkit-linear-gradient(top, #cd9e76 33%, #b47742 33%, #b47742 66%, #7c522d 66%);
+      background-image: -moz-linear-gradient(top, #cd9e76 33%, #b47742 33%, #b47742 66%, #7c522d 66%);
+      background-image: -ms-linear-gradient(top, #cd9e76 33%, #b47742 33%, #b47742 66%, #7c522d 66%);
+      background-image: -o-linear-gradient(top, #cd9e76 33%, #b47742 33%, #b47742 66%, #7c522d 66%);
+      background-image: linear-gradient(top, #cd9e76 33%, #b47742 34%, #b47742 66%, #a16b3b 67%);
+      background-repeat: no-repeat;
+      background-size: 8px 100%;
+      background-position: left top;
+      padding-top: 0px;
+      padding-bottom: 0; } }
+
+/* line 185, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_typographic-elements.scss */
+address, time {
+  display: block;
+  margin: 0.75em 0px; }
+
+/* line 191, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_typographic-elements.scss */
+blockquote {
+  margin: 1.5em 1.5em;
+  padding: 1.5em 1.5em;
+  background-color: rgba(38, 39, 72, 0.2);
+  quotes: '"';
+  line-height: 1.5; }
+  /* line 198, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_typographic-elements.scss */
+  blockquote:before {
+    margin: -0.45em 0px 0px -0.3em;
+    float: left;
+    content: '“';
+    font-family: "Playball", cursive;
+    font-size: 3em; }
+  /* line 205, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_typographic-elements.scss */
+  blockquote:after {
+    content: attr(cite);
+    display: block;
+    font-size: 84%;
+    text-align: right; }
+
+/* line 212, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_typographic-elements.scss */
+article.brain-dribble blockquote {
+  background-color: rgba(95, 46, 68, 0.2); }
+
+/* line 213, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_typographic-elements.scss */
+article.craft-code blockquote {
+  background-color: rgba(164, 62, 79, 0.2); }
+
+/* line 214, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_typographic-elements.scss */
+article.speak-write-mentor blockquote {
+  background-color: rgba(180, 119, 66, 0.2); }
+
+/* line 217, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_typographic-elements.scss */
+pre {
+  margin: 1.5em 1.5em;
+  padding: 1.5em 1.5em;
+  background-color: #090911;
+  font-size: 100%;
+  color: #fcfcfc;
+  line-height: 1.5;
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word; }
+  /* line 226, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_typographic-elements.scss */
+  pre code {
+    background: none; }
+
+/* forms */
+/* line 30, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_forms.scss */
+form {
+  width: 100%; }
+
+@media screen and (min-width: 860px) {
+  /* line 31, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_forms.scss */
+  .form-small {
+    width: 50%;
+    margin: 0px auto; } }
+
+/* line 37, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_forms.scss */
+fieldset {
+  margin-bottom: 1.5em; }
+
+/* line 38, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_forms.scss */
+legend {
+  display: none;
+  font-size: 1.4em; }
+
+/* line 44, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_forms.scss */
+.form-instructions {
+  padding: 0.375em 0px;
+  border: 2px solid #6a6a6a;
+  border-width: 2px 0px; }
+  @media screen and (min-width: 860px) {
+    /* line 44, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_forms.scss */
+    .form-instructions {
+      width: 75%; } }
+
+/* line 52, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_forms.scss */
+.form-field {
+  width: 100%; }
+  @media screen and (min-width: 860px) {
+    /* line 52, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_forms.scss */
+    .form-field {
+      width: 48%;
+      float: left; }
+      /* line 56, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_forms.scss */
+      .form-field:nth-of-type(2n-1) {
+        margin-right: 4%; } }
+
+@media screen and (min-width: 860px) {
+  /* line 59, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_forms.scss */
+  .form-small .form-field {
+    width: 100%;
+    float: none;
+    margin-right: 0px; } }
+
+/* line 67, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_forms.scss */
+label, input, select, textarea, button {
+  display: inline-block;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+  vertical-align: baseline;
+  margin: 0.75em 0px 1.5em;
+  font-family: "Adventor", Helvetica, Arial, sans-serif;
+  font-size: 1em; }
+  @media screen and (max-width: 859px) {
+    /* line 67, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_forms.scss */
+    label, input, select, textarea, button {
+      margin: 0.375em 0px 0.75em; } }
+
+/*Addresses Firefox 3+ setting `line-height` on `input` using `!important` in the UA stylesheet.*/
+/* line 78, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_forms.scss */
+button, input {
+  line-height: normal; }
+
+/* line 80, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_forms.scss */
+label {
+  width: 100%;
+  margin-bottom: 0.75em; }
+  @media screen and (max-width: 859px) {
+    /* line 80, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_forms.scss */
+    label {
+      margin-bottom: 0.375em; } }
+
+/* line 85, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_forms.scss */
+input, select, textarea {
+  width: 100%;
+  padding: 0.375em 0.5em;
+  background-color: white;
+  border: 3px solid #6a6a6a;
+  border-radius: 1px; }
+
+/* line 92, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_forms.scss */
+select option {
+  padding: 0.75em 1em; }
+
+/* line 93, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_forms.scss */
+textarea {
+  vertical-align: top; }
+
+/* line 94, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_forms.scss */
+table input, table select, table textarea {
+  margin: 0px; }
+
+/* line 97, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_forms.scss */
+input[type="search"] {
+  -webkit-appearance: textfield; }
+
+/* line 99, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_forms.scss */
+input[type="range"] {
+  margin-bottom: 2.25em; }
+
+/* line 101, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_forms.scss */
+.input-radio input {
+  width: 10%;
+  margin-bottom: 0.75em; }
+  @media screen and (max-width: 859px) {
+    /* line 101, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_forms.scss */
+    .input-radio input {
+      width: 6%; } }
+/* line 106, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_forms.scss */
+.input-radio input:last-of-type {
+  margin-bottom: 1.5em; }
+/* line 107, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_forms.scss */
+.input-radio span {
+  display: inline-block;
+  width: 87%; }
+  @media screen and (max-width: 859px) {
+    /* line 107, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_forms.scss */
+    .input-radio span {
+      width: 91%;
+      font-size: 0.9em; } }
+
+/* line 117, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_forms.scss */
+.input-checkbox label {
+  float: right;
+  width: 91%; }
+  @media screen and (max-width: 859px) {
+    /* line 117, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_forms.scss */
+    .input-checkbox label {
+      width: 93%; } }
+/* line 121, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_forms.scss */
+.input-checkbox input {
+  width: 8%; }
+  @media screen and (max-width: 859px) {
+    /* line 121, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_forms.scss */
+    .input-checkbox input {
+      width: 6%; } }
+
+/* line 125, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_forms.scss */
+.input-date, .input-colour, .input-number {
+  width: 23%;
+  margin-right: 2%; }
+  @media screen and (max-width: 859px) {
+    /* line 125, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_forms.scss */
+    .input-date, .input-colour, .input-number {
+      width: 40%; } }
+  @media screen and (max-width: 639px) {
+    /* line 125, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_forms.scss */
+    .input-date, .input-colour, .input-number {
+      width: 50%; } }
+
+/* line 131, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_forms.scss */
+input[type=color] {
+  width: 100px;
+  height: 100px; }
+
+/* line 135, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_forms.scss */
+.input-range-number {
+  width: 100%; }
+  /* line 137, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_forms.scss */
+  .input-range-number input[type="range"] {
+    width: 48%;
+    margin-right: 1.5em; }
+  /* line 141, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_forms.scss */
+  .input-range-number input[type="number"] {
+    width: 10%; }
+
+/* line 144, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_forms.scss */
+input[type="submit"], input[type="reset"] {
+  width: 30%; }
+
+/* line 145, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_forms.scss */
+input[type="reset"] {
+  float: left; }
+
+/* line 146, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_forms.scss */
+input[type="submit"] {
+  float: right; }
+
+/* line 149, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_forms.scss */
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #262748; }
+
+/* line 153, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_forms.scss */
+.input-required label:after {
+  display: inline-block;
+  padding-left: 0.75em;
+  content: '*'; }
+
+/* line 160, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_forms.scss */
+.input-error input,
+.input-error select,
+.input-error textarea {
+  border-color: #a43e4f; }
+
+/* line 164, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_forms.scss */
+.input-success input,
+.input-success select,
+.input-success textarea {
+  border-color: #52ae9f; }
+
+/* line 168, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_forms.scss */
+.form-error, .form-success {
+  padding: 0.75em 1.5em; }
+
+/* line 171, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_forms.scss */
+.form-error {
+  border: 2px solid #a43e4f;
+  color: #a43e4f; }
+
+/* line 175, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_forms.scss */
+.form-success {
+  border: 2px solid #52ae9f;
+  color: #52ae9f; }
+
+/* tables */
+/*
+CONTENTS
+
+0. Vars, mixins and extends
+1. Basic table
+2. Simple table
+
+*/
+/*1. BASIC TABLE~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/* line 20, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_tables.scss */
+table {
+  width: 100%;
+  margin: 1.5em 0px;
+  border-collapse: collapse;
+  border-spacing: 0px; }
+
+/* line 26, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_tables.scss */
+caption {
+  margin-bottom: 0.75em; }
+
+/* line 27, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_tables.scss */
+thead {
+  background-color: rgba(38, 39, 72, 0.2); }
+
+/* line 28, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_tables.scss */
+tr:nth-child(2n) {
+  background-color: #f3f3e9;
+  border-color: #6a6a6a; }
+
+/* line 32, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_tables.scss */
+th, td {
+  padding: 0.75em 1.5em;
+  font-size: 1em;
+  font-weight: normal;
+  text-align: left; }
+
+/* line 38, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_tables.scss */
+th {
+  border: 0px solid #262748;
+  border-width: 2px 0px; }
+
+/* line 42, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_tables.scss */
+td {
+  border: 0px solid #6a6a6a;
+  border-bottom-width: 2px; }
+
+/* line 49, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_tables.scss */
+.table-simple tr:nth-child(2n) {
+  background-color: transparent;
+  border-color: #f3f3e9; }
+/* line 53, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_tables.scss */
+.table-simple td {
+  border-color: #f3f3e9; }
+
+/* images, audio, video, canvas etc... */
+/*media*/
+/* line 3, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_media.scss */
+audio,
+video,
+img,
+.media-feature,
+.media-feature audio,
+.media-feature video,
+.media-feature img {
+  width: 100%;
+  max-width: 100%;
+  height: auto; }
+
+/* line 15, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_media.scss */
+figure audio, figure video, figure img {
+  margin-bottom: 0.75em; }
+
+/* line 19, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_media.scss */
+figure:not(.media-feature) audio, figure:not(.media-feature) video, figure:not(.media-feature) img {
+  width: 50%;
+  max-width: 50%; }
+
+/* line 22, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_media.scss */
+figcaption {
+  font-style: italic; }
+
+/* line 23, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_media.scss */
+img {
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box; }
+
+/*Prevents modern browsers from displaying `audio` without controls. Remove excess height in iOS 5 devices.*/
+/* line 27, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_media.scss */
+audio:not([controls]) {
+  display: none;
+  height: 0; }
+
+/* UI ELEMENTS~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* buttons */
+/* line 44, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_buttons-icons.scss */
+.icon-psuedo-extend, .icon-make:before, .nav-toggle:before, .icon-button:before, .icon-before:before, .icon-after:after {
+  display: inline-block;
+  content: 'x';
+  font-family: "Font Awesome", monospace;
+  font-size: 20px;
+  line-height: 25px; }
+
+/* line 54, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_buttons-icons.scss */
+html input[type="button"],
+input[type="submit"],
+button,
+.button,
+a.button {
+  display: inline-block;
+  width: auto;
+  padding: 0.75em 1.5em;
+  background-color: #262748;
+  border: none;
+  color: #fcfcfc;
+  font-family: "Adventor", Helvetica, Arial, sans-serif;
+  text-decoration: none;
+  text-shadow: none;
+  text-align: center; }
+  /* line 32, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_buttons-icons.scss */
+  html input[type="button"]:hover,
+  input[type="submit"]:hover,
+  button:hover,
+  .button:hover,
+  a.button:hover {
+    background-color: #141527;
+    color: #fcfcfc;
+    cursor: pointer; }
+
+/* line 60, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_buttons-icons.scss */
+.button-reset,
+input[type="reset"] {
+  display: inline-block;
+  width: auto;
+  padding: 0.75em 1.5em;
+  background-color: #373737;
+  border: none;
+  color: #fcfcfc;
+  font-family: "Adventor", Helvetica, Arial, sans-serif;
+  text-decoration: none;
+  text-shadow: none;
+  text-align: center; }
+  /* line 32, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_buttons-icons.scss */
+  .button-reset:hover,
+  input[type="reset"]:hover {
+    background-color: #1e1e1e;
+    color: #fcfcfc;
+    cursor: pointer; }
+
+/* line 63, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_buttons-icons.scss */
+.button-disabled,
+button:disabled,
+input[type="reset"]:disabled,
+input[type="submit"]:disabled,
+input[type="button"]:disabled {
+  display: inline-block;
+  width: auto;
+  padding: 0.75em 1.5em;
+  background-color: rgba(95, 46, 68, 0.8);
+  border: none;
+  color: #fcfcfc;
+  font-family: "Adventor", Helvetica, Arial, sans-serif;
+  text-decoration: none;
+  text-shadow: none;
+  text-align: center;
+  cursor: default; }
+  /* line 32, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_buttons-icons.scss */
+  .button-disabled:hover,
+  button:disabled:hover,
+  input[type="reset"]:disabled:hover,
+  input[type="submit"]:disabled:hover,
+  input[type="button"]:disabled:hover {
+    background-color: rgba(61, 29, 43, 0.8);
+    color: #fcfcfc;
+    cursor: pointer; }
+
+/* line 69, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_buttons-icons.scss */
+.button-feature,
+input.button-feature,
+.button.button-feature {
+  margin: 0px 0px 1.5em;
+  padding: 1.5em 3em;
+  font-size: 1.4em; }
+
+/* line 77, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_buttons-icons.scss */
+table button {
+  margin: 0px; }
+
+/* line 81, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_buttons-icons.scss */
+.icon-make, .nav-toggle {
+  margin: 0px;
+  padding: 0px;
+  background: none;
+  border: none;
+  box-shadow: none; }
+  /* line 88, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_buttons-icons.scss */
+  .icon-make:before, .nav-toggle:before {
+    color: #090911;
+    padding-right: 10px; }
+  /* line 93, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_buttons-icons.scss */
+  .icon-make:hover, .nav-toggle:hover {
+    background: none;
+    border: none; }
+
+/* line 100, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_buttons-icons.scss */
+button.icon-make:before, button.nav-toggle:before,
+input[type="button"].icon-make:before,
+input[type="button"].nav-toggle:before,
+input[type="submit"].icon-make:before,
+input[type="submit"].nav-toggle:before,
+a.icon-make:before,
+a.nav-toggle:before {
+  color: #262748; }
+/* line 101, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_buttons-icons.scss */
+button.icon-make:hover:before, button.nav-toggle:hover:before,
+input[type="button"].icon-make:hover:before,
+input[type="button"].nav-toggle:hover:before,
+input[type="submit"].icon-make:hover:before,
+input[type="submit"].nav-toggle:hover:before,
+a.icon-make:hover:before,
+a.nav-toggle:hover:before {
+  color: #3d1d2b; }
+
+/* line 104, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_buttons-icons.scss */
+.icon-button {
+  display: inline-block;
+  width: auto;
+  padding: 0.75em 1.5em;
+  background-color: #262748;
+  border: none;
+  color: #fcfcfc;
+  font-family: "Adventor", Helvetica, Arial, sans-serif;
+  text-decoration: none;
+  text-shadow: none;
+  text-align: center; }
+  /* line 32, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_buttons-icons.scss */
+  .icon-button:hover {
+    background-color: #141527;
+    color: #fcfcfc;
+    cursor: pointer; }
+  /* line 107, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_buttons-icons.scss */
+  .icon-button:before {
+    padding: 10px;
+    color: #fcfcfc; }
+
+/* line 115, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_buttons-icons.scss */
+.icon-before:before {
+  padding-right: 10px; }
+
+/* line 123, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_buttons-icons.scss */
+.icon-after:before {
+  content: none !important; }
+/* line 124, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_buttons-icons.scss */
+.icon-after:after {
+  padding-left: 10px; }
+
+/* line 131, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_buttons-icons.scss */
+.i-move:before {
+  content: '\f047'; }
+
+/* line 132, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_buttons-icons.scss */
+.icon-after.i-move:after {
+  content: '\f047'; }
+
+/* line 134, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_buttons-icons.scss */
+.i-copy:before {
+  content: '\f0c5'; }
+
+/* line 135, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_buttons-icons.scss */
+.icon-after.i-copy:after {
+  content: '\f0c5'; }
+
+/* line 137, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_buttons-icons.scss */
+.i-menu:before, .nav-toggle:before {
+  content: '\f0c9'; }
+
+/* line 138, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_buttons-icons.scss */
+.icon-after.i-menu:after, .icon-after.nav-toggle:after {
+  content: '\f0c9'; }
+
+/* line 140, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_buttons-icons.scss */
+.i-calendar:before {
+  content: '\f073'; }
+
+/* line 141, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_buttons-icons.scss */
+.icon-after.i-calendar:after {
+  content: '\f073'; }
+
+/* line 143, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_buttons-icons.scss */
+.i-camera:before {
+  content: '\f030'; }
+
+/* line 144, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_buttons-icons.scss */
+.icon-after.i-camera:after {
+  content: '\f030'; }
+
+/* line 146, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_buttons-icons.scss */
+.i-yes:before {
+  content: '\f00c'; }
+
+/* line 147, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_buttons-icons.scss */
+.icon-after.i-yes:after {
+  content: '\f00c'; }
+
+/* line 149, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_buttons-icons.scss */
+.i-settings:before {
+  content: '\f013'; }
+
+/* line 150, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_buttons-icons.scss */
+.icon-after.i-settings:after {
+  content: '\f013'; }
+
+/* line 152, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_buttons-icons.scss */
+.i-feedback:before {
+  content: '\f086'; }
+
+/* line 153, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_buttons-icons.scss */
+.icon-after.i-feedback:after {
+  content: '\f086'; }
+
+/* line 155, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_buttons-icons.scss */
+.i-email:before {
+  content: '\f003'; }
+
+/* line 156, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_buttons-icons.scss */
+.icon-after.i-email:after {
+  content: '\f003'; }
+
+/* line 158, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_buttons-icons.scss */
+.i-warning:before {
+  content: '\f12a'; }
+
+/* line 159, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_buttons-icons.scss */
+.icon-after.i-warning:after {
+  content: '\f12a'; }
+
+/* line 161, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_buttons-icons.scss */
+.i-minus:before {
+  content: '\f068'; }
+
+/* line 162, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_buttons-icons.scss */
+.icon-after.i-minus:after {
+  content: '\f068'; }
+
+/* line 164, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_buttons-icons.scss */
+.i-plus:before {
+  content: '\f067'; }
+
+/* line 165, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_buttons-icons.scss */
+.icon-after.i-plus:after {
+  content: '\f067'; }
+
+/* line 167, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_buttons-icons.scss */
+.i-closed:before {
+  content: '\f147'; }
+
+/* line 168, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_buttons-icons.scss */
+.icon-after.i-closed:after {
+  content: '\f147'; }
+
+/* line 170, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_buttons-icons.scss */
+.i-open:before {
+  content: '\f196'; }
+
+/* line 171, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_buttons-icons.scss */
+.icon-after.i-open:after {
+  content: '\f196'; }
+
+/* line 173, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_buttons-icons.scss */
+.i-refresh:before {
+  content: '\f021'; }
+
+/* line 174, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_buttons-icons.scss */
+.icon-after.i-refresh:after {
+  content: '\f021'; }
+
+/* line 176, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_buttons-icons.scss */
+.i-search:before {
+  content: '\f002'; }
+
+/* line 177, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_buttons-icons.scss */
+.icon-after.i-search:after {
+  content: '\f002'; }
+
+/* line 179, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_buttons-icons.scss */
+.i-signin:before {
+  content: '\f090'; }
+
+/* line 180, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_buttons-icons.scss */
+.icon-after.i-signin:after {
+  content: '\f090'; }
+
+/* line 182, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_buttons-icons.scss */
+.i-signout:before {
+  content: '\f08b'; }
+
+/* line 183, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_buttons-icons.scss */
+.icon-after.i-signout:after {
+  content: '\f08b'; }
+
+/* line 185, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_buttons-icons.scss */
+.i-close:before {
+  content: '\f00d'; }
+
+/* line 186, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_buttons-icons.scss */
+.icon-after.i-close:after {
+  content: '\f00d'; }
+
+/* line 188, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_buttons-icons.scss */
+.i-delete:before {
+  content: '\f014'; }
+
+/* line 189, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_buttons-icons.scss */
+.icon-after.i-delete:after {
+  content: '\f014'; }
+
+/* line 191, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_buttons-icons.scss */
+.i-user:before {
+  content: '\f007'; }
+
+/* line 192, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_buttons-icons.scss */
+.icon-after.i-user:after {
+  content: '\f007'; }
+
+/* line 194, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_buttons-icons.scss */
+.i-facebook:before {
+  content: '\f09a'; }
+
+/* line 195, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_buttons-icons.scss */
+.icon-after.i-facebook:after {
+  content: '\f09a'; }
+
+/* line 197, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_buttons-icons.scss */
+.i-twitter:before {
+  content: '\f099'; }
+
+/* line 198, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_buttons-icons.scss */
+.icon-after.i-twitter:after {
+  content: '\f099'; }
+
+/* line 200, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_buttons-icons.scss */
+.i-android:before {
+  content: '\f17b'; }
+
+/* line 201, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_buttons-icons.scss */
+.icon-after.i-android:after {
+  content: '\f17b'; }
+
+/* line 203, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_buttons-icons.scss */
+.i-apple:before {
+  content: '\f179'; }
+
+/* line 204, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_buttons-icons.scss */
+.icon-after.i-apple:after {
+  content: '\f179'; }
+
+/* line 206, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_buttons-icons.scss */
+.i-github:before {
+  content: '\f09b'; }
+
+/* line 207, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_buttons-icons.scss */
+.icon-after.i-github:after {
+  content: '\f09b'; }
+
+/* line 209, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_buttons-icons.scss */
+.i-rss:before {
+  content: '\f09e'; }
+
+/* line 210, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_buttons-icons.scss */
+.icon-after.i-rss:after {
+  content: '\f09e'; }
+
+/* line 212, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_buttons-icons.scss */
+.i-tags:before {
+  content: '\f02c'; }
+
+/* line 213, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_buttons-icons.scss */
+.icon-after.i-tags:after {
+  content: '\f02c'; }
+
+/* line 215, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_buttons-icons.scss */
+.i-codepen:before {
+  content: '\f1cb'; }
+
+/* line 216, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_buttons-icons.scss */
+.icon-after.i-codepen:after {
+  content: '\f1cb'; }
+
+/* line 218, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_buttons-icons.scss */
+.i-mobile:before {
+  content: '\f10b'; }
+
+/* line 219, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_buttons-icons.scss */
+.icon-after.i-mobile:after {
+  content: '\f10b'; }
+
+/* line 221, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_buttons-icons.scss */
+.i-forward:before {
+  content: '\f04e'; }
+
+/* line 222, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_buttons-icons.scss */
+.icon-after.i-forward:after {
+  content: '\f04e'; }
+
+/* navigation and menus */
+/* line 42, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_nav-menu.scss */
+nav ul, nav ol {
+  margin: 0px;
+  padding: 0px;
+  border: none;
+  outline: none;
+  list-style: none; }
+  /* line 35, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_nav-menu.scss */
+  nav ul li, nav ol li {
+    margin: 0px;
+    padding: 0px; }
+
+/* line 43, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_nav-menu.scss */
+nav {
+  position: relative; }
+  /* line 45, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_nav-menu.scss */
+  nav li {
+    display: inline-block;
+    position: relative; }
+  /* line 49, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_nav-menu.scss */
+  nav a {
+    display: block;
+    padding: 0.75em 0px; }
+
+/* line 55, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_nav-menu.scss */
+nav[role="main"] {
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box; }
+  @media screen and (max-width: 479px) {
+    /* line 55, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_nav-menu.scss */
+    nav[role="main"] {
+      display: none; } }
+  /* line 58, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_nav-menu.scss */
+  nav[role="main"] a {
+    width: 30%;
+    float: left;
+    margin-right: 3%;
+    border: none;
+    padding: 0.75em 0px;
+    background-image: -webkit-linear-gradient(left, #40427a 33%, #262748 33%, #262748 66%, #0c0c16 66%);
+    background-image: -moz-linear-gradient(left, #40427a 33%, #262748 33%, #262748 66%, #0c0c16 66%);
+    background-image: -ms-linear-gradient(left, #40427a 33%, #262748 33%, #262748 66%, #0c0c16 66%);
+    background-image: -o-linear-gradient(left, #40427a 33%, #262748 33%, #262748 66%, #0c0c16 66%);
+    background-image: linear-gradient(left, #40427a 33%, #262748 34%, #262748 66%, #1d1e37 67%);
+    background-repeat: no-repeat;
+    background-size: 100% 4px;
+    background-position: left top;
+    font-family: "Playball", cursive;
+    font-size: 1.4em; }
+    @media screen and (min-width: 860px) {
+      /* line 58, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_nav-menu.scss */
+      nav[role="main"] a {
+        width: 100%;
+        float: none;
+        margin: 0px;
+        padding: 0.75em 0px;
+        background-image: -webkit-linear-gradient(left, #40427a 33%, #262748 33%, #262748 66%, #0c0c16 66%);
+        background-image: -moz-linear-gradient(left, #40427a 33%, #262748 33%, #262748 66%, #0c0c16 66%);
+        background-image: -ms-linear-gradient(left, #40427a 33%, #262748 33%, #262748 66%, #0c0c16 66%);
+        background-image: -o-linear-gradient(left, #40427a 33%, #262748 33%, #262748 66%, #0c0c16 66%);
+        background-image: linear-gradient(left, #40427a 33%, #262748 34%, #262748 66%, #1d1e37 67%);
+        background-repeat: no-repeat;
+        background-size: 100% 8px;
+        background-position: left bottom;
+        font-size: 2em; } }
+    /* line 70, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_nav-menu.scss */
+    nav[role="main"] a:nth-child(3) {
+      width: 34%;
+      margin-right: 0px; }
+      @media screen and (min-width: 860px) {
+        /* line 70, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_nav-menu.scss */
+        nav[role="main"] a:nth-child(3) {
+          width: 100%; } }
+    /* line 74, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_nav-menu.scss */
+    nav[role="main"] a:nth-child(4) {
+      display: none; }
+      @media screen and (min-width: 860px) {
+        /* line 74, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_nav-menu.scss */
+        nav[role="main"] a:nth-child(4) {
+          display: block; } }
+    /* line 80, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_nav-menu.scss */
+    nav[role="main"] a:nth-child(3n-2) {
+      padding: 0.75em 0px;
+      background-image: -webkit-linear-gradient(left, #934769 33%, #5f2e44 33%, #5f2e44 66%, #2b151f 66%);
+      background-image: -moz-linear-gradient(left, #934769 33%, #5f2e44 33%, #5f2e44 66%, #2b151f 66%);
+      background-image: -ms-linear-gradient(left, #934769 33%, #5f2e44 33%, #5f2e44 66%, #2b151f 66%);
+      background-image: -o-linear-gradient(left, #934769 33%, #5f2e44 33%, #5f2e44 66%, #2b151f 66%);
+      background-image: linear-gradient(left, #934769 33%, #5f2e44 34%, #5f2e44 66%, #4e2638 67%);
+      background-repeat: no-repeat;
+      background-size: 100% 4px;
+      background-position: left top;
+      color: #5f2e44; }
+      @media screen and (min-width: 860px) {
+        /* line 80, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_nav-menu.scss */
+        nav[role="main"] a:nth-child(3n-2) {
+          padding: 0.75em 0px;
+          background-image: -webkit-linear-gradient(left, #934769 33%, #5f2e44 33%, #5f2e44 66%, #2b151f 66%);
+          background-image: -moz-linear-gradient(left, #934769 33%, #5f2e44 33%, #5f2e44 66%, #2b151f 66%);
+          background-image: -ms-linear-gradient(left, #934769 33%, #5f2e44 33%, #5f2e44 66%, #2b151f 66%);
+          background-image: -o-linear-gradient(left, #934769 33%, #5f2e44 33%, #5f2e44 66%, #2b151f 66%);
+          background-image: linear-gradient(left, #934769 33%, #5f2e44 34%, #5f2e44 66%, #4e2638 67%);
+          background-repeat: no-repeat;
+          background-size: 100% 8px;
+          background-position: left bottom; } }
+      /* line 86, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_nav-menu.scss */
+      nav[role="main"] a:nth-child(3n-2):hover {
+        color: #96496b; }
+    /* line 90, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_nav-menu.scss */
+    nav[role="main"] a:nth-child(3n-1) {
+      padding: 0.75em 0px;
+      background-image: -webkit-linear-gradient(left, #c66878 33%, #a43e4f 33%, #a43e4f 66%, #6c2934 66%);
+      background-image: -moz-linear-gradient(left, #c66878 33%, #a43e4f 33%, #a43e4f 66%, #6c2934 66%);
+      background-image: -ms-linear-gradient(left, #c66878 33%, #a43e4f 33%, #a43e4f 66%, #6c2934 66%);
+      background-image: -o-linear-gradient(left, #c66878 33%, #a43e4f 33%, #a43e4f 66%, #6c2934 66%);
+      background-image: linear-gradient(left, #c66878 33%, #a43e4f 34%, #a43e4f 66%, #913746 67%);
+      background-repeat: no-repeat;
+      background-size: 100% 4px;
+      background-position: left top;
+      color: #a43e4f; }
+      @media screen and (min-width: 860px) {
+        /* line 90, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_nav-menu.scss */
+        nav[role="main"] a:nth-child(3n-1) {
+          padding: 0.75em 0px;
+          background-image: -webkit-linear-gradient(left, #c66878 33%, #a43e4f 33%, #a43e4f 66%, #6c2934 66%);
+          background-image: -moz-linear-gradient(left, #c66878 33%, #a43e4f 33%, #a43e4f 66%, #6c2934 66%);
+          background-image: -ms-linear-gradient(left, #c66878 33%, #a43e4f 33%, #a43e4f 66%, #6c2934 66%);
+          background-image: -o-linear-gradient(left, #c66878 33%, #a43e4f 33%, #a43e4f 66%, #6c2934 66%);
+          background-image: linear-gradient(left, #c66878 33%, #a43e4f 34%, #a43e4f 66%, #913746 67%);
+          background-repeat: no-repeat;
+          background-size: 100% 8px;
+          background-position: left bottom; } }
+      /* line 96, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_nav-menu.scss */
+      nav[role="main"] a:nth-child(3n-1):hover {
+        color: #c76c7b; }
+    /* line 100, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_nav-menu.scss */
+    nav[role="main"] a:nth-child(3n) {
+      padding: 0.75em 0px;
+      background-image: -webkit-linear-gradient(left, #cd9e76 33%, #b47742 33%, #b47742 66%, #7c522d 66%);
+      background-image: -moz-linear-gradient(left, #cd9e76 33%, #b47742 33%, #b47742 66%, #7c522d 66%);
+      background-image: -ms-linear-gradient(left, #cd9e76 33%, #b47742 33%, #b47742 66%, #7c522d 66%);
+      background-image: -o-linear-gradient(left, #cd9e76 33%, #b47742 33%, #b47742 66%, #7c522d 66%);
+      background-image: linear-gradient(left, #cd9e76 33%, #b47742 34%, #b47742 66%, #a16b3b 67%);
+      background-repeat: no-repeat;
+      background-size: 100% 4px;
+      background-position: left top;
+      color: #b47742; }
+      @media screen and (min-width: 860px) {
+        /* line 100, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_nav-menu.scss */
+        nav[role="main"] a:nth-child(3n) {
+          padding: 0.75em 0px;
+          background-image: -webkit-linear-gradient(left, #cd9e76 33%, #b47742 33%, #b47742 66%, #7c522d 66%);
+          background-image: -moz-linear-gradient(left, #cd9e76 33%, #b47742 33%, #b47742 66%, #7c522d 66%);
+          background-image: -ms-linear-gradient(left, #cd9e76 33%, #b47742 33%, #b47742 66%, #7c522d 66%);
+          background-image: -o-linear-gradient(left, #cd9e76 33%, #b47742 33%, #b47742 66%, #7c522d 66%);
+          background-image: linear-gradient(left, #cd9e76 33%, #b47742 34%, #b47742 66%, #a16b3b 67%);
+          background-repeat: no-repeat;
+          background-size: 100% 8px;
+          background-position: left bottom; } }
+      /* line 106, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_nav-menu.scss */
+      nav[role="main"] a:nth-child(3n):hover {
+        color: #cea17a; }
+    /* line 110, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_nav-menu.scss */
+    nav[role="main"] a[href*="mailto"] {
+      padding: 0.75em 0px;
+      background-image: -webkit-linear-gradient(left, #86c6bc 33%, #52ae9f 33%, #52ae9f 66%, #397a70 66%);
+      background-image: -moz-linear-gradient(left, #86c6bc 33%, #52ae9f 33%, #52ae9f 66%, #397a70 66%);
+      background-image: -ms-linear-gradient(left, #86c6bc 33%, #52ae9f 33%, #52ae9f 66%, #397a70 66%);
+      background-image: -o-linear-gradient(left, #86c6bc 33%, #52ae9f 33%, #52ae9f 66%, #397a70 66%);
+      background-image: linear-gradient(left, #86c6bc 33%, #52ae9f 34%, #52ae9f 66%, #4a9d8f 67%);
+      background-repeat: no-repeat;
+      background-size: 100% 4px;
+      background-position: left top;
+      color: #52ae9f; }
+      @media screen and (min-width: 860px) {
+        /* line 110, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_nav-menu.scss */
+        nav[role="main"] a[href*="mailto"] {
+          padding: 0.75em 0px;
+          background-image: -webkit-linear-gradient(left, #86c6bc 33%, #52ae9f 33%, #52ae9f 66%, #397a70 66%);
+          background-image: -moz-linear-gradient(left, #86c6bc 33%, #52ae9f 33%, #52ae9f 66%, #397a70 66%);
+          background-image: -ms-linear-gradient(left, #86c6bc 33%, #52ae9f 33%, #52ae9f 66%, #397a70 66%);
+          background-image: -o-linear-gradient(left, #86c6bc 33%, #52ae9f 33%, #52ae9f 66%, #397a70 66%);
+          background-image: linear-gradient(left, #86c6bc 33%, #52ae9f 34%, #52ae9f 66%, #4a9d8f 67%);
+          background-repeat: no-repeat;
+          background-size: 100% 8px;
+          background-position: left bottom; } }
+      /* line 116, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_nav-menu.scss */
+      nav[role="main"] a[href*="mailto"]:hover {
+        color: #8ac8be; }
+
+/* line 124, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_nav-menu.scss */
+.nav-social a {
+  border: none; }
+/* line 125, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_nav-menu.scss */
+.nav-social a[href*="twitter"], .nav-social a[href*="twitter"]:before {
+  color: #52ae9f; }
+/* line 126, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_nav-menu.scss */
+.nav-social a[href*="lanyrd"], .nav-social a[href*="lanyrd"]:before {
+  color: #262748; }
+/* line 127, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_nav-menu.scss */
+.nav-social a[href*="github"], .nav-social a[href*="github"]:before {
+  color: #5f2e44; }
+/* line 128, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_nav-menu.scss */
+.nav-social a[href*="mailto"], .nav-social a[href*="mailto"]:before {
+  color: #a43e4f; }
+/* line 129, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_nav-menu.scss */
+.nav-social a[href*="codepen"], .nav-social a[href*="codepen"]:before {
+  color: #a43e4f; }
+/* line 130, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_nav-menu.scss */
+.nav-social a[href*="feed"], .nav-social a[href*="feed"]:before {
+  color: #b47742; }
+
+/* line 132, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_nav-menu.scss */
+section .nav-social {
+  padding: 0.75em 0.375em; }
+  @media screen and (max-width: 859px) {
+    /* line 132, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_nav-menu.scss */
+    section .nav-social {
+      position: absolute;
+      top: 1.5em;
+      right: 0px; } }
+  /* line 137, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_nav-menu.scss */
+  section .nav-social a {
+    display: inline-block; }
+    @media screen and (min-width: 480px) {
+      /* line 139, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_nav-menu.scss */
+      section .nav-social a:before {
+        font-size: 30px;
+        padding-right: 15px; } }
+    @media screen and (min-width: 860px) {
+      /* line 139, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_nav-menu.scss */
+      section .nav-social a:before {
+        font-size: 40px;
+        padding-right: 20px; } }
+
+/* line 145, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_nav-menu.scss */
+footer .nav-social {
+  margin: 0px;
+  padding: 0px;
+  border: none;
+  outline: none;
+  list-style: none; }
+  /* line 35, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_nav-menu.scss */
+  footer .nav-social li {
+    margin: 0px;
+    padding: 0px; }
+  /* line 147, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_nav-menu.scss */
+  footer .nav-social a, footer .nav-social span {
+    display: block;
+    padding: 0.75em 0px;
+    background-image: -webkit-linear-gradient(left, #40427a 33%, #262748 33%, #262748 66%, #0c0c16 66%);
+    background-image: -moz-linear-gradient(left, #40427a 33%, #262748 33%, #262748 66%, #0c0c16 66%);
+    background-image: -ms-linear-gradient(left, #40427a 33%, #262748 33%, #262748 66%, #0c0c16 66%);
+    background-image: -o-linear-gradient(left, #40427a 33%, #262748 33%, #262748 66%, #0c0c16 66%);
+    background-image: linear-gradient(left, #40427a 33%, #262748 34%, #262748 66%, #1d1e37 67%);
+    background-repeat: no-repeat;
+    background-size: 100% 4px;
+    background-position: left bottom; }
+  /* line 151, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_nav-menu.scss */
+  footer .nav-social a[href*="twitter"] {
+    padding: 0.75em 0px;
+    background-image: -webkit-linear-gradient(left, #86c6bc 33%, #52ae9f 33%, #52ae9f 66%, #397a70 66%);
+    background-image: -moz-linear-gradient(left, #86c6bc 33%, #52ae9f 33%, #52ae9f 66%, #397a70 66%);
+    background-image: -ms-linear-gradient(left, #86c6bc 33%, #52ae9f 33%, #52ae9f 66%, #397a70 66%);
+    background-image: -o-linear-gradient(left, #86c6bc 33%, #52ae9f 33%, #52ae9f 66%, #397a70 66%);
+    background-image: linear-gradient(left, #86c6bc 33%, #52ae9f 34%, #52ae9f 66%, #4a9d8f 67%);
+    background-repeat: no-repeat;
+    background-size: 100% 4px;
+    background-position: left bottom; }
+  /* line 152, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_nav-menu.scss */
+  footer .nav-social a[href*="github"] {
+    padding: 0.75em 0px;
+    background-image: -webkit-linear-gradient(left, #934769 33%, #5f2e44 33%, #5f2e44 66%, #2b151f 66%);
+    background-image: -moz-linear-gradient(left, #934769 33%, #5f2e44 33%, #5f2e44 66%, #2b151f 66%);
+    background-image: -ms-linear-gradient(left, #934769 33%, #5f2e44 33%, #5f2e44 66%, #2b151f 66%);
+    background-image: -o-linear-gradient(left, #934769 33%, #5f2e44 33%, #5f2e44 66%, #2b151f 66%);
+    background-image: linear-gradient(left, #934769 33%, #5f2e44 34%, #5f2e44 66%, #4e2638 67%);
+    background-repeat: no-repeat;
+    background-size: 100% 4px;
+    background-position: left bottom; }
+  /* line 153, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_nav-menu.scss */
+  footer .nav-social a[href*="mailto"] {
+    padding: 0.75em 0px;
+    background-image: -webkit-linear-gradient(left, #c66878 33%, #a43e4f 33%, #a43e4f 66%, #6c2934 66%);
+    background-image: -moz-linear-gradient(left, #c66878 33%, #a43e4f 33%, #a43e4f 66%, #6c2934 66%);
+    background-image: -ms-linear-gradient(left, #c66878 33%, #a43e4f 33%, #a43e4f 66%, #6c2934 66%);
+    background-image: -o-linear-gradient(left, #c66878 33%, #a43e4f 33%, #a43e4f 66%, #6c2934 66%);
+    background-image: linear-gradient(left, #c66878 33%, #a43e4f 34%, #a43e4f 66%, #913746 67%);
+    background-repeat: no-repeat;
+    background-size: 100% 4px;
+    background-position: left bottom; }
+  /* line 154, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_nav-menu.scss */
+  footer .nav-social a[href*="codepen"] {
+    padding: 0.75em 0px;
+    background-image: -webkit-linear-gradient(left, #c66878 33%, #a43e4f 33%, #a43e4f 66%, #6c2934 66%);
+    background-image: -moz-linear-gradient(left, #c66878 33%, #a43e4f 33%, #a43e4f 66%, #6c2934 66%);
+    background-image: -ms-linear-gradient(left, #c66878 33%, #a43e4f 33%, #a43e4f 66%, #6c2934 66%);
+    background-image: -o-linear-gradient(left, #c66878 33%, #a43e4f 33%, #a43e4f 66%, #6c2934 66%);
+    background-image: linear-gradient(left, #c66878 33%, #a43e4f 34%, #a43e4f 66%, #913746 67%);
+    background-repeat: no-repeat;
+    background-size: 100% 4px;
+    background-position: left bottom; }
+  /* line 155, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_nav-menu.scss */
+  footer .nav-social a[href*="feed"] {
+    padding: 0.75em 0px;
+    background-image: -webkit-linear-gradient(left, #cd9e76 33%, #b47742 33%, #b47742 66%, #7c522d 66%);
+    background-image: -moz-linear-gradient(left, #cd9e76 33%, #b47742 33%, #b47742 66%, #7c522d 66%);
+    background-image: -ms-linear-gradient(left, #cd9e76 33%, #b47742 33%, #b47742 66%, #7c522d 66%);
+    background-image: -o-linear-gradient(left, #cd9e76 33%, #b47742 33%, #b47742 66%, #7c522d 66%);
+    background-image: linear-gradient(left, #cd9e76 33%, #b47742 34%, #b47742 66%, #a16b3b 67%);
+    background-repeat: no-repeat;
+    background-size: 100% 4px;
+    background-position: left bottom; }
+  /* line 157, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_nav-menu.scss */
+  footer .nav-social a[href*="http"]:before {
+    padding-right: 0.99em; }
+
+@media screen and (min-width: 640px) {
+  /* line 163, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_nav-menu.scss */
+  .nav-toggle {
+    display: none; } }
+
+/* line 170, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_nav-menu.scss */
+.nav-block .nav-toggle:before, .nav-block-vertical .nav-toggle:before {
+  padding: 8px 12px;
+  background-color: #6a6a6a;
+  color: #fcfcfc; }
+/* line 175, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_nav-menu.scss */
+.nav-block .nav-toggle:hover:before, .nav-block-vertical .nav-toggle:hover:before {
+  background-color: #373737;
+  color: #fcfcfc; }
+
+/* line 201, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_nav-menu.scss */
+.nav-breadcrumb li:not(:last-child):after {
+  content: ">"; }
+/* line 202, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_nav-menu.scss */
+.nav-breadcrumb li a, .nav-breadcrumb li span {
+  padding: 0.75em 0.75em 0.75em 1.5em; }
+/* line 203, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_nav-menu.scss */
+.nav-breadcrumb li a {
+  border-width: 0px; }
+
+/* line 210, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_nav-menu.scss */
+.nav-pagination li a, .nav-pagination-block li a {
+  border-width: 0px; }
+/* line 212, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_nav-menu.scss */
+.nav-pagination li:first-child a:before, .nav-pagination-block li:first-child a:before {
+  padding-right: 0.5em;
+  content: "|<<"; }
+/* line 213, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_nav-menu.scss */
+.nav-pagination li:last-child a:after, .nav-pagination-block li:last-child a:after {
+  padding-left: 0.5em;
+  content: ">>|"; }
+/* line 214, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_nav-menu.scss */
+.nav-pagination li a[rel*="prev"]:before, .nav-pagination-block li a[rel*="prev"]:before {
+  padding-right: 0.5em;
+  content: "<"; }
+/* line 215, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_nav-menu.scss */
+.nav-pagination li a[rel*="next"]:after, .nav-pagination-block li a[rel*="next"]:after {
+  padding-left: 0.5em;
+  content: ">"; }
+
+/* line 222, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_nav-menu.scss */
+.nav-pagination-block li {
+  margin-right: 0.75em; }
+  /* line 224, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_nav-menu.scss */
+  .nav-pagination-block li a {
+    background-color: #6a6a6a;
+    color: #fcfcfc; }
+    /* line 227, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_nav-menu.scss */
+    .nav-pagination-block li a:hover {
+      background-color: #373737; }
+  /* line 229, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_nav-menu.scss */
+  .nav-pagination-block li span {
+    display: inline-block;
+    padding: 0.75em 1.5em;
+    background-color: #f3f3e9; }
+
+/*2. MENUS~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/* line 240, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_nav-menu.scss */
+menu[type="toolbar"] {
+  list-style: none; }
+
+/* line 241, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_nav-menu.scss */
+menu[type="toolbar"] button {
+  background: none;
+  border: 4px solid #6a6a6a;
+  padding: 3px;
+  margin: 0px; }
+
+/* html, body, header, footer & basic main layout */
+/* line 10, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_main-partials.scss */
+html {
+  background-color: #f3f3e9; }
+
+/* line 11, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_main-partials.scss */
+body {
+  width: 100%;
+  overflow: auto;
+  font-family: "Adventor", Helvetica, Arial, sans-serif;
+  font-size: 84%;
+  font-color: #090911;
+  line-height: 1; }
+  @media screen and (min-width: 640px) {
+    /* line 11, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_main-partials.scss */
+    body {
+      font-size: 90%; } }
+  @media screen and (min-width: 860px) {
+    /* line 11, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_main-partials.scss */
+    body {
+      font-size: 100%; } }
+  @media screen and (min-width: 1280px) {
+    /* line 11, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_main-partials.scss */
+    body {
+      font-size: 112%; } }
+
+/* line 22, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_main-partials.scss */
+body > div {
+  position: relative;
+  overflow: auto; }
+
+/* line 26, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_main-partials.scss */
+header[role="main"],
+section[role="main"],
+body > div > footer {
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box; }
+
+/* line 32, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_main-partials.scss */
+header[role="main"], body > div > footer {
+  width: 100%;
+  float: none; }
+  @media screen and (min-width: 860px) {
+    /* line 32, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_main-partials.scss */
+    header[role="main"], body > div > footer {
+      width: 38%;
+      float: left;
+      text-align: right; } }
+
+/* line 37, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_main-partials.scss */
+header[role="main"] {
+  overflow: auto;
+  padding: 0.75em 0.75em; }
+  @media screen and (min-width: 860px) {
+    /* line 37, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_main-partials.scss */
+    header[role="main"] {
+      padding: 0px 1.5em; } }
+
+/* line 43, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_main-partials.scss */
+body > div > footer {
+  padding: 0.75em 1.5em 0px;
+  position: relative;
+  bottom: 0px; }
+  @media screen and (min-width: 860px) {
+    /* line 43, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_main-partials.scss */
+    body > div > footer {
+      position: absolute;
+      bottom: 0px; } }
+  /* line 49, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_main-partials.scss */
+  body > div > footer p {
+    width: 100%;
+    overflow: hidden;
+    padding-top: 1.5em;
+    font-size: 0.9em;
+    text-align: right; }
+    /* line 54, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_main-partials.scss */
+    body > div > footer p span {
+      float: left; }
+
+/*2.2 Main content container*/
+/* line 59, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_main-partials.scss */
+section[role="main"] {
+  width: 100%;
+  float: none;
+  padding: 1.5em 1.5em;
+  background-color: rgba(252, 252, 252, 0.9);
+  border: 4px solid #9d9d9d;
+  border-width: 4px 0px; }
+  @media screen and (min-width: 860px) {
+    /* line 59, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_main-partials.scss */
+    section[role="main"] {
+      width: 62%;
+      float: right;
+      min-height: 1000px;
+      border-width: 0px 0px 0px 4px; } }
+
+/*posts*/
+/* line 1, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_articles.scss */
+article {
+  overflow: hidden;
+  padding: 0.75em 0px;
+  background-image: -webkit-linear-gradient(left, #0c0c16 33%, #262748 33%, #262748 66%, #40427a 66%);
+  background-image: -moz-linear-gradient(left, #0c0c16 33%, #262748 33%, #262748 66%, #40427a 66%);
+  background-image: -o-linear-gradient(left, #0c0c16 33%, #262748 33%, #262748 66%, #40427a 66%);
+  background-image: -ms-linear-gradient(left, #0c0c16 33%, #262748 33%, #262748 66%, #40427a 66%);
+  background-image: linear-gradient(left, #0c0c16 33%, #262748 33%, #262748 66%, #40427a 66%);
+  background-repeat: no-repeat;
+  background-size: 100% 4px;
+  background-position: left top; }
+  @media screen and (min-width: 860px) {
+    /* line 1, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_articles.scss */
+    article {
+      margin: 1.5em 0px;
+      padding: 0.75em 0px;
+      background-image: -webkit-linear-gradient(left, #0c0c16 33%, #262748 33%, #262748 66%, #40427a 66%);
+      background-image: -moz-linear-gradient(left, #0c0c16 33%, #262748 33%, #262748 66%, #40427a 66%);
+      background-image: -o-linear-gradient(left, #0c0c16 33%, #262748 33%, #262748 66%, #40427a 66%);
+      background-image: -ms-linear-gradient(left, #0c0c16 33%, #262748 33%, #262748 66%, #40427a 66%);
+      background-image: linear-gradient(left, #0c0c16 33%, #262748 33%, #262748 66%, #40427a 66%);
+      background-repeat: no-repeat;
+      background-size: 100% 8px;
+      background-position: left top; } }
+  /* line 9, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_articles.scss */
+  article .post-tags {
+    margin: 0.75em 0px;
+    text-align: right;
+    padding: 0.75em 0px;
+    background-image: -webkit-linear-gradient(left, #0c0c16 33%, #262748 33%, #262748 66%, #40427a 66%);
+    background-image: -moz-linear-gradient(left, #0c0c16 33%, #262748 33%, #262748 66%, #40427a 66%);
+    background-image: -o-linear-gradient(left, #0c0c16 33%, #262748 33%, #262748 66%, #40427a 66%);
+    background-image: -ms-linear-gradient(left, #0c0c16 33%, #262748 33%, #262748 66%, #40427a 66%);
+    background-image: linear-gradient(left, #0c0c16 33%, #262748 33%, #262748 66%, #40427a 66%);
+    background-repeat: no-repeat;
+    background-size: 100% 4px;
+    background-position: left top; }
+    /* line 13, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_articles.scss */
+    article .post-tags a {
+      margin-left: 6px; }
+
+/*dif categories == dif colours*/
+/* line 18, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_articles.scss */
+article.brain-dribble {
+  padding: 0.75em 0px;
+  background-image: -webkit-linear-gradient(left, #2b151f 33%, #5f2e44 33%, #5f2e44 66%, #934769 66%);
+  background-image: -moz-linear-gradient(left, #2b151f 33%, #5f2e44 33%, #5f2e44 66%, #934769 66%);
+  background-image: -o-linear-gradient(left, #2b151f 33%, #5f2e44 33%, #5f2e44 66%, #934769 66%);
+  background-image: -ms-linear-gradient(left, #2b151f 33%, #5f2e44 33%, #5f2e44 66%, #934769 66%);
+  background-image: linear-gradient(left, #2b151f 33%, #5f2e44 33%, #5f2e44 66%, #934769 66%);
+  background-repeat: no-repeat;
+  background-size: 100% 4px;
+  background-position: left top; }
+  @media screen and (min-width: 860px) {
+    /* line 18, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_articles.scss */
+    article.brain-dribble {
+      padding: 0.75em 0px;
+      background-image: -webkit-linear-gradient(left, #2b151f 33%, #5f2e44 33%, #5f2e44 66%, #934769 66%);
+      background-image: -moz-linear-gradient(left, #2b151f 33%, #5f2e44 33%, #5f2e44 66%, #934769 66%);
+      background-image: -o-linear-gradient(left, #2b151f 33%, #5f2e44 33%, #5f2e44 66%, #934769 66%);
+      background-image: -ms-linear-gradient(left, #2b151f 33%, #5f2e44 33%, #5f2e44 66%, #934769 66%);
+      background-image: linear-gradient(left, #2b151f 33%, #5f2e44 33%, #5f2e44 66%, #934769 66%);
+      background-repeat: no-repeat;
+      background-size: 100% 8px;
+      background-position: left top; } }
+  /* line 23, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_articles.scss */
+  article.brain-dribble .post-tags {
+    padding: 0.75em 0px;
+    background-image: -webkit-linear-gradient(left, #2b151f 33%, #5f2e44 33%, #5f2e44 66%, #934769 66%);
+    background-image: -moz-linear-gradient(left, #2b151f 33%, #5f2e44 33%, #5f2e44 66%, #934769 66%);
+    background-image: -o-linear-gradient(left, #2b151f 33%, #5f2e44 33%, #5f2e44 66%, #934769 66%);
+    background-image: -ms-linear-gradient(left, #2b151f 33%, #5f2e44 33%, #5f2e44 66%, #934769 66%);
+    background-image: linear-gradient(left, #2b151f 33%, #5f2e44 33%, #5f2e44 66%, #934769 66%);
+    background-repeat: no-repeat;
+    background-size: 100% 4px;
+    background-position: left top; }
+
+/* line 27, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_articles.scss */
+article.craft-code {
+  padding: 0.75em 0px;
+  background-image: -webkit-linear-gradient(left, #6c2934 33%, #a43e4f 33%, #a43e4f 66%, #c66878 66%);
+  background-image: -moz-linear-gradient(left, #6c2934 33%, #a43e4f 33%, #a43e4f 66%, #c66878 66%);
+  background-image: -o-linear-gradient(left, #6c2934 33%, #a43e4f 33%, #a43e4f 66%, #c66878 66%);
+  background-image: -ms-linear-gradient(left, #6c2934 33%, #a43e4f 33%, #a43e4f 66%, #c66878 66%);
+  background-image: linear-gradient(left, #6c2934 33%, #a43e4f 33%, #a43e4f 66%, #c66878 66%);
+  background-repeat: no-repeat;
+  background-size: 100% 4px;
+  background-position: left top; }
+  @media screen and (min-width: 860px) {
+    /* line 27, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_articles.scss */
+    article.craft-code {
+      padding: 0.75em 0px;
+      background-image: -webkit-linear-gradient(left, #6c2934 33%, #a43e4f 33%, #a43e4f 66%, #c66878 66%);
+      background-image: -moz-linear-gradient(left, #6c2934 33%, #a43e4f 33%, #a43e4f 66%, #c66878 66%);
+      background-image: -o-linear-gradient(left, #6c2934 33%, #a43e4f 33%, #a43e4f 66%, #c66878 66%);
+      background-image: -ms-linear-gradient(left, #6c2934 33%, #a43e4f 33%, #a43e4f 66%, #c66878 66%);
+      background-image: linear-gradient(left, #6c2934 33%, #a43e4f 33%, #a43e4f 66%, #c66878 66%);
+      background-repeat: no-repeat;
+      background-size: 100% 8px;
+      background-position: left top; } }
+  /* line 32, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_articles.scss */
+  article.craft-code .post-tags {
+    padding: 0.75em 0px;
+    background-image: -webkit-linear-gradient(left, #6c2934 33%, #a43e4f 33%, #a43e4f 66%, #c66878 66%);
+    background-image: -moz-linear-gradient(left, #6c2934 33%, #a43e4f 33%, #a43e4f 66%, #c66878 66%);
+    background-image: -o-linear-gradient(left, #6c2934 33%, #a43e4f 33%, #a43e4f 66%, #c66878 66%);
+    background-image: -ms-linear-gradient(left, #6c2934 33%, #a43e4f 33%, #a43e4f 66%, #c66878 66%);
+    background-image: linear-gradient(left, #6c2934 33%, #a43e4f 33%, #a43e4f 66%, #c66878 66%);
+    background-repeat: no-repeat;
+    background-size: 100% 4px;
+    background-position: left top; }
+
+/* line 36, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_articles.scss */
+article.speak-write-mentor {
+  padding: 0.75em 0px;
+  background-image: -webkit-linear-gradient(left, #7c522d 33%, #b47742 33%, #b47742 66%, #cd9e76 66%);
+  background-image: -moz-linear-gradient(left, #7c522d 33%, #b47742 33%, #b47742 66%, #cd9e76 66%);
+  background-image: -o-linear-gradient(left, #7c522d 33%, #b47742 33%, #b47742 66%, #cd9e76 66%);
+  background-image: -ms-linear-gradient(left, #7c522d 33%, #b47742 33%, #b47742 66%, #cd9e76 66%);
+  background-image: linear-gradient(left, #7c522d 33%, #b47742 33%, #b47742 66%, #cd9e76 66%);
+  background-repeat: no-repeat;
+  background-size: 100% 4px;
+  background-position: left top; }
+  @media screen and (min-width: 860px) {
+    /* line 36, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_articles.scss */
+    article.speak-write-mentor {
+      padding: 0.75em 0px;
+      background-image: -webkit-linear-gradient(left, #7c522d 33%, #b47742 33%, #b47742 66%, #cd9e76 66%);
+      background-image: -moz-linear-gradient(left, #7c522d 33%, #b47742 33%, #b47742 66%, #cd9e76 66%);
+      background-image: -o-linear-gradient(left, #7c522d 33%, #b47742 33%, #b47742 66%, #cd9e76 66%);
+      background-image: -ms-linear-gradient(left, #7c522d 33%, #b47742 33%, #b47742 66%, #cd9e76 66%);
+      background-image: linear-gradient(left, #7c522d 33%, #b47742 33%, #b47742 66%, #cd9e76 66%);
+      background-repeat: no-repeat;
+      background-size: 100% 8px;
+      background-position: left top; } }
+  /* line 41, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_articles.scss */
+  article.speak-write-mentor .post-tags {
+    padding: 0.75em 0px;
+    background-image: -webkit-linear-gradient(left, #7c522d 33%, #b47742 33%, #b47742 66%, #cd9e76 66%);
+    background-image: -moz-linear-gradient(left, #7c522d 33%, #b47742 33%, #b47742 66%, #cd9e76 66%);
+    background-image: -o-linear-gradient(left, #7c522d 33%, #b47742 33%, #b47742 66%, #cd9e76 66%);
+    background-image: -ms-linear-gradient(left, #7c522d 33%, #b47742 33%, #b47742 66%, #cd9e76 66%);
+    background-image: linear-gradient(left, #7c522d 33%, #b47742 33%, #b47742 66%, #cd9e76 66%);
+    background-repeat: no-repeat;
+    background-size: 100% 4px;
+    background-position: left top; }
+
+/* line 46, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_articles.scss */
+article.brain-dribble, article.craft-code, article.speak-write-mentor {
+  padding: 1.5em 0px; }
+
+/* line 48, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_articles.scss */
+.link-fullart {
+  display: block;
+  border: none;
+  text-align: right;
+  font-family: "Playball", cursive;
+  font-size: 1.3em; }
+
+/* line 57, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_articles.scss */
+.list-posts {
+  margin: 0px;
+  padding: 0px;
+  border: none;
+  outline: none;
+  list-style: none; }
+  /* line 35, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_nav-menu.scss */
+  .list-posts li {
+    margin: 0px;
+    padding: 0px; }
+  /* line 59, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_articles.scss */
+  .list-posts li {
+    overflow: auto;
+    padding: 0.75em 0px;
+    background-image: -webkit-linear-gradient(left, #0c0c16 33%, #262748 33%, #262748 66%, #40427a 66%);
+    background-image: -moz-linear-gradient(left, #0c0c16 33%, #262748 33%, #262748 66%, #40427a 66%);
+    background-image: -o-linear-gradient(left, #0c0c16 33%, #262748 33%, #262748 66%, #40427a 66%);
+    background-image: -ms-linear-gradient(left, #0c0c16 33%, #262748 33%, #262748 66%, #40427a 66%);
+    background-image: linear-gradient(left, #0c0c16 33%, #262748 33%, #262748 66%, #40427a 66%);
+    background-repeat: no-repeat;
+    background-size: 100% 4px;
+    background-position: left top; }
+    /* line 62, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_articles.scss */
+    .list-posts li .link-fullart {
+      float: none; }
+    /* line 63, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_articles.scss */
+    .list-posts li.brain-dribble {
+      padding: 0.75em 0px;
+      background-image: -webkit-linear-gradient(left, #2b151f 33%, #5f2e44 33%, #5f2e44 66%, #934769 66%);
+      background-image: -moz-linear-gradient(left, #2b151f 33%, #5f2e44 33%, #5f2e44 66%, #934769 66%);
+      background-image: -o-linear-gradient(left, #2b151f 33%, #5f2e44 33%, #5f2e44 66%, #934769 66%);
+      background-image: -ms-linear-gradient(left, #2b151f 33%, #5f2e44 33%, #5f2e44 66%, #934769 66%);
+      background-image: linear-gradient(left, #2b151f 33%, #5f2e44 33%, #5f2e44 66%, #934769 66%);
+      background-repeat: no-repeat;
+      background-size: 100% 4px;
+      background-position: left top; }
+      /* line 65, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_articles.scss */
+      .list-posts li.brain-dribble a h2, .list-posts li.brain-dribble a time, .list-posts li.brain-dribble .link-fullart {
+        border: none;
+        color: #5f2e44; }
+    /* line 67, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_articles.scss */
+    .list-posts li.craft-code {
+      padding: 0.75em 0px;
+      background-image: -webkit-linear-gradient(left, #6c2934 33%, #a43e4f 33%, #a43e4f 66%, #c66878 66%);
+      background-image: -moz-linear-gradient(left, #6c2934 33%, #a43e4f 33%, #a43e4f 66%, #c66878 66%);
+      background-image: -o-linear-gradient(left, #6c2934 33%, #a43e4f 33%, #a43e4f 66%, #c66878 66%);
+      background-image: -ms-linear-gradient(left, #6c2934 33%, #a43e4f 33%, #a43e4f 66%, #c66878 66%);
+      background-image: linear-gradient(left, #6c2934 33%, #a43e4f 33%, #a43e4f 66%, #c66878 66%);
+      background-repeat: no-repeat;
+      background-size: 100% 4px;
+      background-position: left top; }
+      /* line 69, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_articles.scss */
+      .list-posts li.craft-code a h2, .list-posts li.craft-code a time, .list-posts li.craft-code .link-fullart {
+        border: none;
+        color: #a43e4f; }
+    /* line 71, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_articles.scss */
+    .list-posts li.speak-write-mentor {
+      padding: 0.75em 0px;
+      background-image: -webkit-linear-gradient(left, #7c522d 33%, #b47742 33%, #b47742 66%, #cd9e76 66%);
+      background-image: -moz-linear-gradient(left, #7c522d 33%, #b47742 33%, #b47742 66%, #cd9e76 66%);
+      background-image: -o-linear-gradient(left, #7c522d 33%, #b47742 33%, #b47742 66%, #cd9e76 66%);
+      background-image: -ms-linear-gradient(left, #7c522d 33%, #b47742 33%, #b47742 66%, #cd9e76 66%);
+      background-image: linear-gradient(left, #7c522d 33%, #b47742 33%, #b47742 66%, #cd9e76 66%);
+      background-repeat: no-repeat;
+      background-size: 100% 4px;
+      background-position: left top; }
+      /* line 73, /Users/ruthjohn/src/Rumyras-Head/source/assets/stylesheets/sass/_articles.scss */
+      .list-posts li.speak-write-mentor a h2, .list-posts li.speak-write-mentor a time, .list-posts li.speak-write-mentor .link-fullart {
+        border: none;
+        color: #b47742; }
+
+/* PAGE LAYOUTS */
