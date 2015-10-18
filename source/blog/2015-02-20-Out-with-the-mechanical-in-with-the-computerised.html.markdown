@@ -15,8 +15,8 @@ I like to think I'm comfortable with new technology, that I'm a woman who embrac
 
 I always want to urge people to try new things, new things can be better, worried that those that are 'happy with what they have' could be missing out on better processes, saving time, seeing more awesome.
 
-<figure class="feature">
-	<img src="http://rumyrashead.com/wp-content/uploads/2015/02/oldnnew.jpg" alt="old mechanical janome sewing machine next to new computerised sewing machine">
+<figure class="media-feature">
+	<img src="media/oldnnew.jpg" alt="old mechanical janome sewing machine next to new computerised sewing machine">
 	<figcaption></figcaption>
 </figure>
 

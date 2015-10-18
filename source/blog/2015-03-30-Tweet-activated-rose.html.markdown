@@ -16,8 +16,8 @@ status: published
 
 <p>TLDR; I crocheted a rose, a couple of rows of which contained wire, I then sewed LEDs on the rose in a parallel circuit. This post describes how I made it flash when someone tweets with a specified string, head down to the bottom of the post if you don't care about the code, there's a cool video :)</p>
 
-<figure class="feature">
-	<img src="http://rumyrashead.com/wp-content/uploads/2015/03/featureCode.jpg" alt="Lit up crocheted rose, with equipment and code running to make it flash" />
+<figure class="media-feature">
+	<img src="media/featureCode.jpg" alt="Lit up crocheted rose, with equipment and code running to make it flash" />
 	<figcaption></figcaption>
 </figure>
 

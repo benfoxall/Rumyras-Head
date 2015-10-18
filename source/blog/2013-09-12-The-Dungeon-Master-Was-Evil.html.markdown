@@ -11,7 +11,7 @@ status: published
 ---
 
 <figure>
-	<img src="http://rumyrashead.com/wp-content/uploads/2013/09/dungeonmaster.jpg" />
+	<img src="media/dungeonmaster.jpg" />
 	<figcaption>The Dungeon Master</figcaption>
 </figure>
 
@@ -26,7 +26,7 @@ READMORE
 <h3>And it's all because of this guy:</h3>
 
 <figure>
-	<img src="http://rumyrashead.com/wp-content/uploads/2013/09/almenac.jpg" />
+	<img src="media/almenac.jpg" />
 	<figcaption>King Menator</figcaption>
 </figure>
 

@@ -6,7 +6,7 @@ category: brain-dribble
 status: published
 ---
 
-<figure class="feature">
+<figure class="media-feature">
 	<img src="http://farm4.staticflickr.com/3819/10578416714_0c47253263.jpg" />
 	<figcaption>Colorado View</figcaption>
 </figure>
