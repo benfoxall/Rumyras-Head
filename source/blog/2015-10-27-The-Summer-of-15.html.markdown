@@ -10,7 +10,7 @@ tags:
 status: published
 ---
 
-You may have noticed it’s been a bit quiet around here lately. You’d be right, I haven’t written much for a while now, there’s a reason for that. The reason, Ive been sick.
+You may have noticed it’s been a bit quiet around here lately. You’d be right, I haven’t written much for a while now, there’s a reason for that. The reason, I've been sick.
 
 It’s hard to put it like that, mental health illnesses are invisible illnesses to so many, with no physical signs, most people (even those close) would probably not even suggest I was sick. For me to even put that label on it is hard and kinda weird, but looking back over this summer, looking back at all the assessments, doctors appointments, occupational health phone calls and talks with my councillor, yes I was most definitely not well.
 
@@ -20,14 +20,14 @@ READMORE
 
 This probably isn’t the best question to ask, it really isn’t that straight forward. Maybe we should start with what was wrong? Again thing’s aren’t particularly black and white.
 
-I’ve had periods of depression in my adult life before, I’ve been as good as I can about it, taken myself to see the doctor, taken their advise. If it’s particularly bad, taken the medication they’ve prescribed me. But this time something about how I was were different. If you looked in to the glass house that was my life, you probably wouldn’t see anything wrong. Healthy woman, great career, good job, big loving family around her, loads of friends - what could it possibly be that would make her feel the need to drive her car off the side of the motorway when she was driving home from work every day.
+I’ve had periods of depression in my adult life before, I’ve been as good as I can about it, taken myself to see the doctor, taken their advice. If it’s particularly bad, taken the medication they’ve prescribed me. But this time something about how I was were different. If you looked in to the glass house that was my life, you probably wouldn’t see anything wrong. Healthy woman, great career, good job, big loving family around her, loads of friends - what could it possibly be that would make her feel the need to drive her car off the side of the motorway when she was driving home from work every day.
 
 Welcome to mental health illnesses. For the most part, there is no reason. I think as humans it’s natural to try and find rhyme and reason in things, especially those we can’t explain, but it’s a lot easier to accept these range of illnesses if you view them just as that, illnesses.
 
 Not saying that there aren’t external influences. Just like you might get run down by being overworked and picking up a cold, if you don’t take the time out to recover properly it will get worse. Life influences, triggers and disrupts.
 
 I’M NOT SURE ABOUT THIS BIT—
-So anyway, this had all been happening quietly in the background. If anyone unravelled the layers they would see work wasn’t at all how I wanted it, the environment was difficult, the projects demotivating and it had been this way for some time. I recently separated from my partner, it was the right decision for both of us, but when you’re a woman approaching her mid thirties, who had always seen a family in her future, this was particularly crushing. (There’s a fair few reminders everyday about the risk of having children over 35). Then this spirals, I own no house, I’m still yet to travel extensively (I’ve been working since uni)
+So anyway, this had all been happening quietly in the background. If anyone unravelled the layers they would see work wasn’t at all how I wanted it, the environment was difficult, the projects demotivating and it had been this way for some time. I recently separated from my partner, it was the right decision for both of us, but when you’re a woman approaching her mid thirties, who had always seen a family in her future, this was particularly crushing. (There’s a fair few reminders everyday about the risk of having children over 35). Then this spirals, I own no house, I’m still yet to travel extensively (I’ve been working since uni)...
 
 Then there’s also the sense of guilt, like I mentioned, what was *I* to be sad about.
 
